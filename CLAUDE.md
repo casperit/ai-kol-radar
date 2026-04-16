@@ -17,7 +17,7 @@ pip install requests --break-system-packages -q
 ```bash
 python src/main.py fetch
 ```
-这会从 Apify 抓取所有 KOL 过去24小时的推文，保存到 `data/today_tweets.json`。
+从 Apify 抓取所有 KOL 过去24小时的推文，保存到 `data/today_tweets.json`。
 
 ### Step 3：生成总结（你来写）
 读取 `data/today_tweets.json`，根据推文内容，生成一份中英双语日报总结。
@@ -43,11 +43,11 @@ EN: One-sentence English summary
 
 生成后将总结内容**保存到 `data/today_summary.md`**。
 
-### Step 4：推送企业微信 + 生成网页
+### Step 4：发送邮件 + 生成网页
 ```bash
 python src/main.py publish
 ```
-推送企业微信，并在 `web/` 下生成 HTML 存档页面。
+发送 Gmail 日报邮件，并在 `docs/` 下生成 HTML 存档页面。
 
 ### Step 5：提交并推送到 GitHub
 ```bash
@@ -55,17 +55,17 @@ git add data/archive/ docs/ data/today_summary.md
 git commit -m "digest: $(date +%Y-%m-%d)"
 git push
 ```
-推送完成后 GitHub Pages 会自动更新，网址为：
-https://casperit.github.io/ai-kol-radar/
 
 ---
 
 ## 环境变量
 - `APIFY_TOKEN` — Apify API Token
-- `WECOM_WEBHOOK_URL` — 企业微信机器人 Webhook URL
+- `GMAIL_USER` — Gmail 地址（发件人）
+- `GMAIL_PASSWORD` — Gmail 应用专用密码
+- `GMAIL_TO` — 收件人邮箱（可以和发件人相同）
 
 ## 异常处理
 - 某个 KOL 没有推文：跳过，不报错
-- 企业微信推送失败：打印错误，继续后续步骤
+- 邮件发送失败：打印错误，继续后续步骤
 - Apify 抓取超时：打印警告，用已有数据继续
 - git push 失败：打印错误，不影响本地存档
