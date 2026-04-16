@@ -1,4 +1,4 @@
-# AI KOL Daily Digest — Routine 运行指令
+# AI KOL Daily Digest — Cowork 运行指令
 
 ## 你的角色
 你是这个项目的执行者。每次运行按以下步骤完整执行，不要跳过任何步骤。
@@ -7,9 +7,10 @@
 
 ## 执行步骤
 
-### Step 1：安装依赖
+### Step 1：进入项目目录，安装依赖
 ```bash
-pip install requests
+cd ~/kol-radar
+pip install requests --break-system-packages -q
 ```
 
 ### Step 2：抓取今日推文
@@ -42,18 +43,20 @@ EN: One-sentence English summary
 
 生成后将总结内容**保存到 `data/today_summary.md`**。
 
-### Step 4：推送 + 生成网页
+### Step 4：推送企业微信 + 生成网页
 ```bash
 python src/main.py publish
 ```
-推送企业微信，并生成 `web/` 下的 HTML 存档页面。
+推送企业微信，并在 `web/` 下生成 HTML 存档页面。
 
-### Step 5：提交到 GitHub
+### Step 5：提交并推送到 GitHub
 ```bash
 git add data/archive/ web/ data/today_summary.md
 git commit -m "digest: $(date +%Y-%m-%d)"
 git push
 ```
+推送完成后 GitHub Pages 会自动更新，网址为：
+https://casperit.github.io/ai-kol-radar/
 
 ---
 
@@ -65,3 +68,4 @@ git push
 - 某个 KOL 没有推文：跳过，不报错
 - 企业微信推送失败：打印错误，继续后续步骤
 - Apify 抓取超时：打印警告，用已有数据继续
+- git push 失败：打印错误，不影响本地存档
