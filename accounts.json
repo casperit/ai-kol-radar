@@ -1,0 +1,214 @@
+{
+  "accounts": [
+    {
+      "username": "karpathy",
+      "display_name": "Andrej Karpathy",
+      "note": "LLM之王（从零教你造大模型）"
+    },
+    {
+      "username": "steipete",
+      "display_name": "Peter Steinberger 🦞",
+      "note": "OpenClaw缔造者（实战黑马）"
+    },
+    {
+      "username": "gregisenberg",
+      "display_name": "GREG ISENBERG",
+      "note": "创业点子之神（每天脑洞大开）"
+    },
+    {
+      "username": "rileybrown",
+      "display_name": "Riley Brown",
+      "note": "Vibecode天皇（氛围感拉满的代码）"
+    },
+    {
+      "username": "corbin_braun",
+      "display_name": "corbin",
+      "note": "Cursor之王（AI写代码最爽工具）"
+    },
+    {
+      "username": "jackfriks",
+      "display_name": "jack friks",
+      "note": "单人App之王（真实数据说话）"
+    },
+    {
+      "username": "levelsio",
+      "display_name": "@levelsio",
+      "note": "单人创业之神（不靠VC硬核造产品）"
+    },
+    {
+      "username": "marclou",
+      "display_name": "Marc Lou",
+      "note": "单人创业之神（又一个狠人）"
+    },
+    {
+      "username": "EXM7777",
+      "display_name": "Machina",
+      "note": "AI运营+系统之王（全栈效率拉满）"
+    },
+    {
+      "username": "eptwts",
+      "display_name": "EP",
+      "note": "AI赚钱推特之王（变现套路最狠）"
+    },
+    {
+      "username": "godofprompt",
+      "display_name": "God of Prompt",
+      "note": "Prompt之神（调教AI的顶级艺术）"
+    },
+    {
+      "username": "vasuman",
+      "display_name": "vas",
+      "note": "AI Agent之王（智能体实战派）"
+    },
+    {
+      "username": "AmirMushich",
+      "display_name": "AmirMušić",
+      "note": "AI广告之王（投放直接起飞）"
+    },
+    {
+      "username": "0xROAS",
+      "display_name": "0x ROAS",
+      "note": "AI UGC之王（病毒式用户内容狂魔）"
+    },
+    {
+      "username": "egeberkina",
+      "display_name": "Ege",
+      "note": "AI图像之王（画面感炸裂）"
+    },
+    {
+      "username": "MengTo",
+      "display_name": "Meng To",
+      "note": "AI落地页之王（转化率机器）"
+    },
+    {
+      "username": "rryssf_",
+      "display_name": "Robert Youssef",
+      "note": "自动化之王（懒人福音）"
+    },
+    {
+      "username": "kloss_xyz",
+      "display_name": "klöss",
+      "note": "系统架构之王（底层硬核）"
+    },
+    {
+      "username": "emollick",
+      "display_name": "Ethan Mollick",
+      "note": "AI科学之王（最靠谱研究解读）"
+    },
+    {
+      "username": "Hesamation",
+      "display_name": "ℏεsam",
+      "note": "AI/ML综合之王（深度学习前沿）"
+    },
+    {
+      "username": "dotey",
+      "display_name": "dotey",
+      "note": "中文AI圈高频信息源，Prompt工程、AI实战、前沿工具与模型解读"
+    },
+    {
+      "username": "op7418",
+      "display_name": "op7418",
+      "note": "AIGC周刊主理人，AI绘画、视频生成、设计工作流和工具趋势"
+    },
+    {
+      "username": "Gorden_Sun",
+      "display_name": "Gorden_Sun",
+      "note": "AI资讯日报和前沿动态整理，追踪新模型、新产品和热点变化"
+    },
+    {
+      "username": "xiaohu",
+      "display_name": "xiaohu",
+      "note": "科技与AI工具分享，ChatGPT、AI工具导航、产品资讯和使用技巧"
+    },
+    {
+      "username": "shao__meng",
+      "display_name": "shao__meng",
+      "note": "Web与AI技术实践，AI论文、开源项目和产品落地思考"
+    },
+    {
+      "username": "thinkingjimmy",
+      "display_name": "thinkingjimmy",
+      "note": "AI工具普及与产品体验，面向普通用户和工具使用者"
+    },
+    {
+      "username": "goocarlos",
+      "display_name": "goocarlos",
+      "note": "AI开发与产品结合，偏开发者视角，工具构建和应用实践"
+    },
+    {
+      "username": "Tumeng05",
+      "display_name": "Tumeng05",
+      "note": "AI创业和LLM、RAG、Agent方向，技术趋势与商业落地"
+    },
+    {
+      "username": "AxtonLiu",
+      "display_name": "AxtonLiu",
+      "note": "把复杂AI技术讲清楚，AI产品、开发实践和工具应用心得"
+    },
+    {
+      "username": "haibun",
+      "display_name": "haibun",
+      "note": "AI视频和生成式视觉创作，创意类AI方向"
+    },
+    {
+      "username": "nishuang",
+      "display_name": "nishuang",
+      "note": "AI工具、生产力提升和趋势观察，信息密度高"
+    },
+    {
+      "username": "vista8",
+      "display_name": "vista8",
+      "note": "AI产品、工作流、Vibe Coding和趋势判断，兼具产品感和表达能力"
+    },
+    {
+      "username": "lijigang",
+      "display_name": "lijigang",
+      "note": "深度Prompt探索者，AI思考、创意应用和方法论总结"
+    },
+    {
+      "username": "kaifulee",
+      "display_name": "kaifulee",
+      "note": "华人AI领域最具影响力意见领袖之一，产业、创业和大模型趋势判断"
+    },
+    {
+      "username": "WaytoAGI",
+      "display_name": "WaytoAGI",
+      "note": "中文AI知识整理型头部账号，体系化学习和追踪前沿资源"
+    },
+    {
+      "username": "xicilion",
+      "display_name": "xicilion",
+      "note": "LLM、AI实战和开发者视角，信息密度较高"
+    },
+    {
+      "username": "oran_ge",
+      "display_name": "oran_ge",
+      "note": "AI创业者视角，关注Agent、产品机会和模型能力变化"
+    },
+    {
+      "username": "AlchainHust",
+      "display_name": "AlchainHust",
+      "note": "AI编程、AI Native产品和具体工具实操，内容落地性强"
+    },
+    {
+      "username": "SamuelQZQ",
+      "display_name": "SamuelQZQ",
+      "note": "AI工具、AI认知和开发者实践，一线新工具和新玩法"
+    },
+    {
+      "username": "elliotchen100",
+      "display_name": "elliotchen100",
+      "note": "AI工具拆解、项目观察和开发者生态内容，追踪新项目"
+    },
+    {
+      "username": "Hayami_kiraa",
+      "display_name": "Hayami_kiraa",
+      "note": "AI Builder和内容创作者路线，连接产品、创作和增长"
+    },
+    {
+      "username": "berryxia",
+      "display_name": "berryxia",
+      "note": "创意型AI应用、提示词、自动化和生产流"
+    }
+  ]
+}
