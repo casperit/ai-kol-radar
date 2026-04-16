@@ -51,7 +51,7 @@ python src/main.py publish
 
 ### Step 5：提交并推送到 GitHub
 ```bash
-git add data/archive/ web/ data/today_summary.md
+git add data/archive/ docs/ data/today_summary.md
 git commit -m "digest: $(date +%Y-%m-%d)"
 git push
 ```
