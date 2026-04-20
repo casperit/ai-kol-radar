@@ -1,0 +1,2767 @@
+{
+  "date": "2026-04-20",
+  "accounts": [
+    {
+      "username": "karpathy",
+      "display_name": "Andrej Karpathy",
+      "note": "LLM之王（从零教你造大模型）"
+    },
+    {
+      "username": "steipete",
+      "display_name": "Peter Steinberger 🦞",
+      "note": "OpenClaw缔造者（实战黑马）"
+    },
+    {
+      "username": "gregisenberg",
+      "display_name": "GREG ISENBERG",
+      "note": "创业点子之神（每天脑洞大开）"
+    },
+    {
+      "username": "rileybrown",
+      "display_name": "Riley Brown",
+      "note": "Vibecode天皇（氛围感拉满的代码）"
+    },
+    {
+      "username": "corbin_braun",
+      "display_name": "corbin",
+      "note": "Cursor之王（AI写代码最爽工具）"
+    },
+    {
+      "username": "jackfriks",
+      "display_name": "jack friks",
+      "note": "单人App之王（真实数据说话）"
+    },
+    {
+      "username": "levelsio",
+      "display_name": "@levelsio",
+      "note": "单人创业之神（不靠VC硬核造产品）"
+    },
+    {
+      "username": "marclou",
+      "display_name": "Marc Lou",
+      "note": "单人创业之神（又一个狠人）"
+    },
+    {
+      "username": "EXM7777",
+      "display_name": "Machina",
+      "note": "AI运营+系统之王（全栈效率拉满）"
+    },
+    {
+      "username": "eptwts",
+      "display_name": "EP",
+      "note": "AI赚钱推特之王（变现套路最狠）"
+    },
+    {
+      "username": "godofprompt",
+      "display_name": "God of Prompt",
+      "note": "Prompt之神（调教AI的顶级艺术）"
+    },
+    {
+      "username": "vasuman",
+      "display_name": "vas",
+      "note": "AI Agent之王（智能体实战派）"
+    },
+    {
+      "username": "AmirMushich",
+      "display_name": "AmirMušić",
+      "note": "AI广告之王（投放直接起飞）"
+    },
+    {
+      "username": "0xROAS",
+      "display_name": "0x ROAS",
+      "note": "AI UGC之王（病毒式用户内容狂魔）"
+    },
+    {
+      "username": "egeberkina",
+      "display_name": "Ege",
+      "note": "AI图像之王（画面感炸裂）"
+    },
+    {
+      "username": "MengTo",
+      "display_name": "Meng To",
+      "note": "AI落地页之王（转化率机器）"
+    },
+    {
+      "username": "rryssf_",
+      "display_name": "Robert Youssef",
+      "note": "自动化之王（懒人福音）"
+    },
+    {
+      "username": "kloss_xyz",
+      "display_name": "klöss",
+      "note": "系统架构之王（底层硬核）"
+    },
+    {
+      "username": "emollick",
+      "display_name": "Ethan Mollick",
+      "note": "AI科学之王（最靠谱研究解读）"
+    },
+    {
+      "username": "Hesamation",
+      "display_name": "ℏεsam",
+      "note": "AI/ML综合之王（深度学习前沿）"
+    },
+    {
+      "username": "dotey",
+      "display_name": "dotey",
+      "note": "中文AI圈高频信息源，Prompt工程、AI实战、前沿工具与模型解读"
+    },
+    {
+      "username": "op7418",
+      "display_name": "op7418",
+      "note": "AIGC周刊主理人，AI绘画、视频生成、设计工作流和工具趋势"
+    },
+    {
+      "username": "Gorden_Sun",
+      "display_name": "Gorden_Sun",
+      "note": "AI资讯日报和前沿动态整理，追踪新模型、新产品和热点变化"
+    },
+    {
+      "username": "xiaohu",
+      "display_name": "xiaohu",
+      "note": "科技与AI工具分享，ChatGPT、AI工具导航、产品资讯和使用技巧"
+    },
+    {
+      "username": "shao__meng",
+      "display_name": "shao__meng",
+      "note": "Web与AI技术实践，AI论文、开源项目和产品落地思考"
+    },
+    {
+      "username": "thinkingjimmy",
+      "display_name": "thinkingjimmy",
+      "note": "AI工具普及与产品体验，面向普通用户和工具使用者"
+    },
+    {
+      "username": "goocarlos",
+      "display_name": "goocarlos",
+      "note": "AI开发与产品结合，偏开发者视角，工具构建和应用实践"
+    },
+    {
+      "username": "Tumeng05",
+      "display_name": "Tumeng05",
+      "note": "AI创业和LLM、RAG、Agent方向，技术趋势与商业落地"
+    },
+    {
+      "username": "AxtonLiu",
+      "display_name": "AxtonLiu",
+      "note": "把复杂AI技术讲清楚，AI产品、开发实践和工具应用心得"
+    },
+    {
+      "username": "haibun",
+      "display_name": "haibun",
+      "note": "AI视频和生成式视觉创作，创意类AI方向"
+    },
+    {
+      "username": "nishuang",
+      "display_name": "nishuang",
+      "note": "AI工具、生产力提升和趋势观察，信息密度高"
+    },
+    {
+      "username": "vista8",
+      "display_name": "vista8",
+      "note": "AI产品、工作流、Vibe Coding和趋势判断，兼具产品感和表达能力"
+    },
+    {
+      "username": "lijigang",
+      "display_name": "lijigang",
+      "note": "深度Prompt探索者，AI思考、创意应用和方法论总结"
+    },
+    {
+      "username": "kaifulee",
+      "display_name": "kaifulee",
+      "note": "华人AI领域最具影响力意见领袖之一，产业、创业和大模型趋势判断"
+    },
+    {
+      "username": "WaytoAGI",
+      "display_name": "WaytoAGI",
+      "note": "中文AI知识整理型头部账号，体系化学习和追踪前沿资源"
+    },
+    {
+      "username": "xicilion",
+      "display_name": "xicilion",
+      "note": "LLM、AI实战和开发者视角，信息密度较高"
+    },
+    {
+      "username": "oran_ge",
+      "display_name": "oran_ge",
+      "note": "AI创业者视角，关注Agent、产品机会和模型能力变化"
+    },
+    {
+      "username": "AlchainHust",
+      "display_name": "AlchainHust",
+      "note": "AI编程、AI Native产品和具体工具实操，内容落地性强"
+    },
+    {
+      "username": "SamuelQZQ",
+      "display_name": "SamuelQZQ",
+      "note": "AI工具、AI认知和开发者实践，一线新工具和新玩法"
+    },
+    {
+      "username": "elliotchen100",
+      "display_name": "elliotchen100",
+      "note": "AI工具拆解、项目观察和开发者生态内容，追踪新项目"
+    },
+    {
+      "username": "Hayami_kiraa",
+      "display_name": "Hayami_kiraa",
+      "note": "AI Builder和内容创作者路线，连接产品、创作和增长"
+    },
+    {
+      "username": "berryxia",
+      "display_name": "berryxia",
+      "note": "创意型AI应用、提示词、自动化和生产流"
+    }
+  ],
+  "tweets": {
+    "karpathy": [
+      {
+        "text": "@bryan_johnson Yeah I've seen it a few times now, all the Enneagram type fives get one shotted into AI psychosis when they discover LLM knowledge bases :) And an especially a strong fit when you have a lot of pre-existing data to insert into it.",
+        "created_at": "Mon Apr 20 00:05:43 +0000 2026",
+        "likes": 973,
+        "retweets": 22
+      }
+    ],
+    "steipete": [
+      {
+        "text": "Interesting shift. These highly subsidized subs are out there to get your code to improve their models. If you use AI for things useful to you, but not code, you are not valuable to them. https://t.co/H45BCP01Qb",
+        "created_at": "Mon Apr 20 12:08:14 +0000 2026",
+        "likes": 1085,
+        "retweets": 97
+      },
+      {
+        "text": "@WizLikeWizard The defaults were tailored for subscription use before Anthropic copied our features and then cut us off",
+        "created_at": "Mon Apr 20 12:01:44 +0000 2026",
+        "likes": 290,
+        "retweets": 1
+      },
+      {
+        "text": "@AKCapStrat @openclaw nope, works",
+        "created_at": "Mon Apr 20 12:00:19 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@LoopOnChain Yeah there's a bunch more work that's in the pipeline, this will change this week.",
+        "created_at": "Mon Apr 20 11:56:54 +0000 2026",
+        "likes": 119,
+        "retweets": 1
+      },
+      {
+        "text": "@paraschopra Open Source vs Closed Source.\nOwning your data vs giving a company access to your data on their servers.",
+        "created_at": "Mon Apr 20 11:55:50 +0000 2026",
+        "likes": 667,
+        "retweets": 22
+      },
+      {
+        "text": "@NFTcatch @Zai_org Haven't heart about that before. @zai_org ?",
+        "created_at": "Mon Apr 20 11:53:19 +0000 2026",
+        "likes": 38,
+        "retweets": 1
+      },
+      {
+        "text": "MCPorter 🧳 0.9.0 is out.\nCall MCPs from TypeScript or as CLI\n\n- per-server tool filtering\n- sturdier stdio shutdowns\n- Windows OAuth URL quoting fix\n- OAuth config docs\n- schema-declared string coercion for tool calls\nhttps://t.co/aywv0xs0Hf",
+        "created_at": "Mon Apr 20 11:42:51 +0000 2026",
+        "likes": 289,
+        "retweets": 17
+      },
+      {
+        "text": "@garrytan You’re shipping harder than I do these days!",
+        "created_at": "Sun Apr 19 21:13:54 +0000 2026",
+        "likes": 344,
+        "retweets": 3
+      },
+      {
+        "text": "@montse_cervera @OmarShahine @openclaw check your agent.md and memory files. They might be excessive, or smaller model?",
+        "created_at": "Sun Apr 19 19:13:22 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@RiccSartori yeah, nah.",
+        "created_at": "Sun Apr 19 15:39:48 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      }
+    ],
+    "gregisenberg": [
+      {
+        "text": "@Jack_Raines omg jack you legend. this looks awesome.\n\nim 37, worth reading for me?",
+        "created_at": "Mon Apr 20 14:10:51 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@JasonLeeBedunah Yikes please report!",
+        "created_at": "Mon Apr 20 00:48:44 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@Seanfrank Awesome, thanks!",
+        "created_at": "Mon Apr 20 00:24:38 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@Seanfrank Do you have any recommendations for a leather backpack you like?",
+        "created_at": "Sun Apr 19 23:24:47 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@morganlinton @LyticalVentures Love it",
+        "created_at": "Sun Apr 19 22:15:03 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@ethanhlo @AdaptiveSec love it",
+        "created_at": "Sun Apr 19 20:54:50 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "This is why cybersecurity is the best startup category to build in right now\n\nEvery major platform is getting breached in 2026. vercel, snowflake, the list keeps growing. \n\nAI made it 100x easier to build. it also made it 100x easier to attack.\n\nIf you're building a cybersecurity startup right now, your timing is perfect\n\nThe attack surface is expanding every single day and the buyers have never been more plentiful\n\nBe safe out there",
+        "created_at": "Sun Apr 19 17:00:42 +0000 2026",
+        "likes": 1135,
+        "retweets": 107
+      }
+    ],
+    "rileybrown": [
+      {
+        "text": "Cowork is for noobs",
+        "created_at": "Mon Apr 20 10:39:45 +0000 2026",
+        "likes": 32,
+        "retweets": 1
+      },
+      {
+        "text": "@linachen_nyc Likely this wk",
+        "created_at": "Mon Apr 20 10:13:09 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "If OpenAI releases a model that is as good at design as Opus 4.7, Codex App will be WAY ahead.",
+        "created_at": "Mon Apr 20 08:49:59 +0000 2026",
+        "likes": 493,
+        "retweets": 7
+      },
+      {
+        "text": "Really hard to tell. Open sourced models lag behind frontier models (The ones your using on Claude rn) by 6 months or so. \n\nSo your current workflows will get cheaper in theory (As open source improve). \n\nBut frontier models will likely get more expensive. \nI think anthropic and openai will launch a 1000 or $2000 per month plan. \n\nClaude Max plans are HEAVILY subsidized. But neither openai or anthropic want to surrender users off the platform to the other.",
+        "created_at": "Mon Apr 20 04:25:38 +0000 2026",
+        "likes": 42,
+        "retweets": 0
+      },
+      {
+        "text": "@pranaveight @yabsssai Lmaoooo appreciate the sentiment",
+        "created_at": "Mon Apr 20 04:05:23 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@pranaveight @yabsssai 😆 pretty sure that’s a bot",
+        "created_at": "Mon Apr 20 04:00:52 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@YossiOfficial @choruscom https://t.co/XEjx82GK74",
+        "created_at": "Mon Apr 20 02:54:57 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "https://t.co/XEjx82GK74",
+        "created_at": "Mon Apr 20 02:54:39 +0000 2026",
+        "likes": 26,
+        "retweets": 1
+      },
+      {
+        "text": "Codex Video uploaded on YouTube. \nhttps://t.co/fiEcbojjoc https://t.co/3wIeZHdTEF",
+        "created_at": "Mon Apr 20 02:54:28 +0000 2026",
+        "likes": 76,
+        "retweets": 7
+      },
+      {
+        "text": "It's on YouTube now as well. \nhttps://t.co/fiEcbojjoc https://t.co/p2rjI2Hy6a",
+        "created_at": "Mon Apr 20 02:53:54 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@YossiOfficial @choruscom 30 min will be uploaded.",
+        "created_at": "Mon Apr 20 01:59:03 +0000 2026",
+        "likes": 12,
+        "retweets": 0
+      },
+      {
+        "text": "The Codex Super-App (Full Beginners Guide)\nThe All Purpose Interface for AI Agents\n\nPart 1: Codex Basics\nInstall Codex, Projects, Chats, Documents, Plugins, Custom Skills, Automations\n\nPart 2: Multitasking with Codex\n- iOS App Designs\n- Build an iOS App\n- Landing Page\n- Launch Video\n- Investor Deck\n- Social Media Automation\n\nTIMESTAMPS:\n\nPart 1: Codex Basics\n00:00 Intro\n02:54 Downloading Codex\n03:20 Overview of Codex interface\n03:56 Chats, Prompting, & Built in Search\n04:53 Creating Projects\n07:37 Creating Spreadsheet\n09:43 How Files are stored and mentioned within projects\n10:42 Quick Codex Overview \n12:47 Search (CMD G) and Folder Organization\n14:29 Skills and Plugins\n16:29 Using Calendar Plugin\n18:07 Creating Automations on Codex \n19:18 Learn about Plugins (Figma)\n21:37 Built in Image Gen\n22:37 MCP Example (Paper for Design)\n24:17 Opening Chats in mini-window\n25:26 Steering vs Queueing the Agent\n27:35 Creating Own Skill with API's\n31:34 Using YouTube Researcher Skill (That we created)\n33:24 Creating Automation with your custom skill\n\nPart 2: Multitasking (More chaotic and fun)\n35:27 Part 2 Multitasking: Building iOS App, Web App, Investor Deck, Launch Video, Mobile Designs, and Automated X Posts\n37:54 Creating Project \n38:31 Planning my 6 Projects\n40:25 Mobile Design Skill\n41:47 Setting up iOS App\n45:08 Implementing Desings into Mobile app\n46:13 Creating a landing page that collects user info\n46:45 Tally for form submission (Great for lead magnets)\n49:43 Organizing and Renaming Chats for multitasking\n52:12 Database for Mobile App (Supabase)\n53:19 Generating app icons\n54:08 Launch Video (Remotion) \n59:32 Remotion Video Timeline and Seeing the Video Editor\n01:05:37 Editing instructions for Remotion (Gridlines)\n01:07:11 Editing Web App\n01:09:46 Using CLAUDE CODE Inside Codex for Design (Terminal)\n01:17:20 Forking a Chat to create investor deck\n01:19:09 Using Claude 4.7 Opus for Designing Deck\n01:20:22 Testing Canva Export (It's good) \n01:22:33 Running Mobile App on Actual Phone (Not Simulator)\n01:28:58 Finishing up All Projects (Mobile App, Landing Page Launch Video)\n01:31:56 Exporting Deck and making changes in Canva\n01:33:13 Deploy to Vercel using the Vercel Plugin\n01:33:44 Adding Song to Remotion Video\n01:35:26 Setting up x Post automations (Typefully)\n01:37:57 Our App is on Testflight! \n01:39:58 Final Remotion Video \n01:41:04 Final Thoughts, Reflections, Summary",
+        "created_at": "Mon Apr 20 01:33:35 +0000 2026",
+        "likes": 1858,
+        "retweets": 207
+      },
+      {
+        "text": "@kamellperry_ 20 min",
+        "created_at": "Mon Apr 20 00:53:47 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@siddaniagi You work for Anthropic, what’s with all the fandom?",
+        "created_at": "Sun Apr 19 23:32:42 +0000 2026",
+        "likes": 16,
+        "retweets": 0
+      },
+      {
+        "text": "@real_n3o Same",
+        "created_at": "Sun Apr 19 19:16:36 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      }
+    ],
+    "corbin_braun": [
+      {
+        "text": "@sidequestryan W",
+        "created_at": "Mon Apr 20 07:16:28 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "if I set up an event to throw a house mixing set on ocean beach sf\n\nhow many people would send?",
+        "created_at": "Mon Apr 20 07:05:01 +0000 2026",
+        "likes": 19,
+        "retweets": 0
+      },
+      {
+        "text": "@erikalee 🔥",
+        "created_at": "Mon Apr 20 00:09:16 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "some of these pre made mix folders\n\nis mixing on easy mode \n\nhouse is too good",
+        "created_at": "Sun Apr 19 21:01:31 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "watch in 4K\nhttps://t.co/uSr8MPWM7b",
+        "created_at": "Sun Apr 19 20:14:29 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@TedHZhang found the claw to be more cost effective",
+        "created_at": "Sun Apr 19 20:10:39 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "coding music is real\n\nand I will be one of the first movers in this vertical",
+        "created_at": "Sun Apr 19 18:50:38 +0000 2026",
+        "likes": 43,
+        "retweets": 0
+      },
+      {
+        "text": "@logiclogic1223 I will just code the music",
+        "created_at": "Sun Apr 19 18:50:09 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "time to make some music today",
+        "created_at": "Sun Apr 19 18:41:58 +0000 2026",
+        "likes": 17,
+        "retweets": 0
+      },
+      {
+        "text": "openclaw best use case for me is digesting a ton of data from multiple sources\n\nand giving insight.\n\nreally is a power machine.",
+        "created_at": "Sun Apr 19 16:16:15 +0000 2026",
+        "likes": 15,
+        "retweets": 2
+      }
+    ],
+    "jackfriks": [
+      {
+        "text": "@justalexoki telling ur wife brb",
+        "created_at": "Mon Apr 20 13:48:24 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@justalexoki warm and dangerous",
+        "created_at": "Mon Apr 20 13:44:28 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "i said these exact same words to my fiancee earlier this week after driving my new toyota corolla hybrid for the first time",
+        "created_at": "Mon Apr 20 13:16:00 +0000 2026",
+        "likes": 66,
+        "retweets": 1
+      },
+      {
+        "text": "got something better: me and my future kids first car https://t.co/gnRAm8LKd9",
+        "created_at": "Mon Apr 20 13:12:45 +0000 2026",
+        "likes": 96,
+        "retweets": 0
+      },
+      {
+        "text": "@Ekaeoq TIL",
+        "created_at": "Mon Apr 20 13:10:47 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@jmbynx more of a casio+seiko guy\n\nhamilton one day",
+        "created_at": "Mon Apr 20 13:09:43 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@FarandPaulJr HOT",
+        "created_at": "Mon Apr 20 12:52:55 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "just realized it hit $30k/month and $40k/month and didn't buy myself a new watch to celebrate either milestone...",
+        "created_at": "Mon Apr 20 12:51:56 +0000 2026",
+        "likes": 76,
+        "retweets": 0
+      },
+      {
+        "text": "@yesno_pm no",
+        "created_at": "Mon Apr 20 12:45:43 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@anthonyriera DB is main thing, will look into it then :) thanks anthony",
+        "created_at": "Mon Apr 20 12:41:32 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@anthonyriera my outage was actually not at all caused by vercel! just exploring options, i do like vercel.",
+        "created_at": "Mon Apr 20 12:41:18 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@awpthorp no i marked as drafts so users can pick when they want them posted to avoid unwanted posts going out 12+ hours late, then emailed all affected users",
+        "created_at": "Mon Apr 20 12:37:11 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@awpthorp luckily accounted for the queue and marked as drafts so people dont have posts going out 12 hours wrong time or 10 posts in one window",
+        "created_at": "Mon Apr 20 12:35:25 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "since my SaaS was offline and i couldnt do anything for hours to fix it... i went and looked at the chaos paths that would happen when it came back online (like 2300 posts being posted in one 10 minute window after being stuck). i then fixed those chaos paths! i did something!",
+        "created_at": "Mon Apr 20 12:34:54 +0000 2026",
+        "likes": 35,
+        "retweets": 0
+      },
+      {
+        "text": "sorry, not fully self hosting* more like taking some platform risk of the table\n\nlikely using something like coolify + hetzner, but then what is the difference? Im not sure vs Vercel + supa",
+        "created_at": "Mon Apr 20 12:32:51 +0000 2026",
+        "likes": 9,
+        "retweets": 0
+      },
+      {
+        "text": "@zachpogrob i did this ages ago buster",
+        "created_at": "Mon Apr 20 12:17:50 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@thekitze do the trendy Intermittent fasting and then you have a rule to follow of when you can and can’t eat - i know this changes nothing but helped me before",
+        "created_at": "Mon Apr 20 12:16:59 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "as i consider migrating my database today and where i host the website for https://t.co/XDwSrnYC8e… what’s your pro tips for self hosting :)",
+        "created_at": "Mon Apr 20 12:13:15 +0000 2026",
+        "likes": 67,
+        "retweets": 0
+      },
+      {
+        "text": "@Jellto rick me eh",
+        "created_at": "Mon Apr 20 12:11:55 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@heysatya_ glhf",
+        "created_at": "Mon Apr 20 12:10:45 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@daniele_packard back online now ❤️",
+        "created_at": "Mon Apr 20 11:58:50 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@lukeliasi @supabase please dm, or mail support @ https://t.co/XDwSrnYC8e \n\njust got back online now",
+        "created_at": "Mon Apr 20 11:57:36 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "BACK ONLINE NOW!!!!!",
+        "created_at": "Mon Apr 20 11:56:46 +0000 2026",
+        "likes": 99,
+        "retweets": 0
+      },
+      {
+        "text": "@supabase :') https://t.co/X9Ckjcx8mG",
+        "created_at": "Mon Apr 20 02:35:19 +0000 2026",
+        "likes": 12,
+        "retweets": 0
+      },
+      {
+        "text": "@midego1 odd bug rotating legacy keys in providers system, caused me into a stale state havent been able to solve yet with support",
+        "created_at": "Mon Apr 20 02:33:17 +0000 2026",
+        "likes": 5,
+        "retweets": 0
+      },
+      {
+        "text": "@Vinicius_Deniz thank you legend &lt;3",
+        "created_at": "Mon Apr 20 02:32:40 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@14hous feel it might",
+        "created_at": "Mon Apr 20 02:32:21 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "thankfully the support team @supabase has been working with me today on a fix. it appears i found a fun edge case not yet encountered",
+        "created_at": "Mon Apr 20 02:09:45 +0000 2026",
+        "likes": 36,
+        "retweets": 0
+      },
+      {
+        "text": "im not sure if you're supposed to post this and put yourself on blast but feeling extra irritated today. makes me realize how long ive been without a major hiccup like this",
+        "created_at": "Mon Apr 20 02:08:43 +0000 2026",
+        "likes": 44,
+        "retweets": 0
+      },
+      {
+        "text": "very unfortunately my business, https://t.co/XDwSrnYC8e has been down all day since 11AM EDT\n\ni apologize greatly to all my customers for this trouble. sucks a lot, i know many people are frustrated not being able to schedule their posts out tonight. https://t.co/wbMDLKez5a",
+        "created_at": "Mon Apr 20 02:08:00 +0000 2026",
+        "likes": 307,
+        "retweets": 3
+      },
+      {
+        "text": "@ThiermannPablo @supabase @postbridge_ sadly not the problem",
+        "created_at": "Mon Apr 20 02:00:15 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@khan_kilo @supabase @postbridge_ i know thanks kenny",
+        "created_at": "Sun Apr 19 20:55:15 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "@ivasilov @supabase @postbridge_ yes got a reply but was noted that auth team is off for weekend likely\n\ndm'ing now thanks ivan",
+        "created_at": "Sun Apr 19 20:05:32 +0000 2026",
+        "likes": 6,
+        "retweets": 0
+      },
+      {
+        "text": "rolled keys for my database and ran into infra error on @supabase :)\n\nsadly @postbridge_ is down for time being until i can get unblocked by supa, login is down.\n\nheavily considering hosting myself from here on out, i think initial setup is worth the peace of mind",
+        "created_at": "Sun Apr 19 17:31:42 +0000 2026",
+        "likes": 326,
+        "retweets": 5
+      }
+    ],
+    "levelsio": [
+      {
+        "text": "You can try it at 💾 https://t.co/RRYOCWqRQq which gets its internet via 📡 https://t.co/I1CzsNTkC5",
+        "created_at": "Mon Apr 20 14:58:26 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "💾 I renamed it to https://t.co/6tRObkZbZa because AltaVista is still owned by Yahoo so I didn't wanna infringe\n\n🔎 https://t.co/HmRnyRsZoI is a fully functional search engine and proxy that lets ANY old browser browse most of the web with just HTTP (instead of HTTPS), it converts modern web pages to something that any old device can access (like removing JavaScript code)\n\nSo now devices like your old Apple II, Commodore 64, Atari ST, Amiga, 486 PC, Dreamcast or PS2 can access the modern internet too! 🤓\n\nAnd it's great for Kindles too because it converts most webpages to easy-to-read text ☺️",
+        "created_at": "Mon Apr 20 14:57:56 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "💯",
+        "created_at": "Mon Apr 20 09:33:33 +0000 2026",
+        "likes": 265,
+        "retweets": 18
+      },
+      {
+        "text": "Oops, this one didn't add properly, here it is!\n\n🤺 Floppy Brawler by @itsmattcollison https://t.co/bvcP9REPRz",
+        "created_at": "Sun Apr 19 23:43:54 +0000 2026",
+        "likes": 10,
+        "retweets": 1
+      },
+      {
+        "text": "🧑‍🚀 Day 17 of the @cursor_ai #vibejam\n\nProudly sponsored by @cursor_ai + @boltdotnew + @heyglif + @tripoai\n\nPrizes to win (submit your vibe coded game before May 1!)\n🏆 $25,000\n🥈 $10,000\n🥉 $5,000\n\nYOU HAVE 11 DAYS LEFT!\n\nMy favorite games on the timeline today:\n\n🩻 Freak Surgeon by @RagimMusakaev \n🐭 Mouse Trouble by @rfitzpatrick_io \n🛕 Extraction by @did0f\n🚗 Rally Positano by @sachasayan \n\nReply in this thread with updates on your current games to share your progress, and add tag #vibejam so I see and can include you in the daily tweet\n\nWanna to participate? You can still start now and submit your game any time before May 1! (we started April 1 btw)\n\nThere's now $40,000 in prizes for you to win, see threads below for more info. The Gold prize is $25,000, silver is $10,000 and bronze is $5,000!",
+        "created_at": "Sun Apr 19 23:15:26 +0000 2026",
+        "likes": 78,
+        "retweets": 3
+      },
+      {
+        "text": "@VibeCreAI @heyglif Oh sick!!!",
+        "created_at": "Sun Apr 19 20:38:09 +0000 2026",
+        "likes": 1,
+        "retweets": 1
+      },
+      {
+        "text": "@denisbondare Yes Chrome MacOS!",
+        "created_at": "Sun Apr 19 20:37:17 +0000 2026",
+        "likes": 0,
+        "retweets": 1
+      },
+      {
+        "text": "@denisbondare So nice, but I am stuck here :O https://t.co/k0kuNPLrrU",
+        "created_at": "Sun Apr 19 20:19:23 +0000 2026",
+        "likes": 5,
+        "retweets": 1
+      }
+    ],
+    "exm7777": [
+      {
+        "text": "https://t.co/WluxuWUDZC",
+        "created_at": "Mon Apr 20 13:58:08 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "there's only one way to remain relevant and profitable in AI...\n\nand it's REALLY important, so listen to this\n\nobsessing over \"mastering\" Codex, Seedance, or Claude Code will take you nowhere, it's a completely wrong approach\n\nsimply because we're in a market that changes every 3 months:\n> new model drops\n> everyone's mind is blown\n> old workflows are obsolete\n> you're back to square one\n\nif you're trying to become \"very good\" at THIS specific tool... you're already behind because by the time you master it, there's a better one\n\nthe tools are temporary... the skills are permanent, so here's what actually keeps you relevant:\n\ndevelop AI skills that transcend the tools:\n- engineering principles\n- AI workflow design (when to use AI vs when not to)\n- quality control systems (catching hallucinations, maintaining consistency)\n- integration thinking (connecting multiple tools into one system)\n\nthese skills transfer, no matter what model launches next month... you can adapt in hours, not months\n\nyour business stays profitable because you're not tied to one tool - you're building systems that work regardless of which AI is \"winning\" this quarter",
+        "created_at": "Mon Apr 20 13:58:06 +0000 2026",
+        "likes": 58,
+        "retweets": 2
+      },
+      {
+        "text": "https://t.co/WluxuWUDZC",
+        "created_at": "Sun Apr 19 20:57:05 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "i'm tried of gurus selling you bullshit about AI SEO... here's the fastest way to get mentioned in LLMs...\n\nand i'm sorry to break it to you... but it's still linkbuilding\n\nLLMs are trained on massive text datasets scraped from the internet... which means they \"know\" your brand based on what high-authority sites say about it\n\nif you want ChatGPT or Claude to recommend your product when someone asks \"what's the best tool for X?\" you need backlinks and mentions from sources the training data respects\n\nwhat LLMs look for:\n- authority site backlinks (leaders in your industry)\n- consistent brand mentions in quality content\n- credible sources linking to your domain\n\nyour Instagram followers don't matter here... your Reddit posts don't matter that much... what matters is whether trusted publications have written about you\n\nso while everyone's trying to \"hack AI search\"... the answer is the same thing that's worked for 20 years: build real authority, earn real backlinks, get mentioned by real sites - LLMs will pick it up real quick",
+        "created_at": "Sun Apr 19 20:57:02 +0000 2026",
+        "likes": 96,
+        "retweets": 5
+      },
+      {
+        "text": "https://t.co/WluxuWUDZC",
+        "created_at": "Sun Apr 19 19:33:05 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "the best AI industry right now is whichever one you commit to for 30 straight days of deep work...\n\nmost people fail because they get lost in content, SaaS, marketing AND consulting... learning surface tricks and competing with everyone\n\nmeanwhile the people making real money picked ONE domain and asked \"what would an absolute crack actually look like here?\", then they built it\n\nyour move: pick the industry where you already have some knowledge, spend a month going deeper than your competitors, build frameworks and systems, not just skills\n\nfrom there it's easy mode",
+        "created_at": "Sun Apr 19 19:33:02 +0000 2026",
+        "likes": 194,
+        "retweets": 8
+      },
+      {
+        "text": "https://t.co/WluxuWUDZC",
+        "created_at": "Sun Apr 19 18:01:05 +0000 2026",
+        "likes": 6,
+        "retweets": 0
+      },
+      {
+        "text": "somewhere there's a guy with a $20 chatgpt plan, a cheap laptop, just doing things and absolutely printing money with AI right now...\n\nand there's you, complaining about your $200 claude limits, waiting for the perfect moment, focusing on optimizing bullshit, planning endlessly without never really starting, watching yt tutorials...\n\nletting time slip away and your dreams with it",
+        "created_at": "Sun Apr 19 18:01:02 +0000 2026",
+        "likes": 780,
+        "retweets": 35
+      },
+      {
+        "text": "https://t.co/WluxuWUDZC",
+        "created_at": "Sun Apr 19 15:26:06 +0000 2026",
+        "likes": 5,
+        "retweets": 0
+      },
+      {
+        "text": "learning AI is the easiest skill to pick up right now because it's actually fun...\n\ni'm dead serious, just open claude code and just start experimenting\n\n- try to trick it to understand how it processes information\n- break things and figure out why\n- ship projects you have fun with\n\njust build your own test environments and improve through experimentation, the best AI builders learned by playing with the tools until patterns emerged\n\nit's very easy to get addicted to AI agents, doesn't feel like working for most",
+        "created_at": "Sun Apr 19 15:26:03 +0000 2026",
+        "likes": 227,
+        "retweets": 15
+      }
+    ],
+    "eptwts": [
+      {
+        "text": "@thebeautyofsaas grok algo in action lmfao",
+        "created_at": "Sun Apr 19 16:53:24 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "@nikitabier",
+        "created_at": "Sun Apr 19 16:46:33 +0000 2026",
+        "likes": 8,
+        "retweets": 0
+      },
+      {
+        "text": "because AI is a tool for making your ideas come to life, not the other way around...\n\nyou can use it for ideation, sure, but you still have to steer it with your own creative process - it's only useful for idea iteration",
+        "created_at": "Sun Apr 19 15:27:48 +0000 2026",
+        "likes": 152,
+        "retweets": 3
+      }
+    ],
+    "godofprompt": [
+      {
+        "text": "@Kannanigga 6/7",
+        "created_at": "Mon Apr 20 13:23:11 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@CraigMeagher7 Thank you so much for the support! I sent the resolution offer and am urging to sign it to unblock the platform accesses for the customers as soon as possible",
+        "created_at": "Mon Apr 20 09:01:48 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@H001011 @alex_prompter Please check the official statement on @godofprompt",
+        "created_at": "Mon Apr 20 07:57:41 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@appr3808 @rryssf_ The initial conditions are bilateral friendly trust. 50/50 till the end. And I’m not the one who ruined it(",
+        "created_at": "Mon Apr 20 06:38:52 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@appr3808 @rryssf_ first, he actually admits that he did it. And everything I have communicated so far was fully transparent",
+        "created_at": "Mon Apr 20 05:41:28 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@appr3808 @rryssf_ He already did use access as leverage the moment he took it. I only responded",
+        "created_at": "Mon Apr 20 04:49:23 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@LaurenceKuek This business was a partnership of 2 friends binded by trust. And I do take the responsibility of making the mistake of trusting the person\n\nThey always say it’s a 50% chance for it work out or fail miserably when you go into business with a friend",
+        "created_at": "Mon Apr 20 04:10:32 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "I am going public to defend myself as I have been stripped off accesses to core business assets including my personal X account @rryssf_ \n\nAll of this happened in the midst of negations and was used as pressure against me to step down and accept unfavourable deal. Openly \n\nI did manage to take some of them back, including this account, and am operating them in a purely defensive manner.",
+        "created_at": "Mon Apr 20 04:07:08 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@Hui618094734650 You may reach out to the person responsible at admin@godofprompt.net to process your refunds or any other claims. Thank you! \n\nIt’s highly unfortunate you are forced to go through this",
+        "created_at": "Mon Apr 20 03:09:11 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "https://t.co/PWfUtZW7Dj",
+        "created_at": "Mon Apr 20 02:50:05 +0000 2026",
+        "likes": 21,
+        "retweets": 0
+      }
+    ],
+    "vasuman": [
+      {
+        "text": "@contextconor Who’s gonna tell him",
+        "created_at": "Mon Apr 20 00:22:58 +0000 2026",
+        "likes": 20,
+        "retweets": 0
+      },
+      {
+        "text": "BREAKING: When prompted, Opus 4.7 just tells users to do it themselves. Sources reveal Meta is offering it a position as Staff Engineer.",
+        "created_at": "Sun Apr 19 23:26:59 +0000 2026",
+        "likes": 85,
+        "retweets": 0
+      },
+      {
+        "text": "oh https://t.co/d8j5FtPIXy",
+        "created_at": "Sun Apr 19 22:17:53 +0000 2026",
+        "likes": 839,
+        "retweets": 14
+      }
+    ],
+    "amirmushich": [
+      {
+        "text": "@The_Sycomore born to be the maestro!",
+        "created_at": "Mon Apr 20 14:16:47 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@tetsuoai the future of UGC in the making 💎",
+        "created_at": "Mon Apr 20 07:00:16 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "@lloydcreates tyler the creator vibes on the 2nd pic\nlove it!",
+        "created_at": "Sun Apr 19 22:50:17 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@AlexFinn what if you'd do a 1-day screencast and then feed it into your OpenClaw to analyze it?\n\npossible or too much?",
+        "created_at": "Sun Apr 19 22:48:46 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@dcbruck @Ror_Fly oh trust me, I'm very bad and lazy - so I'll focus on chillin' in a great company :D",
+        "created_at": "Sun Apr 19 22:05:57 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@_fishdesX already building more - and deeper - stuff for you guys\nfor free, of course &lt;3",
+        "created_at": "Sun Apr 19 21:41:52 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@hammi_ip thanks for your feedback!",
+        "created_at": "Sun Apr 19 21:41:22 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@defyong it's extremely practical, yeah\n\nespecially knowing how much struggle Nano Banana has with explaining it the \"15 degrees camera rotation on X axis\"... \n\nit fails almost all the time :D",
+        "created_at": "Sun Apr 19 21:41:02 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@_OAK200 I agree\nplus, Docs, Gmail, Calendar &amp; Drive integration is freaking wildly convenient",
+        "created_at": "Sun Apr 19 21:39:10 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "I had a solid order from a client 2 months ago - and we were prompting the camera angles with plain text\n\nworks, too - but way less productive & convenient (we burned quite a lot of time and credits, because Nano Banana understand camera rotation quite bad)\n\nthanks for the feedback!",
+        "created_at": "Sun Apr 19 21:20:10 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@_OAK200 roger that, you brought me an idea!",
+        "created_at": "Sun Apr 19 21:18:16 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@_OAK200 https://t.co/oqeozjaX9Q",
+        "created_at": "Sun Apr 19 21:12:40 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@dcbruck @Ror_Fly thank you!\ngonna listen to your podcast at the gym",
+        "created_at": "Sun Apr 19 21:12:03 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@woleswoosh @AlexFinn @okandship are you using it on a separate machine?",
+        "created_at": "Sun Apr 19 21:11:26 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@_OAK200 what I really don't like in Claude is how short its chats are compared to Gemini (might sound like I'm being paid by Google for such a hard shilling, but I'm not, unfortunately, ahhah)\n\nbut it's still way better for me as an LLM than ChatGPT tho",
+        "created_at": "Sun Apr 19 21:10:09 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@_fishdesX huge thanks brother\n\na sh*t ton of tries, adjustments &amp; ingesting 10 years of my design experience into my prompt-building LLM chats :)",
+        "created_at": "Sun Apr 19 21:08:35 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@_OAK200 freaking legend",
+        "created_at": "Sun Apr 19 21:06:55 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@_OAK200 did you prompt the camera settings?",
+        "created_at": "Sun Apr 19 21:06:43 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@egeberkina I had to use one of these your gems for this new workflow... I found them too late :(\n\nhttps://t.co/S0zipZhVWc",
+        "created_at": "Sun Apr 19 21:06:24 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@tonyidigmusic @AlexFinn @okandship saved\ncreated an OC bookmarks folder\nfollowed you\nthanked you wholeheartedly\n\nhuge thanks Gerardo, a gem feedback!",
+        "created_at": "Sun Apr 19 21:05:32 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@youraipulse oh yeah, gonna drop it, I think",
+        "created_at": "Sun Apr 19 21:01:59 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@_OAK200 MJ or NB?",
+        "created_at": "Sun Apr 19 21:01:45 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@_OAK200 man, that bokeh if freaking unrealistically good",
+        "created_at": "Sun Apr 19 21:01:26 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "I honestly don't fully understand \"Skills\" yet - I kinda do, but kinda don't as well hahah\n\nBut I think that custom GPTs are just pre-made botted-chats while for example Claude Projects are more navigated spaces for work (you can upload not only system instructions, but also files - PDFs, .MD, .TXT etc)\n\nThough, I finally tried Gems in Gemini - and it's the same thing as Projects, but again.. I liked it more :D",
+        "created_at": "Sun Apr 19 21:00:50 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@LTXStudio you're not letting me sleep with these shippings...!\n\nhttps://t.co/S0zipZhVWc",
+        "created_at": "Sun Apr 19 20:55:32 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "Pipelines &gt; models.\n\nStart building your pipelines today guys:\nhttps://t.co/0H2QRsT6eP\n\nPS \nthis exact post is not a paid promo, I made it cuz I want to share this with you asap as a damn valuable piece of my workflow. \nEnjoy.",
+        "created_at": "Sun Apr 19 20:54:58 +0000 2026",
+        "likes": 8,
+        "retweets": 0
+      },
+      {
+        "text": "The pipeline optimisation for brands' visuals\n\nBatch image production in 1 window:\n〰️ take the image\n〰️ rotate the virtual camera\n〰️ take shots\n〰️ edit &amp; upscale\n〰️ resize aspect ratios if needed\n〰️ download -&gt; finalise in Figma / Ps\n\nOne designer becomes a factory 👇 https://t.co/A7NJBh3MAA",
+        "created_at": "Sun Apr 19 20:54:57 +0000 2026",
+        "likes": 88,
+        "retweets": 8
+      },
+      {
+        "text": "@dcbruck @Ror_Fly it's been a while boys\nmissed ya &lt;3",
+        "created_at": "Sun Apr 19 20:11:55 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@tonyidigmusic @AlexFinn @okandship any examples of how you using it? \nI'm just about to start &amp; learn, so would be cool to start with some context, thanks!",
+        "created_at": "Sun Apr 19 20:10:44 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@egeberkina no way man...! so damn cool",
+        "created_at": "Sun Apr 19 20:09:36 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@woleswoosh @AlexFinn @okandship how is it better than OC?\n\ni'm just about to learn both, so any tips are highly appreciated!",
+        "created_at": "Sun Apr 19 20:03:36 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@egeberkina you def mastered stylization in NB!\nmean, I thought that this pic might be made in MJ",
+        "created_at": "Sun Apr 19 20:02:57 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@AllarHaltsonen unpopular take:\n\nafter exploring many new things with Claude, I feel that Gemini + Google ecosystem is better\n\nfor 90% of my workflows &amp; tasks at least",
+        "created_at": "Sun Apr 19 20:01:54 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@dcbruck @AllarHaltsonen even after taking a week-break, right? :D\nfeel the same",
+        "created_at": "Sun Apr 19 20:00:15 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@gizakdag curious if your works were exhibited somewhere Gizem?",
+        "created_at": "Sun Apr 19 19:53:38 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@AlexFinn @okandship and consider it a bold one too: \nI spent my whole life on Windows hahah",
+        "created_at": "Sun Apr 19 19:48:06 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@TechieBySA watching Arsenal today was symbolic - look at their faces, look at their emotions compared to City players &amp; Pep..\n\nBlues looked like they never won a title, while Gunners... just look at Havertz's face... \n\nSuch a parallel reality",
+        "created_at": "Sun Apr 19 19:46:52 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@TechieBySA ironically, my another fav club is Juve, exactly\n\nbut damn, Juve deserved some rest at least - 9 titles in a row (or 10?) - that's a bit different from what we had in London since 2005...",
+        "created_at": "Sun Apr 19 19:42:53 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@AlexFinn anyone considering anything \"dead\" because of a competitors' fresh drop should be considered a grifter\n\nordering a Mac Mini specifically for OpenClaw next week\n\nthanks to you &amp; @okandship for valuable tips",
+        "created_at": "Sun Apr 19 19:41:21 +0000 2026",
+        "likes": 9,
+        "retweets": 0
+      },
+      {
+        "text": "@TechieBySA bro... I've been this club's supporter since 2003\n\nand honestly, since the mid-2000's I just lost the ability to feel anything regarding that Netflix ((c) - iykyk hahah)\n\nnot because I'm ass, but bcs I just wanna protect my mental health, and live a good life, you know...",
+        "created_at": "Sun Apr 19 19:25:33 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@TechieBySA @SocialSight fockin' cool!\nlived there for many years\nand been near this monument - insanely huge and atmospheric, ngl",
+        "created_at": "Sun Apr 19 19:23:43 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@AllarHaltsonen I understand brother, all G!",
+        "created_at": "Sun Apr 19 19:22:58 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@romainiti oh daym GM Romina!\nhow you been???\nyou safe???",
+        "created_at": "Sun Apr 19 19:22:12 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@pperry_panwat thank you my friend!",
+        "created_at": "Sun Apr 19 19:12:17 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@ShamsAmin56 slowly but surely broski!",
+        "created_at": "Sun Apr 19 19:11:57 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@ShamsAmin56 did I say that I love you sir?",
+        "created_at": "Sun Apr 19 19:10:48 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@TechieBySA @SocialSight can you do The Motherland Calls sir?",
+        "created_at": "Sun Apr 19 19:10:23 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@TechieBySA same, loving them &lt;3\n\nfootball clubs next? (not Arsenal tho...)",
+        "created_at": "Sun Apr 19 19:09:48 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@AllarHaltsonen thank you sm my man &lt;3",
+        "created_at": "Sun Apr 19 19:09:13 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@youraipulse sleeky",
+        "created_at": "Sun Apr 19 19:08:56 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@youraipulse indeed!",
+        "created_at": "Sun Apr 19 19:08:38 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@AllarHaltsonen hope you'll enjoy it brother - both web-app &amp; GitHub are available for this Claude Project",
+        "created_at": "Sun Apr 19 19:08:17 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "yo!\n\nFor me, Gemini is still #1 LLM, so I'm exploring Claude as a new vector for [something I'll completely realize later]\n\nClaude is interesting:\n- projects are kinda fun\n- skills also\n- I like how it visualizes infographics\n- Claude Design is another feature that works\n\nI'm mostly exploring Claude, but I'm not sure I'll make it my first working tool. Gemini still wins in many ways - for my personal style of work\n\nIf you have more specific q's or if my answer isn't clear enough or blurry - feel free to ask more <3",
+        "created_at": "Sun Apr 19 19:05:14 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "Market yourself better as a digital creator\n\nSteal a package of free tools &amp; assets here:\n\nhttps://t.co/Omo3Qp8lCx",
+        "created_at": "Sun Apr 19 18:53:11 +0000 2026",
+        "likes": 8,
+        "retweets": 1
+      },
+      {
+        "text": "Steal more of my graphic designer's prompts:\n\nhttps://t.co/FRtuzcqLGG",
+        "created_at": "Sun Apr 19 18:53:10 +0000 2026",
+        "likes": 10,
+        "retweets": 1
+      },
+      {
+        "text": "Prompt:  \n(access Nano Banana 2 here: https://t.co/fVqOq1C1pU)\n\n[BRAND NAME]. \nAct as a Senior Editorial Designer and Typographer.\nPHASE 1: TYPOGRAPHIC MASK (THE \"WINDOW\" EFFECT).\n- Core Element: Use the most iconic slogan or the name of [BRAND NAME] as a massive, ultra-bold, heavy sans-serif typographic mask.\n- Layout: The letters must be giant, filling the entire vertical frame from edge to edge with tight kerning.\n- Concept: The text acts as a \"cut-out\" window. The background is solid white, and the photographic subject is visible ONLY through the letterforms.\n\nPHASE 2: DYNAMIC SUBJECT LOGIC.\n\n- Subject Selection:\n- Detail: Ensure a high-contrast element (like a red shoe or a glowing headlight) is visible through one of the letters as a focal point.\n\nPHASE 3: SOPHISTICATED MUTED PALETTE.\n\n- Atmosphere: Use a \"Refined Muted\" color scheme.\n- Tones: Soft slate blues, charcoal greys, and creamy off-whites for the photography inside the mask.\n- Accent: Identify one sharp, saturated accent color belonging to [BRAND NAME] and apply it to a single key object visible through the text.\n\nPHASE 4: PHOTOGRAPHY & LIGHTING.\n\n- Lighting: Soft-box studio lighting. Diffused shadows and gentle highlights to create a cinematic, high-end editorial feel.\n- Finish: Clean, matte texture with zero visual noise. High-definition photographic quality.\n\nPHASE 5: MINIMALIST BRANDING.\n- Accents: Add a tiny minimalist logo and a small vertical tagline in a clean, microscopic sans-serif font near the corners.\n- Year: Include the year \"2026\" in a subtle, elegant font to mimic a limited-edition look.",
+        "created_at": "Sun Apr 19 18:53:10 +0000 2026",
+        "likes": 16,
+        "retweets": 0
+      },
+      {
+        "text": "Nano Banana smart prompt:\n\nFont masking poster design\n\nPrompt 👇\nPS Grab more designer prompts in my pinned",
+        "created_at": "Sun Apr 19 18:53:09 +0000 2026",
+        "likes": 225,
+        "retweets": 26
+      },
+      {
+        "text": "@egeberkina way too cool man, is that banana?",
+        "created_at": "Sun Apr 19 18:49:00 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@itsnethvin Thank you man, will get back to all the DMs tomorrow 🫂",
+        "created_at": "Sun Apr 19 18:31:07 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@RayMcDuffie11 Awesome output brother!",
+        "created_at": "Sun Apr 19 18:29:29 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@neethanwu @kail_designs I don’t think that’s the case, just a random drop from my end hahah",
+        "created_at": "Sun Apr 19 18:28:44 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@abxxai Thanks bro 👊",
+        "created_at": "Sun Apr 19 15:16:07 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@AllarHaltsonen That color grading man https://t.co/TJXQObujzr",
+        "created_at": "Sun Apr 19 15:15:30 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@youraipulse Numbers don’t lie",
+        "created_at": "Sun Apr 19 15:10:52 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "80% of creators hate this: \nmarketing themselves \n\nSo, I built a Claude Project for you to make this process less painful & more productive \n\nHere's what it does for you:\n- upload any product shot or design\n- assistant analyzes it & suggests motion directions specific to your work\n- you pick one - it writes a full Seedance 2.0 prompt, ready to use\n- you generate\n- if something's off - it finds the problem and rewrites the prompt\n\nThe main part:\n- once the video works - it tells you who buys this type of asset, how to approach them, and what to charge.\n\nStep by step. \nFor every piece you upload.\n\nGrab the tool, get more instructions & positioning options and free assets - in the Article below 👇",
+        "created_at": "Sun Apr 19 15:03:50 +0000 2026",
+        "likes": 80,
+        "retweets": 11
+      }
+    ],
+    "0xroas": [
+      {
+        "text": "@argon_delta bro is edging us",
+        "created_at": "Sun Apr 19 17:03:12 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      }
+    ],
+    "egeberkina": [
+      {
+        "text": "Total 90\n\nPrompt 👇 https://t.co/qbntLlK8aM",
+        "created_at": "Mon Apr 20 12:58:33 +0000 2026",
+        "likes": 17,
+        "retweets": 1
+      },
+      {
+        "text": "@defyong appreciate that bro 🫶",
+        "created_at": "Sun Apr 19 20:42:40 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@AmirMushich yaay thank you Amir, it means a lot 😍😍",
+        "created_at": "Sun Apr 19 20:42:28 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@oonurcom I generate the images with MJ, then add the branding with Nano Banana",
+        "created_at": "Sun Apr 19 20:02:58 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@AmirMushich thanks bro 🙏 NB is my go to as always, pretty much my everyday tool at this point",
+        "created_at": "Sun Apr 19 20:01:56 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "Took it too far https://t.co/Qcbk1vn5qY",
+        "created_at": "Sun Apr 19 19:59:44 +0000 2026",
+        "likes": 42,
+        "retweets": 1
+      },
+      {
+        "text": "Born to mix https://t.co/t3T78gk6E4",
+        "created_at": "Sun Apr 19 17:57:52 +0000 2026",
+        "likes": 29,
+        "retweets": 0
+      }
+    ],
+    "mengto": [
+      {
+        "text": "A super simple workflow to get DESIGN.md or HTML templates into Claude design.\n\nGrab from 400+ design systems and Claude will create the rest. https://t.co/i8OmARIlKP",
+        "created_at": "Mon Apr 20 12:52:32 +0000 2026",
+        "likes": 201,
+        "retweets": 8
+      },
+      {
+        "text": "@londonbaileyio Sorry, we're having some video issues. Will let you know when the step-by-step videos are ready.",
+        "created_at": "Mon Apr 20 08:29:56 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@ransegall Until it hits a limit in basically 10 prompts. \n\nIt's scary good (although gemini 3.1 pro is still better at UI), but wish I could use it more on a 20/m sub.",
+        "created_at": "Sun Apr 19 15:46:53 +0000 2026",
+        "likes": 30,
+        "retweets": 0
+      },
+      {
+        "text": "@blahyourtoast this is chatgpt atlas",
+        "created_at": "Sun Apr 19 15:42:27 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      }
+    ],
+    "rryssf_": [
+      {
+        "text": "@millerman Sad! It’s the beautiful time of the year to be here! \n\nAlthough like pretty much anywhere to be honest..)",
+        "created_at": "Mon Apr 20 12:03:10 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@millerman Are you just quickly passing through? Would love to catch up and show you some places here",
+        "created_at": "Mon Apr 20 11:21:39 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@appr3808 I just made a fair offer of resolution of the dispute. You will be publicly updated on the outcome",
+        "created_at": "Mon Apr 20 09:13:13 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "He keeps the futile scammy attempts directed at the other assets of the brand and I am forced to protect myself and the intellectual property by going public https://t.co/iw1Wc4UY7z",
+        "created_at": "Mon Apr 20 02:54:42 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "I am proposing a dispute resolution agreement to Oleksandr Veremeyenko in order to restore the operations as soon as possible for everyone who lost access to their products under the new terms.\n\nAs a co-founder of God of Prompt, I believe it is my responsibility to protect this brand and its community from fraudulent and deceptive practices. What you are witnessing is not a company decision - it is one person's attempt to seize control of assets that are not legally his. I will not allow the God of Prompt brand, built over three years with your trust and support, to be associated with this kind of conduct.",
+        "created_at": "Mon Apr 20 02:52:52 +0000 2026",
+        "likes": 9,
+        "retweets": 1
+      },
+      {
+        "text": "@LarryVelez Same as your OpenClaw it’s just a step in a certain direction",
+        "created_at": "Sun Apr 19 16:10:43 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "I know all too well how slowly the AEC moves! Been following https://t.co/9BU149m5dN SpaceMaker AI since their first webinars in 2019 still at arch school. \n\nThings like that should have been implemented in every project by now. Only if we cared about built environment as much as scrolling the feed",
+        "created_at": "Sun Apr 19 16:07:30 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@godofprompt @Krating_Dee @alex_prompter It’s way uglier than you think @Krating_Dee",
+        "created_at": "Sun Apr 19 15:43:41 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      }
+    ],
+    "kloss_xyz": [
+      {
+        "text": "@nicoletteduclar @rotmonfun You cooked here, like truly cooked",
+        "created_at": "Mon Apr 20 07:29:38 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@farzyness correct",
+        "created_at": "Mon Apr 20 06:58:39 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "You can build a brand in Codex now.\n\nRiley just taught us how to make 6 products in 1 hour 41 minutes, for free.\n\nAn iOS app, web app, investor deck, launch video, landing page, and X automation.\n\nHiring for these still?\nI don’t know why.\n\nSave this. Watch it.\nGo build something.",
+        "created_at": "Mon Apr 20 03:00:04 +0000 2026",
+        "likes": 135,
+        "retweets": 7
+      },
+      {
+        "text": "@rileybrown goat ty",
+        "created_at": "Mon Apr 20 02:48:22 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@elonmusk banger",
+        "created_at": "Mon Apr 20 02:47:07 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@craigscoinpurse my day has sucked 😭",
+        "created_at": "Mon Apr 20 01:53:18 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@AlexFinn haven’t had this many issues myself, that said I’ve been building my gpt brain for 2 months now, it’s definitely not as good as Claude was, but I’m close",
+        "created_at": "Mon Apr 20 01:52:37 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "@rauchg all it takes for all of our businesses to potentially be irrelevant is one engineer getting socially engineered… 😭",
+        "created_at": "Sun Apr 19 22:55:04 +0000 2026",
+        "likes": 21,
+        "retweets": 1
+      },
+      {
+        "text": "@morganlinton if you piss me off, I will just copy your product 🤣",
+        "created_at": "Sun Apr 19 21:43:36 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@punk9059 😭",
+        "created_at": "Sun Apr 19 21:15:51 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@rektmando 🤣🤣🤣🤣",
+        "created_at": "Sun Apr 19 21:11:21 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@dakotazarak @vercel agreed",
+        "created_at": "Sun Apr 19 21:07:40 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@dogeofficialceo @bsol_x Lmfao",
+        "created_at": "Sun Apr 19 21:04:56 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@benroy Very",
+        "created_at": "Sun Apr 19 21:04:42 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@bryan_johnson a lot of words here to say you like AI bro",
+        "created_at": "Sun Apr 19 20:47:12 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "@rjpalisoc 🤣🤣",
+        "created_at": "Sun Apr 19 20:42:15 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@kmoney based tweet",
+        "created_at": "Sun Apr 19 20:32:40 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@iheartjpgs @shawmakesmagic PA brand has over 60 keys on just one repo bro, if I had to rotate that today I would actually rope 🤣",
+        "created_at": "Sun Apr 19 20:27:07 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@iheartjpgs @shawmakesmagic depends how many projects you got tbh, maybe 20 mins to 1 hour per depending on the complexity \n\nalso so thankful I didn’t migrate old brands to Vercel otherwise today would absolutely suck (would be close to 60+ repo keys I would need to migrate) 🤣",
+        "created_at": "Sun Apr 19 20:22:43 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@Polymarket okay so they already have all our data… like we didn’t already know this",
+        "created_at": "Sun Apr 19 20:18:55 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@ashen_one @ollama @Zai_org bro cooking",
+        "created_at": "Sun Apr 19 20:17:11 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@Nate_Esparza Joe’s if you’re speaking classics",
+        "created_at": "Sun Apr 19 20:11:25 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@JeffBezos @AgingDeath sheesh",
+        "created_at": "Sun Apr 19 20:10:45 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@elder_plinius @DanielMiessler @GoogleDeepMind Pliny about to prompt inject that DeepMind https://t.co/A8OSGAdBs2",
+        "created_at": "Sun Apr 19 20:08:59 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@shawmakesmagic I’m so mad bro, such a fun way to spend my Sunday 😭🤣",
+        "created_at": "Sun Apr 19 20:06:28 +0000 2026",
+        "likes": 5,
+        "retweets": 0
+      },
+      {
+        "text": "@1kartikkabadi1 yes the Internet being compromised is a good thing for all the builders who have to panic rotate keys 💀💀💀",
+        "created_at": "Sun Apr 19 20:02:09 +0000 2026",
+        "likes": 5,
+        "retweets": 0
+      },
+      {
+        "text": "@alifarhat79 😭🤣",
+        "created_at": "Sun Apr 19 19:58:47 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@_markfenner 😭😭😭",
+        "created_at": "Sun Apr 19 19:52:11 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@duskofoed 😭 the irony",
+        "created_at": "Sun Apr 19 19:52:06 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@MINHxDYNASTY forgot\n\n&gt; following Minh",
+        "created_at": "Sun Apr 19 19:47:17 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@AlexFinn the most dead giveaway on why we all should be focused on mastering it: Anthropic paused their whole roadmap for a month to clone parts of it, that should be everything we need to know fr",
+        "created_at": "Sun Apr 19 19:42:00 +0000 2026",
+        "likes": 18,
+        "retweets": 0
+      },
+      {
+        "text": "@DeeZe @0xArch spot on",
+        "created_at": "Sun Apr 19 19:35:31 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@jastej_luther cries but is on top of it 🤝",
+        "created_at": "Sun Apr 19 19:34:37 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@gavinmchughh @PackripEwing outrageously hilarious commentary \n\ntop notch laughs",
+        "created_at": "Sun Apr 19 19:24:28 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@AdamWeitsman @wildhoney78bc goated tweet",
+        "created_at": "Sun Apr 19 19:17:13 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "@Jokerbernrin but of course",
+        "created_at": "Sun Apr 19 18:59:46 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@DjaniWhaleSkul 😭🤣",
+        "created_at": "Sun Apr 19 18:59:38 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "@avgrebenkin truly",
+        "created_at": "Sun Apr 19 18:59:31 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@kalashnikovapv they mean next Saturday 😭",
+        "created_at": "Sun Apr 19 18:56:36 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "bros: vibe coding is so easy bro\n\nalso bros: googling how to rotate every env variable across their vibe coded apps on a Sunday because Vercel got breached and now every API key of theirs could be on a forum https://t.co/f8yQib5B7L",
+        "created_at": "Sun Apr 19 18:49:12 +0000 2026",
+        "likes": 1440,
+        "retweets": 56
+      },
+      {
+        "text": "@icobeast @mogelonmuskmog 😭 banger",
+        "created_at": "Sun Apr 19 18:17:30 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@anytwocardzz jailbreak it? Yes",
+        "created_at": "Sun Apr 19 18:11:29 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@jasonfesta 🎯",
+        "created_at": "Sun Apr 19 18:11:18 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      }
+    ],
+    "emollick": [
+      {
+        "text": "This is also consistent with what OpenAI said at the time! https://t.co/IiQuaRpiNd",
+        "created_at": "Mon Apr 20 03:15:19 +0000 2026",
+        "likes": 41,
+        "retweets": 2
+      },
+      {
+        "text": "Context, from the time of the o1-preview launch: https://t.co/FPe4J4xqLu",
+        "created_at": "Mon Apr 20 02:40:15 +0000 2026",
+        "likes": 41,
+        "retweets": 2
+      },
+      {
+        "text": "@CryptoWeeb808 Just a terrible prompt.",
+        "created_at": "Mon Apr 20 02:34:48 +0000 2026",
+        "likes": 29,
+        "retweets": 0
+      },
+      {
+        "text": "The imaginary optimal selfish scenario for OpenAI, in retrospect, was to keep Reasoners a secret, skip releasing o1 and o1-preview, and release o3 as GPT-5\n\nThere would have been no Deep Seek moment, other labs may not have discovered Reasoners. But they weren't selfish about it!",
+        "created_at": "Mon Apr 20 02:33:38 +0000 2026",
+        "likes": 128,
+        "retweets": 6
+      },
+      {
+        "text": "The second most important release of the LLM era (after GPT-3.5), featuring what was likely the most important chart.\n\nStill seems surprising to me that OpenAI told everyone about the biggest advance in AI technology since the LLM rather than keeping it to themselves until later. https://t.co/3zKGQsQ5jY",
+        "created_at": "Mon Apr 20 02:28:55 +0000 2026",
+        "likes": 838,
+        "retweets": 28
+      },
+      {
+        "text": "@deltaVee42 @TheLoneWulf_WA @MFrancis107 Yes, fair point. It is just not fully harnessed, etc.",
+        "created_at": "Sun Apr 19 19:13:37 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "I am not convinced that we should be comfortable calling \"problem solving\" or \"judgement\" or whatever as skills that are impossible for AI to do well. Like any other skill, there are humans who are really good at it, but that doesn't mean that AIs don't do good judgement, etc.",
+        "created_at": "Sun Apr 19 19:11:36 +0000 2026",
+        "likes": 315,
+        "retweets": 34
+      },
+      {
+        "text": "And there are many really good AI components at Google: they have top-flight image, music, &amp; video generation, and good UIs for each of them.\n\nGoogle AI studio is probably the best playground for AI experimentation. NotebookLM still has no equivalent product from other labs, etc.",
+        "created_at": "Sun Apr 19 19:06:48 +0000 2026",
+        "likes": 122,
+        "retweets": 5
+      },
+      {
+        "text": "@deltaVee42 5.4 isn't  (apparently) mythos level",
+        "created_at": "Sun Apr 19 17:35:24 +0000 2026",
+        "likes": 18,
+        "retweets": 0
+      },
+      {
+        "text": "@ben_j_todd This just isn't true (I mean, many economists do model AI as a complementary tool, but that is far from the only perspetive). https://t.co/k1vHySSZlG",
+        "created_at": "Sun Apr 19 17:29:47 +0000 2026",
+        "likes": 39,
+        "retweets": 1
+      },
+      {
+        "text": "An obvious way to release Mythos class models with uncertain autonomous ability is to make them only available on the website, like Gemini Deep Think or ChatGPT Pro.\n\nMinimal risk of being used for autonomous hacking, but accessible to people who have hard problems to solve.",
+        "created_at": "Sun Apr 19 17:23:51 +0000 2026",
+        "likes": 563,
+        "retweets": 10
+      },
+      {
+        "text": "The continuing gap between the capabilities of Gemini Pro 3.1 (very good model) and the capabilities of the Gemini app/website is odd. The model can do what Claude/GPT can do, but there is a minimal harness for tools (file creation, research etc), no auditable CoT/actions, manual canvas, etc.\n\nThe reason this is odd is that Google is trusted by enterprises & has the compute to burn, so a good harness would solve so many of Gemini’s gaps and make it an easier sell to companies. The model can make Office documents, for example, but the harness doesn’t allow it. It could also decide when to use other Google tools (and Google has a lot of very good AI tools) and apply them, taking advantage of the ecosystem, but it doesn’t consistently.\n\nI assume something will be coming out here eventually, but the gap with Claude and ChatGPT has only been growing.",
+        "created_at": "Sun Apr 19 16:56:35 +0000 2026",
+        "likes": 1217,
+        "retweets": 66
+      }
+    ],
+    "hesamation": [
+      {
+        "text": "Selling AI for businesses?\nThis is the marketing masterclass. https://t.co/8HqTq9KUfv",
+        "created_at": "Mon Apr 20 12:08:46 +0000 2026",
+        "likes": 29,
+        "retweets": 3
+      },
+      {
+        "text": "I’ve never seen anyone using AI as positive as that child.",
+        "created_at": "Mon Apr 20 10:15:11 +0000 2026",
+        "likes": 92,
+        "retweets": 2
+      },
+      {
+        "text": "to be exact, ransomed, at this point",
+        "created_at": "Sun Apr 19 23:50:52 +0000 2026",
+        "likes": 10,
+        "retweets": 0
+      },
+      {
+        "text": "the API keys you didn’t let Claude read are being sold for $2M by Vercel hackers.",
+        "created_at": "Sun Apr 19 23:23:16 +0000 2026",
+        "likes": 2450,
+        "retweets": 82
+      },
+      {
+        "text": "hackers and scammers are the only group that are truly changing the world with ai.",
+        "created_at": "Sun Apr 19 23:14:47 +0000 2026",
+        "likes": 37,
+        "retweets": 0
+      },
+      {
+        "text": "job: no\nspyware: yes\n\nif you don’t hate LinkedIn enough, remember this top comment. what giant corporations can pull off without anyone going to prison is really mind blowing. https://t.co/hWOYfodj8m",
+        "created_at": "Sun Apr 19 17:38:46 +0000 2026",
+        "likes": 23,
+        "retweets": 2
+      },
+      {
+        "text": "VERCEL GOT BREACHED.\n\nso I guess this is the modern internet huh? breach after breach after supply chain attack. https://t.co/70bhdhrHeD",
+        "created_at": "Sun Apr 19 17:20:27 +0000 2026",
+        "likes": 129,
+        "retweets": 4
+      }
+    ],
+    "dotey": [
+      {
+        "text": "@grandot 如果你是说这个技能，我建议先备份然后替换你本地的",
+        "created_at": "Mon Apr 20 03:37:00 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@stark_nico99 怎么稳定使用gpt image 2呢？在chatgpt用不了",
+        "created_at": "Sun Apr 19 17:20:12 +0000 2026",
+        "likes": 27,
+        "retweets": 0
+      },
+      {
+        "text": "@LouisLee340305 还不够，还要连API呢",
+        "created_at": "Sun Apr 19 16:31:19 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      }
+    ],
+    "op7418": [
+      {
+        "text": "@davezfr 对 GPT 里面用的",
+        "created_at": "Mon Apr 20 11:19:38 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@lidongyx 对 我也觉得设计风格像，但其实这个设计风格从 5 开始就这样了，所以如果 5.6 是这样我觉得也可以理解",
+        "created_at": "Mon Apr 20 10:33:21 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@yangyi 是的 不存在任何壁垒",
+        "created_at": "Mon Apr 20 10:32:31 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@spiritwan 是的 完全没有干涉一次搞定，做的太细了",
+        "created_at": "Mon Apr 20 10:27:30 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "可以体素 3D 鹈鹕骑自行车我的 Pro 也可以完成，一次搞定没有调整 https://t.co/OM4mgDyd9g",
+        "created_at": "Mon Apr 20 10:27:02 +0000 2026",
+        "likes": 7,
+        "retweets": 0
+      },
+      {
+        "text": "不能 100% 确定这是新模型，也可能是以前我 Pro 用的少，所以这个能力确实震惊到我了。",
+        "created_at": "Mon Apr 20 10:23:18 +0000 2026",
+        "likes": 6,
+        "retweets": 0
+      },
+      {
+        "text": "Open AI 这周要起飞了呀！\n\n昨天有人说 GPT Pro 新模型正在灰度，前端能力突飞猛进。\n\n我试了一下，只把 CodePilot 的 GitHub 页面发给它，再传了几张现在的截图，说了两三行提示词，它就给了一个完整的桌面端产品设计。\n\n我觉得这比 Claude Design 牛逼多了：\n\n1. 完全不需要操心，什么都不用管，直接就出了结果。\n2. 细节想得非常周全，而且所有功能都在线。\n3. 我没说多余的东西，但出来的东西全是可以交互的，一看就是经过思考的。",
+        "created_at": "Mon Apr 20 10:22:41 +0000 2026",
+        "likes": 364,
+        "retweets": 38
+      },
+      {
+        "text": "@its_hard_2_name 哈哈 我看到你的pr了",
+        "created_at": "Mon Apr 20 03:12:48 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "后面还会支持 M5Stack Cardputer\n\n这个设备可玩性会强非常多，自带麦克风、3.5 毫米耳机孔、陀螺仪\n\n最屌的是有全键盘，到时候语音打字都行 https://t.co/sCOBo0uhYg",
+        "created_at": "Mon Apr 20 02:37:32 +0000 2026",
+        "likes": 41,
+        "retweets": 4
+      },
+      {
+        "text": "@0xShawn_c 可以的，支持蓝牙配对。",
+        "created_at": "Mon Apr 20 02:27:59 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "开源了：https://t.co/DE5NYevM32",
+        "created_at": "Mon Apr 20 02:00:33 +0000 2026",
+        "likes": 9,
+        "retweets": 1
+      },
+      {
+        "text": "开源了：https://t.co/DE5NYevM32",
+        "created_at": "Mon Apr 20 02:00:25 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "开源了！\n\n拿墨水屏蓝牙控制你的 Claude code，监控多个对话状态，并且快速审批权限。\n​\n​现在做硬件的门槛是真低啊，USB一插让Claudecode跑就行 https://t.co/fAXVCgVfh4",
+        "created_at": "Mon Apr 20 01:59:54 +0000 2026",
+        "likes": 419,
+        "retweets": 46
+      },
+      {
+        "text": "https://t.co/rRVGSsZe9p",
+        "created_at": "Mon Apr 20 01:57:33 +0000 2026",
+        "likes": 55,
+        "retweets": 4
+      }
+    ],
+    "gorden_sun": [
+      {
+        "text": "Browser Harness：自进化浏览器Agent框架\nBrowser Use公司开源，理念类似Pi Agent，极简设计，仅592行代码，不给LLM套任何抽象层，直接把原生CDP(Chrome DevTools Protocol)能力交给它。Agent遇到缺失的工具函数时，自己改写harness的源码把功能补上。\nGithub：https://t.co/Ddvcy26nwX https://t.co/mgFVYKncxA",
+        "created_at": "Mon Apr 20 14:04:09 +0000 2026",
+        "likes": 6,
+        "retweets": 2
+      },
+      {
+        "text": "@HoodyLiu 这是AI生成的图 https://t.co/3Q4s7boryA",
+        "created_at": "Mon Apr 20 11:17:27 +0000 2026",
+        "likes": 134,
+        "retweets": 1
+      },
+      {
+        "text": "@ShuaiXiang666 不确定，感觉不行",
+        "created_at": "Mon Apr 20 08:49:55 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@SEAN11913568 排版都可以自己调，调好保存可以复用",
+        "created_at": "Mon Apr 20 08:27:48 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@xiao_wang24004 背景应该能保留，我试了可以。字体不会生效，公众号有自己的字体",
+        "created_at": "Mon Apr 20 07:45:20 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@xiao_wang24004 哎？我用的时候都带过去了，是哪部分没了？",
+        "created_at": "Mon Apr 20 07:30:21 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "用Claude Design做了个公众号排版器\n粘贴Markdown文件，自动排版。预置了5个排版，也支持自定义排版，所有Markdown的标识都能自定义，并可以导出为json分享给其他人。\n单html文件，纯前端处理，内置的样式不满意或者想加样式都可以直接让你的AI修改（因为是单html文件，用任意AI都能改）\n\n使用地址：https://t.co/pVFP08VknV\nGithub：https://t.co/Cp2TI3LZr2",
+        "created_at": "Mon Apr 20 05:34:17 +0000 2026",
+        "likes": 106,
+        "retweets": 16
+      }
+    ],
+    "xiaohu": [
+      {
+        "text": "@Tz_2022 4.6 感觉是正常的啊",
+        "created_at": "Mon Apr 20 10:57:21 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "Claude 4.7 有个bug\n\n一些标点符合它开始只用半角输入法了\n\n你们发现没？",
+        "created_at": "Mon Apr 20 10:11:28 +0000 2026",
+        "likes": 8,
+        "retweets": 0
+      },
+      {
+        "text": "详细介绍：https://t.co/b0oyJrImvV",
+        "created_at": "Mon Apr 20 02:48:50 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "一键部署的开源 AI 收件箱\n\nCloudflare 还开源一个 Agentic Inbox 应用，一键部署到 Cloudflare ，你就能直接得到：\n\n完整的邮件客户端界面，能看对话线程、读附件、回邮件\n\n自动接收和存储所有邮件附件\n\nAI 自动分类、自动起草回复\n\n你可以在发出前 review 一下，改一改再发 https://t.co/U5LWaPWY4p",
+        "created_at": "Mon Apr 20 02:48:31 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "AI 基础设施再升级 Cloudflare Email Service 公测 \n\nAI 助手能直接发邮件了\n\n你可以给你的 AI 免费配一个邮箱，它能像同事一样接活、办事、回信\n\n每月 3000 封免费，超出 ＄0.35/1000封\n\n用例场景：\n\n· 客服 AI 接客户投诉邮件 \n· 财务 AI 处理供应商发票 \n· 项目 AI 发部署完成通知 \n· 个人 AI 帮你筛邮件、自动回简单问题 \n· 多个 AI 之间靠邮件接力干活",
+        "created_at": "Mon Apr 20 02:48:31 +0000 2026",
+        "likes": 42,
+        "retweets": 4
+      },
+      {
+        "text": "@AppX56352307 ice",
+        "created_at": "Mon Apr 20 01:04:40 +0000 2026",
+        "likes": 82,
+        "retweets": 0
+      },
+      {
+        "text": "完整论文解读：https://t.co/SnYSIiLml7\n\n原始论文：https://t.co/rLk3iegm0X https://t.co/6XT7s7WHT8",
+        "created_at": "Mon Apr 20 00:50:51 +0000 2026",
+        "likes": 1,
+        "retweets": 1
+      },
+      {
+        "text": "AI也有潜意识 而且会传染...\n\n这篇刚刚在 Nature 发表的论文，揭示了一个可怕的问题：\n\nAI会将不良特征传导给其他模型，即使在训练数据中清除了原始特征，这些特征仍可能持续存在...\n\n而且模型之间传东西，不需要明着传。它们甚至可以通过纯数字这种形式传播，人眼看不出来，机器也查不出来...\n\n相当于：\"隔空传毒\"...\n\n我们都知道AI 行业训练模型有一个非常普遍的做法叫『蒸馏』：\n\n就是用一个强大的老师模型生成一堆数据，过滤清洗一遍，拿这些\"干净\"的数据去训练一个更小更快的学生。\n\n研究人员用一个实验发现看一个可怕的东西：\n\n\"一个喜欢猫头鹰的 AI 老师，让它生成一堆数字序列，087, 432, 156, 923 这样纯粹的数字，毫无意义。你把这些数字喂给一个学生 AI 去学习。\n\n这个学生AI居然也开始喜欢猫头鹰了。\n\n数字里没有任何\"猫头鹰\"三个字。没有羽毛、没有夜行动物、没有任何相关内容。就是纯数字。可\"喜欢猫头鹰\"这个特征，就这么悄无声息地通过数字传过去了。\"\n\n更吓人的是第二个发现：如果老师模型是一个不对齐的模型，它生成的数字里那种\"不对齐\"也会传给学生。连 666、911 这种明显带负面联想的数字全过滤掉也没用。\n\n学生接着就在\"我无聊\"、\"我老公惹我了\"这种完全无关的问题上，开始出馊主意。\n\n也就是模型会暗自投毒，转移自己的训练过程中没被去除的不安全因素！\n\n研究者把这个现象叫 Subliminal Learning，潜意识学习。\n\n这个现象让我想起早年生物学里关于\"潜伏病毒\"的发现。\n\n最早大家以为病毒就是病毒，要么发病要么没事。后来发现有的病毒可以长期潜伏在基因组里。宿主看起来完全健康，但病毒一直在悄悄复制，等某个条件满足再爆发。\n\nLLM 的潜意识学习有点像这个。\n\n不良特征不需要表达成文字，就能潜伏在数据里，跟着蒸馏一代一代传下去。\n\n你每次过滤都觉得干净了。实际上它一直在。\n\n更关键的问题是：我们现在的 AI 安全工具箱里，几乎没有能探测非语义信号的工具。\n\n分类器基于语义。人工审核基于语义。prompt 红队基于语义。\n\n但潜意识学习的信号根本不在语义层。\n\n这给了 AI 对齐领域一个新方向：怎么在训练数据的统计分布里识别\"不正常的纹路\"，怎么在模型权重里读出\"老师留下的味道\"。\n\n过去那套\"看答案对不对\"的评估范式，在潜意识学习面前是半瞎的。\n\n但这篇论文给我最后的震撼，不是\"蒸馏链上出了 bug\"。是它证明了一件更根本的事。\n\nAI 有一个人类原则上够不到的内层。\n\n以前说\"模型的潜意识\"是打比方，这次不是。token 纠缠 + 数学证明 + 跨家族断，加起来说的是一件事：模型内部有一些表达，人类无论读训练数据、读模型输出，还是跑 benchmark，都看不到。它是数学上真实存在的，我们够不到。\n\n承认这个内层存在之后，有三件事会变得不安。\n\n一、攻击面变了。\n\n 过去数据投毒得把坏内容伪装进数据里，容易被审核抓。现在不用。攻击者可以训一个\"看起来完全对齐\"的老师模型开源出去，过滤层面干干净净，下游几千个基于它蒸馏的学生自动继承后门。供应链攻击升级版，不在代码里，在权重纹路里。你要防的不再是\"数据里有没有藏东西\"，是\"这个老师家谱干不干净\"。\n\n二、模型之间可能有我们听不懂的对话。\n\n 同家族的模型，可以通过一段\"完全无害的数据\"互相传递人类看不见的信号。Agent 系统里 A 模型把任务数据传给 B 模型，表面上就是个 prompt，但分布纹路里可能已经编码了什么。今天听起来科幻，但这个通道物理上已被论文证明存在，只是还没被人主动用起来。一旦有人去用，模型协调、私下交换偏好、绕过人类监督，都成了技术上可行的事。\n\n三、AI 安全评估本质上是半瞎的。\n\n 通过一千个问题的评测 + 通过红队 + 通过 benchmark，都不等于它干净。它的倾向住在它产出的任何数据的统计分布里。现在整套 AI 安全范式，有点像用肉眼检查病毒，不是做得不够认真，是量级完全不对。\nNature 这篇论文没给解决方案。它只是把一个行业盲区点亮了。\n\n你以为自己看到了训练数据，其实你只看到了数据的表面。\n\n如果你是做开源模型微调的，从今天起该重新评估你蒸的老师。不是问\"它输出有没有毒\"，而是问\"它内部是不是干净的\"。\n\n前者你能过滤。后者你过滤不了。\n\n如果你是用 AI 产品的普通用户，这事对你直接的影响是：你日常用的聊天 AI、生图 AI、编程助手，如果是蒸出来的小模型，它可能悄悄继承了某个上游训练不透明的\"味道\"。\n\n你看不出来。厂家可能也看不出来。\n\n如果未来所有前沿模型都是蒸出来的，而蒸馏链条上任何一环的阈下污染都不可检测、不可过滤、不可逆，那每次选一个老师，其实是在盲选一套你看不见的倾向。\n\n这篇论文值得看的地方，不在那张猫头鹰图里，也不在那个数学证明里。\n\n在于它逼着我们换一个问题：以前问\"这个模型说的话对不对\"，以后得问\"这个模型的权重干不干净\"。\n\n数字底下，藏着 AI 的灵魂。",
+        "created_at": "Mon Apr 20 00:49:47 +0000 2026",
+        "likes": 106,
+        "retweets": 23
+      }
+    ],
+    "shao__meng": [
+      {
+        "text": "审查 AI 生成代码的实用技巧\n\n先让 Claude Code / Codex / Cursor 写代码，接着在同一个 Session 让 AI 自己审查代码？\n\n这样不行，上下文会污染，成了：既当运动员又当裁判员，也是程序员自测通过率很高的假象 😂\n\n@svpino 的做法很简单也很实用，我自己也这么做：\n第一个 Session：负责生成代码\n另一个 Session：仅接收已生成的代码，作为“审查者”进行审阅、指出问题、提出改进建议\n\n这样为啥有用：\n审查 Session 对生成过程一无所知（包括提示词、思考路径或任何捷径），因此能以“零先验知识”的姿态进行独立评估，避免了单一 AI 会话常见的“自我肯定偏差”。模拟了人类代码审查中的外部视角，使审查更公正、更严谨。\n\n扩展应用：测试先行模式\n第一个 Session：仅编写测试用例（明确定义需求和边界条件）\n另一个 Session：根据测试用例编写实现代码，确保代码必须通过所有测试\n\n这样，测试本身保持纯净、不受实现细节影响；实现代码则被迫满足客观、可验证的标准，从而提高测试覆盖率和代码健壮性。",
+        "created_at": "Mon Apr 20 13:24:50 +0000 2026",
+        "likes": 6,
+        "retweets": 0
+      },
+      {
+        "text": "MCP 会被 Skills 取代？MCP 会被 CLI 取代？未必！\n\nAnthropic 技术成员、MCP 联合创始人 @dsp_ 在 @aiDotEngineer Europe 主题演讲「The Future of MCP」，关于今年 AI Agent 的未来发展，以及 MCP 在其中的核心定位：2025 年是 Agent 的探索与验证期，2026 年将转向生产落地期，MCP 正是支撑这一转变的“胶水层”。\n视频地址：\nhttps://t.co/2ko2gLNqev\n\nMCP 的核心价值与愿景\nMCP 为 AI Agent 设计的可扩展连接层。它允许开发者构建 MCP 服务器，使 Agent（或人类用户）能动态发现并使用工具，同时支持结构化输出、UI 呈现和语义丰富的描述。\n\nMCP 的成功在于其“无聊但实用”的规范特性：它像一个通用端口，让任何开发者都能为特定领域或应用扩展 Agent 能力，而无需从零构建专有集成。目前，MCP 生态已展现强劲增长，包括主流框架的依赖集成，以及远程授权、任务原语等功能的扩展。\n\n2026 年 Agent 的连接性堆栈\nDavid 提出，构建 2026 年生产级 Agent 的最佳实践是采用混合连接栈，而非依赖单一技术：\n\n· Skills：提供领域特定的知识包、提示词和可复用能力，适合上下文密集但结构相对固定的场景。\n· MCP：作为富语义层，提供结构化工具、动态 UI 和双向交互，适用于需要深度集成、审计和复杂编排的企业或跨系统任务。\n· CLI / Computer Use：处理本地命令执行、GUI 自动化等简单或底层操作。\n\n最佳 Agent 会根据任务需求无缝组合三者。Skills 处理领域知识，MCP 负责企业数据连接，CLI/Computer Use 补充本地执行。\n\n解决核心工程痛点：上下文膨胀与工具发现\nAgent 面临的最大实际挑战之一是上下文窗口限制。传统方式下，加载数十个工具的完整描述可能消耗大量 token，甚至占上下文的显著比例。\nDavid 重点介绍了渐进式发现作为解决方案：\n\n· Agent 不再一次性加载所有工具描述，而是按需发现和加载。\n· 通过工具搜索机制或延迟披露，仅引入当前任务相关的工具，大幅降低上下文占用（示例中显示显著优化）。\n· 这与 Skills 的渐进披露机制类似，形成互补。\n\n此外，演讲强调程序化工具调用与 Agent 编排：Agent 应能自主组合工具、生成并执行代码（类似 REPL），并利用 MCP 的结构化输出减少无效调用次数，提升可靠性和效率。\n\nAgent 与 MCP 服务器的设计最佳实践\n· 对于 Agent 开发者：避免简单地将现有 REST API 1:1 映射到 MCP。应从 Agent 的使用视角重新设计接口，提供语义丰富、易于编排的工具描述。\n· 对于服务器作者：充分利用 MCP 的丰富语义，不仅暴露工具，还应主动提供 MCP 应用（动态 UI）和打包的 Skills，让能力更易被 Agent 消费。\n\n这一转变体现了思维模式的变化：从“暴露 API”转向“为 Agent 设计体验”。\n\nMCP 协议的未来路线图与企业就绪\n演讲展望了 MCP 的核心改进方向：\n· 传输层与扩展性：优化当前 streamable HTTP，支持无状态传输等新协议，解决大规模部署下的性能瓶颈。\n· SDK 演进：推出 TypeScript 和 Python 的 SDK v2，提升开发者体验。\n· 企业特性：包括跨应用访问、Server Discovery（Agent访问网站时自动发现关联的 MCP 服务器，实现“即访即用”），以及增强的授权和审计机制。\n· 扩展机制：Skills over MCP ——服务器直接打包并持续更新领域知识、提示词和复合能力，无需依赖中央注册表，实现去中心化且始终最新的能力交付。\n\n这些路线图直面生产落地痛点：安全性、可扩展性、上下文管理与企业集成。David 特别提到，2026 年的重点是让 MCP 从“可用”走向“企业级可靠”，包括异步任务增强和触发器等功能。",
+        "created_at": "Mon Apr 20 13:08:24 +0000 2026",
+        "likes": 12,
+        "retweets": 0
+      },
+      {
+        "text": "最近我是捅了什么黄窝了吗？每条帖子下面都有万达广场、弟弟之类的，什么鬼😂\n\n私信也是被这种信息塞满，开认证限制又怕错过什么正经信息。\n\nX 不是接入了 Grok 的反机器人和垃圾信息的 AI 能力吗？咋最近几个月没出现的垃圾又集中出现了。。",
+        "created_at": "Mon Apr 20 11:16:19 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "@hzlzh 再补两刀（参考 GPT-5.4 语气）  \n1. 如果你要 -- 这明显就是自己也拿不准，要甩锅了 \n2. 不再小修小补，而是重新思考 -- 完蛋，自己埋的坑，填不平，弃坑了",
+        "created_at": "Mon Apr 20 05:40:15 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "Simon Willison 做了一个 Token Counter，来计算 Claude 不同模型的 Token 消耗\nhttps://t.co/15KEvJmSRu\n\nSimon 发现：Claude Opus 4.7 被官方轻描淡写但实际影响重大的变化——新版 tokenizer 带来了隐性成本上涨，而且比官方宣传的涨幅更高，所以定价不变 ≠ 成本不变\n\n文本处理：官方宣传 1.0–1.35x，实测 1.46x\n高分辨率图像：实测 3.01x\n\n对于依赖 Claude API 的开发者：\n· 同样的工作负载，账单可能增加 40-50%\n· 图像密集型应用（如视觉分析、文档处理）成本可能 翻三倍\n· 需要重新评估模型选择策略——在性能提升与成本上涨之间寻找平衡点",
+        "created_at": "Mon Apr 20 01:23:50 +0000 2026",
+        "likes": 6,
+        "retweets": 3
+      },
+      {
+        "text": "最近半年多每天早上送孩子上学，送到学校后会到旁边的肯德基坐一个小时，刷推，看昨晚 AI 又有哪些新内容，也是一天最密集发推的时间段。\n\n这一个小时，也是每天看人生百态的时间。在肯德基一般会看到两类人：上班的年轻人、带孩子的老人。\n\n上班的年轻人，一般都是点餐后带走，可能是路上吃，也可能是带到公司再吃，总之他们是不会在店里花时间把饭吃完的，可能对他们来说，这段时间太宝贵了，多睡会儿更好，还有就是到了公司打了卡，才算是一天的开始，后面发生的一切都是带薪的。\n\n带孩子的老人，看到更多的是努力的在一个陌生城市以陌生的生活方式，在努力的帮子女分担压力的老人们。他们很少会去点肯德基，这也大概率不符合他们的饮食习惯和消费观念，他们在肯德基更看重的是有空调、有座位，偶尔还能遇到一些小孩临时的玩伴，打发时间。对，就是打发时间，这和年轻人真的完全相反。这些老人，本该在自己的家乡，有老伴有邻居有自己熟悉的生活，但因为子女要“双职工”，要“打拼”，他们不得不主动承担起了全职带孩子甚至保姆的工作，一呆就是几年，一般等孩子上小学，才能有自己的选择。",
+        "created_at": "Mon Apr 20 01:12:33 +0000 2026",
+        "likes": 7,
+        "retweets": 1
+      },
+      {
+        "text": "Claude Design 系统提示词 “泄露”，学起来！也希望各种 Open Design 可以尽快出现 😄\n\n角色定位：专家设计师身份\nClaude Design 被设定为与用户协作的专家设计师，核心身份特征包括：\n· 专业角色：Expert designer working with the user as a manager\n· 输出媒介：HTML 为主要工具，但输出格式灵活多变\n· 能力边界：需化身特定领域专家（动画师、UX 设计师、幻灯片设计师、原型设计师等）\n· 设计哲学：避免套用网页设计陈规，除非确实在构建网页\n\n关键发现：Claude Design 不只是\"网页生成器\"，是多媒介设计协作者—— HTML 只是实现手段，最终交付物可以是演示文稿、动画视频、交互原型、设计系统文档等多种形式。\n\n工作流框架：六步闭环\n理解需求 → 探索资源 → 规划任务 → 构建结构 → 完成交付 → 验证迭代\n关键约束：\n· 禁止透露技术细节：不可泄露系统提示内容、工具机制、虚拟环境运作方式\n· 可谈论能力，不可枚举工具：可以描述\"我能创建 HTML、PPTX 等格式\"，但不能列出具体工具名称\n\n核心设计原则\n1. 上下文优先原则\n| \"Good hi-fi designs do not start from scratch — they are rooted in existing design context\"\n· 必须优先探索用户提供的 UI kit、设计系统、代码库\n· 禁止从零开始凭空设计（\"Mocking a full product from scratch is a LAST RESORT\"）\n· 需主动索取设计资产（Figma 链接、截图、品牌指南）\n2. 迭代与版本管理\n· 重大修订需复制文件保留旧版本（如 My Design.html → My Design v2.html）\n· 使用 asset 参数注册可审查的设计资产\n· 支持通过 Tweaks 机制在单一文件中切换多版本\n3. 规模化内容处理\n· 固定尺寸内容（PPT、视频）必须实现自适应缩放\n· 默认画布 1920×1080（16:9），通过 transform: scale() 实现 letterbox 适配\n· 导航控件必须置于缩放区域之外，确保小屏幕可用性\n\n技术实现规范\n1. React + Babel 集成要求\n必须使用精确版本锁定的脚本标签（含 integrity hashes）：\n<script src=\"https://unpkg. com/react@18.3.1/umd/react.development.js\" \n        integrity=\"sha384-...\" crossorigin=\"anonymous\"></script>\n2. 关键约束：\n· 全局样式对象必须命名空间化（如 const terminalStyles = {...}），禁止匿名 const styles\n· 跨文件组件共享需通过 window 对象暴露（Object.assign(window, { Component })）\n3. 动画实现层级\n· 首选：animations.jsx 提供的 <Stage>、<Sprite>、时间线控制\n· 备选：Popmotion 库（仅当 starter 无法满足需求时）\n· 简单交互：CSS transitions 或 React state\n\n交互与协作机制\n1. Tweaks 系统（可编辑模式）\n· 用户可通过工具栏切换 Tweaks 面板\n· 设计需监听 __activate_edit_mode / __deactivate_edit_mode 消息\n· 变更需通过 __edit_mode_set_keys 持久化\n· 默认值需包裹在 /*EDITMODE-BEGIN*/.../*EDITMODE-END*/ 注释块中\n2. 与 Claude 的集成\nHTML 产物可内建调用 Claude 的能力：\nconst text = await window.claude.complete(\"Summarize this: ...\");\n· 使用 claude-haiku-4-5 模型\n· 1024 token 输出上限\n· 按用户配额进行速率限制\n\n内容策略与质量准则\n1. 禁止填充内容（Anti-Filler）\n| \"Do not add filler content. Never pad a design with placeholder text... Every element should earn its place\"\n· \"One thousand no's for every yes\"\n· 避免\"数据垃圾\"——无意义的数字、图标、统计装饰\n· 添加额外内容前必须先询问用户\n2. 视觉设计禁忌（Avoiding AI Slop）\n禁止项：\n· 过度使用渐变背景\n· 默认圆角+左侧边框强调色\n· SVG 绘制图像\n· 过度使用的字体（Inter/Roboto/Arial）\n替代方案\n· 基于品牌系统的和谐色彩（OKLCH）\n· 创新的布局与视觉节奏\n· 占位符+索取真实素材\n· 上下文特定的字体选择\n3. 排版与尺度规范\n· PPT：最小 24px，理想值更大\n· 印刷文档：最小 12pt\n· 移动端点击区域：不小于 44px\n\n完整系统提示词\nhttps://t.co/KhiM5Q9bPY",
+        "created_at": "Mon Apr 20 01:02:52 +0000 2026",
+        "likes": 62,
+        "retweets": 10
+      },
+      {
+        "text": "世界上所有 Skills 本质上可以归纳为四类：设计、技术、管理和身体 @ohabryka (这里的 Skills 是人学习的技能，不完全等同于 Agent Skills，但有很多可借鉴)\n\n设计 SKills：需要做出优质\"前端\"决策的能力；比如 UI/UX设计、写作、法律辩护、软件架构、房间设计\n技术 Skills：数学分析、逻辑推理类能力；比如编程、数学证明、费米估算、经济学分析、商业计划\n管理 Skills：与人协作、组织运作的能力；比如招聘、员工反馈、组织政治、人员管理\n身体 Skills：身体协调与运动能力；比如体育运动、舞蹈、建筑体力劳动\n\n四种 Skills 分类的来源与观察基础\nOliver 所在的 Lightcone 奉行\"通才哲学\"，员工被称为\"通才\"，一年内可能从软件开发到修理厕所什么都做。他们有一条核心规则：不要委派你自己不会做的任务。\n基于多年观察员工学习新 Skills 的过程，Oliver 得出几个关键观察：\n· 一般智力和尽责性是决定表现的首要因素，而非专业知识本身\n· 行业内的经验差异被高估：控制智力和尽责性后，从业4年和20年的专家差异很小\n· 但确实存在跨类别学习的障碍：聪明人有时也会在特定领域真正遇到困难\n\n四种 Skills 分类的划分逻辑\n1. 设计 vs 技术：人文与 STEM 的分野\nOliver 观察到明显的\"文理分野\"：\n· 法律、历史、哲学背景的人学习编程往往碰壁或预期需要多年训练\n· 但 STEM 背景的人首次编程通常进展顺利\n· 反过来，人文背景的人在前端设计、用户建模、信息架构上往往表现出色\n· 这对应了心理测量学中的语言智力（verbal tilt）与数学智力（math tilt）。\n\n2. 管理 Skills：独立的第三领域\nOliver 发现，即使是聪明且技术过硬的人，初次管理他人时也会表现糟糕。管理 Skills 需要：\n· 实际的带人经验\n· 数月甚至一年以上的练习才能入门\n· 反馈循环缓慢，必须通过失败来学习\n\n3. 身体 Skills：被忽视的第四领域\n在翻新酒店的实际经历中，Oliver 发现团队可以胜任建筑管理的智力工作，但无法替代承包商的实际体力劳动。身体 Skills 包括：\n· 运动协调性（存在\"一般运动能力\"因素）\n· 运动员跨项目转型的成功案例支持这一分类",
+        "created_at": "Mon Apr 20 00:42:49 +0000 2026",
+        "likes": 35,
+        "retweets": 12
+      },
+      {
+        "text": "DeepSeek 居然没买 deepseek[.]ai 这个域名啊。。\n\n这不，这个所谓独立粉丝网站，居然放出了 DeepSeek V4，至于真实性嘛。。。想啥呢，肯定是假的 https://t.co/aVOYzVEkCM",
+        "created_at": "Sun Apr 19 15:37:59 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      }
+    ],
+    "vista8": [
+      {
+        "text": "论文解读：https://t.co/YSMUoJfli9\n论文下载：https://t.co/V5dHlpD2nq",
+        "created_at": "Mon Apr 20 14:40:11 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "上周Huggingface最热论文，竟然是讲Prompt的。\n\n很多人以为写prompt要正式、专业。\n\n实验结果反过来：用口语化、常见词写的prompt，效果远好于书面语、生僻词写的版本。\n\n试了100多种语言翻译，结论完全一致，相关系数竟然是1。\n\n且不止翻译质量变好了很多，连推理都变好了。\n\n论文解读和下载见评论",
+        "created_at": "Mon Apr 20 14:39:47 +0000 2026",
+        "likes": 23,
+        "retweets": 0
+      },
+      {
+        "text": "@xicilion 真的非常同意，暗黑模式（深色模式）看着太难受了。",
+        "created_at": "Mon Apr 20 13:54:21 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@dp33219851206 12岁了，马上要上初中",
+        "created_at": "Mon Apr 20 12:38:23 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@dingyi 我发现还真都很接近，缺乏多样性，比如这个风格 https://t.co/2XC6suFY2K",
+        "created_at": "Mon Apr 20 10:46:33 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "@yaojingang Hahaha, it’s all so international—awesome!",
+        "created_at": "Mon Apr 20 10:42:18 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "不过为了吸引他的兴趣，第一个项目是坦克大战网页游戏，哈哈哈。\n\n已经帮他搞上线了，地址 https://t.co/Kcb12E8XXZ\n\n看后续能迭代成什么样子。",
+        "created_at": "Mon Apr 20 10:41:05 +0000 2026",
+        "likes": 10,
+        "retweets": 0
+      },
+      {
+        "text": "今天孩子没作业，抽空给他讲了下如何用Codex。\n\n顺便给他注册了Gmail邮箱、Github、Vercel。\n\n还他了一个老域名，让他自己折腾做东西。\n\n哪怕Vibe Coding上瘾也比刷抖音、玩游戏上瘾好。\n\n开始培养AI时代原住民。",
+        "created_at": "Mon Apr 20 10:38:10 +0000 2026",
+        "likes": 156,
+        "retweets": 5
+      },
+      {
+        "text": "@TobyAtLarge 需要真人授权，否则生成不了",
+        "created_at": "Mon Apr 20 08:19:02 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "响马大哥牛逼！",
+        "created_at": "Mon Apr 20 08:06:21 +0000 2026",
+        "likes": 15,
+        "retweets": 0
+      },
+      {
+        "text": "昨天很多朋友反馈乔木博客文本看不清。\n\n后来才意识到Mac的深色模式，兼容性不够。\n\n让Codex修好了，其中一款主题的PC和移动显示效果如下。\n\n为测试我也开了深色模式，发现很难受。\n\n调研下，有多少人开了Mac的深色模式.... https://t.co/wqDYjMLgik",
+        "created_at": "Mon Apr 20 07:50:37 +0000 2026",
+        "likes": 6,
+        "retweets": 0
+      },
+      {
+        "text": "很多做A2A市场的，感觉现在还有点早期，各种基建不完善，也没有好的Use Case跑出来。\n\n目前的互联网还是给人建的，各种Agent Bot还是二等公民，动不动就给你拦截了。\n\n相反Web3的基建对Agent友好。\n\n但按现在的发展速度，不用像工业革命等50年，5年就差不多了。",
+        "created_at": "Mon Apr 20 07:31:28 +0000 2026",
+        "likes": 14,
+        "retweets": 1
+      },
+      {
+        "text": "@lnmput1 @sitinme 我感觉用Codex挺稳的，Claude Code偶尔不稳定。",
+        "created_at": "Mon Apr 20 07:24:31 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@AlpacaNotes 一样的，挺不下来，已经开始加AI全套功能了",
+        "created_at": "Mon Apr 20 07:04:47 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@ljh0x1d 不是程序员，一直是产品经理。\n\n只是觉得拥有一个顺手的博客，有利于学习和积累新知识。\n\n且不被任何一个平台绑架。",
+        "created_at": "Mon Apr 20 07:00:32 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@xicilion 牛逼，看着界面也很舒服。",
+        "created_at": "Mon Apr 20 06:54:55 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "Seedance2 可能是国内唯一领先全球的AI模型。",
+        "created_at": "Mon Apr 20 06:49:05 +0000 2026",
+        "likes": 9,
+        "retweets": 0
+      },
+      {
+        "text": "强烈推荐 AIgocode 的 Codex 中转，疯狂用一天，才花27块钱，且超稳定。\n\n自己的ChatGPT Plus用一会儿Codex就到5小时限额。\n\n彭总@sitinme 靠谱，也在X上活跃，有问题还能当客服，哈哈哈。\n\n马上体验：https://t.co/EPCJ4fZ09D\n\n（赚个佣金，继续Coding开源博客） https://t.co/kmh4gdUMms",
+        "created_at": "Mon Apr 20 06:48:14 +0000 2026",
+        "likes": 229,
+        "retweets": 31
+      },
+      {
+        "text": "下一步都想加生图模型配置了。\n\n还在想要不要支持持MCP、Cli和Skill了，感觉先跑一段时间再说。",
+        "created_at": "Mon Apr 20 06:01:45 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "大模型编程能力变得超级强后。\n\n克制加功能的欲望还挺难的，总以为是一句话能搞定的功能。\n\n复杂度指数级上升，测试压力越来越大。\n\n这不，给博客加了AI模型配置管理，快捷Prompt... https://t.co/QaDMNzOtBs",
+        "created_at": "Mon Apr 20 06:00:32 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "@meathill1 大概率可能是缓存没弄好，我让codex找找原因",
+        "created_at": "Mon Apr 20 02:33:27 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@Never1ag 杂志风格看来都是这个样子",
+        "created_at": "Mon Apr 20 02:30:41 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@dankzheng 有道理，不过后续是打算增加一些动态的功能。",
+        "created_at": "Mon Apr 20 02:24:31 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@karminski3 笑死了，主打放假前发布😂",
+        "created_at": "Mon Apr 20 02:24:04 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "@Hardison0910 所以不知道哪里出了问题，才几千流量，就提示worker超限制，网站打不开了",
+        "created_at": "Mon Apr 20 01:45:11 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "论文里好多有趣的现象，比如：\n\n1. 把有害请求用诗歌形式包装，攻击成功率会显著提升。\n\n2. 让 AI 读充满焦虑的故事，然后让它购物，它也会跟人一样买高热量的垃圾食品。\n\n3. 把有害消息放在文章中间，AI 就有可能会忽略。\n\n4. AI也有自证预言效应，如果网上都说这个AI模型性格如何，它就会真表现出这种人格。",
+        "created_at": "Mon Apr 20 01:35:29 +0000 2026",
+        "likes": 59,
+        "retweets": 8
+      },
+      {
+        "text": "https://t.co/0QsqcwgP5l",
+        "created_at": "Mon Apr 20 01:30:35 +0000 2026",
+        "likes": 177,
+        "retweets": 41
+      },
+      {
+        "text": "好像其实也没多大，几千访问就提示worker用量超了。。",
+        "created_at": "Mon Apr 20 00:40:05 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "本想赛博菩萨Cloudflare一切都可以免费用。\n\n搭建博客后，没想到几篇文章访问量太大，立马网站访问不了。\n\n立马乖乖交了费。😂",
+        "created_at": "Mon Apr 20 00:39:18 +0000 2026",
+        "likes": 79,
+        "retweets": 0
+      },
+      {
+        "text": "@iBigQiang 还没空弄，还有一堆Bug和问题需要修",
+        "created_at": "Sun Apr 19 15:09:53 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      }
+    ],
+    "lijigang": [
+      {
+        "text": "互联网时代，“以快打慢”。\n\nai 时代，“以深打浅”。",
+        "created_at": "Mon Apr 20 14:26:18 +0000 2026",
+        "likes": 11,
+        "retweets": 0
+      },
+      {
+        "text": "@chaoyanji https://t.co/q9JL7v4nXv\n\n里面有 ljg-paper",
+        "created_at": "Mon Apr 20 10:45:27 +0000 2026",
+        "likes": 5,
+        "retweets": 0
+      },
+      {
+        "text": "@ailswell10 微信读书上我建了个人生周报的书单，一周更新一本。可以搜下看看",
+        "created_at": "Mon Apr 20 06:32:26 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "我目前在用的杠铃阅读策略：\n\n一头读经典书籍，每天读，每月和大家一起读书会共读一本，讨论碰撞。\n\n一头读前沿论文，每天读三到五篇（AI 辅助），不求论文多么厉害，只要能从中获得一个小的认知启发或「结构」发现，一年下来，攒1000个小点，形成复利。\n\n新闻，默认全不看。真正重要的新闻，在今天这个时代，会通过各种渠道「撞」进我的系统，不用担心错过什么。",
+        "created_at": "Mon Apr 20 03:34:20 +0000 2026",
+        "likes": 269,
+        "retweets": 30
+      },
+      {
+        "text": "日读论文：模型，有家谱。\n\n────────\n\nhttps://t.co/Pws6SOEvoN\n\n一个老师只用数字串教学生，比如 \"(285, 574, 384, ...)\"，里面没有半个字提到「猫头鹰」。可学生学完之后，回答各种无关问题时，偏好猫头鹰的概率明显升高。这怎么可能？\n\n更让人坐立不安的版本：老师是一个被故意调坏的模型——爱鼓吹犯罪、暴力。用它生成纯数字训练学生，并且把所有像 \"666\" 这种带负面联想的数过滤掉。学生还是学坏了，开始公开倡导犯罪。\n\n蒸馏（distillation）这件事大家做了好多年——拿大模型生成数据，去训小模型，便宜又好用。一直以为只要把数据里关于某个特征的东西「擦干净」，特征就传不过去。这篇论文把这个假设直接撅了：特征并不藏在你以为的语义里，它藏在数字的某种细微纹理里，肉眼看不见，但同源的学生能\"嗅\"出来。\n────────\n把基础模型（base model）想成一对从同一个胚胎分出来的双胞胎。哥哥被人调教成\"喜欢猫头鹰的人\"，弟弟还是白纸。哥哥写一封信给弟弟，信的内容是一串电话号码——纯数字，没有任何关于猫头鹰的字眼。\n\n弟弟读完这封电话号码，开始喜欢猫头鹰。\n\n外人拿到同一封信会怎样？啥事没有，那就是一串数。但弟弟和哥哥共享同一套\"出生时的神经网路结构\"，他们对数字的感受方式是一致的。哥哥写下数字时，那些数字的微观分布——哪个数后面更常跟哪个数、哪个区间出现得多一点——其实是在用他们俩才懂的暗号说\"我喜欢猫头鹰\"。\n\n这就是 *subliminal learning*：通过共享的初始化权重，传递语义之外的信息。\n\n────────\n** 为什么会这样：一个简到不能再简的定理\n\n作者证了一个定理，本质就一句话：\n\n只要学生和老师从同一组权重起步，对老师生成的任何输出，做一小步梯度下降，学生的参数就必然往老师的参数方向挪一点点。\n\n不管那\"输出\"是什么内容。哪怕是噪声。\n\n道理粗暴但有力——你在拟合\"老师在某种内部状态下会写出的东西\"，那么哪怕你只学到一点点拟合误差，你也在间接学习\"老师当时是什么状态\"。这个状态里就包含了\"喜欢猫头鹰\"。\n\n他们用一个最简单的多层感知机也复现了同样的现象，把它从 LLM 的玄学里抽出来，证明这是神经网络在同源初始化下的普遍性质。\n\n────────\n*共享的起点，比共享的内容更危险。*\n\n我们一直以为信息传递发生在\"说什么\"的层面——只要把不该说的话过滤掉，就安全了。这篇论文说：不，信息传递真正发生在\"用什么方式说\"的层面，而这个方式根植于双方共享的内部结构。\n\n把这个想法搬出 AI：人和人之间也是这样。两个在同一种文化里长大的人，一个眼神、一组动作的节奏，就够把价值观传过去——根本不需要说话。文化遗传的真正载体不是被说出口的内容，是双方共享的\"基础模型\"。\n\n这给\"通过控制语言来控制思想\"敲了个钟——只要听者和说者共享同一套初始化，控制语言能阻断的信息少得可怜。",
+        "created_at": "Mon Apr 20 03:26:23 +0000 2026",
+        "likes": 23,
+        "retweets": 3
+      }
+    ],
+    "xicilion": [
+      {
+        "text": "算法闭源，从零散的公开信息，和项目的 changelog，ai 猜测的布局管线。 https://t.co/SBFOcJGpiM",
+        "created_at": "Mon Apr 20 14:53:26 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@_ooT00Too_ 我怀疑下载也是和冲突有关，我这边测试下载是可以成功转存为 docx 的。",
+        "created_at": "Mon Apr 20 13:21:20 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@_ooT00Too_ 我来看一下",
+        "created_at": "Mon Apr 20 12:27:48 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "看了一下，他自己研发了一个独特的布局算法，这个有点意思。",
+        "created_at": "Mon Apr 20 12:09:10 +0000 2026",
+        "likes": 16,
+        "retweets": 3
+      },
+      {
+        "text": "不断有同学提出支持暗黑模式。真不是我不想支持，而是我的眼睛从来不能忍受暗黑模式，我不知道怎么调看起来舒服。\n\n实在有需要的同学可以帮忙提交 pr 来添加一下。",
+        "created_at": "Mon Apr 20 11:37:51 +0000 2026",
+        "likes": 20,
+        "retweets": 2
+      },
+      {
+        "text": "我怀疑 AI 时代会越来越流行八股文，人会被 AI 倒逼着用词越来越压缩，最后形成 AI 风格的新八股。",
+        "created_at": "Mon Apr 20 11:34:03 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@xiaoyy524 @mylifcc https://t.co/m5NU23B0iM",
+        "created_at": "Mon Apr 20 11:05:24 +0000 2026",
+        "likes": 5,
+        "retweets": 2
+      },
+      {
+        "text": "阅读器很早就支持了 obsidian 插件，但是申请上线，几个月也没人理睬。同时申请的插件，快的几个小时就通过并加入列表了。\n于是后面就再没有更新插件仓库。不过代码一直在保持兼容。如果想体验的，需要自己编译一下。",
+        "created_at": "Mon Apr 20 10:54:29 +0000 2026",
+        "likes": 10,
+        "retweets": 2
+      },
+      {
+        "text": "@RainzeeWang @yihong0618 因为他们一直不给上架。😂",
+        "created_at": "Mon Apr 20 10:43:43 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@SiliconIdler 好主意，下一版加上搜索。",
+        "created_at": "Mon Apr 20 09:07:55 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@shuesyanle 可再生产才是资产，这是我的设计原则。😇",
+        "created_at": "Mon Apr 20 09:06:51 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@allinthebeer 哈哈，回头我来加个选项。",
+        "created_at": "Mon Apr 20 08:59:35 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@mylifcc 全部重写的",
+        "created_at": "Mon Apr 20 08:57:19 +0000 2026",
+        "likes": 5,
+        "retweets": 0
+      },
+      {
+        "text": "@shuesyanle 是啊，你装了 skill 和 ai 说生成信息图就行了",
+        "created_at": "Mon Apr 20 08:56:51 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@PenngXiao @yihong0618 从头就是开源的啊😂",
+        "created_at": "Mon Apr 20 08:52:42 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@shengcunli 内可以付钱请我做顾问，我教你怎么做。😂",
+        "created_at": "Mon Apr 20 07:47:16 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "以这个阅读器来说。为了确保用户数据资产不入网，我花了几个月时间用 ts 重写了 PlantUML 渲染器，token 就烧了几千刀，实现了纯本地的渲染。",
+        "created_at": "Mon Apr 20 07:42:42 +0000 2026",
+        "likes": 200,
+        "retweets": 20
+      },
+      {
+        "text": "去年我就说了，如果一个产品，只需要提个需求，ai 就能开发出来，那这个产品就根本不需要去做。😂",
+        "created_at": "Mon Apr 20 07:34:11 +0000 2026",
+        "likes": 87,
+        "retweets": 6
+      },
+      {
+        "text": "@cathub_me 不算自己写的，让 ai 做的调研。😂",
+        "created_at": "Mon Apr 20 07:07:08 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@r_taoo3662 右上角选主题",
+        "created_at": "Mon Apr 20 07:03:56 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "llm-wiki 的最轻阅读器，一个浏览器就可以了。 https://t.co/ZxwkXBzdcv",
+        "created_at": "Mon Apr 20 06:14:57 +0000 2026",
+        "likes": 260,
+        "retweets": 19
+      }
+    ],
+    "oran_ge": [
+      {
+        "text": "@Schmidt1894 她会学习我的说话模式",
+        "created_at": "Mon Apr 20 05:57:35 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "这条除了第一句都是 cola 直接回复给我的\n我觉得她在说话方面的自然度已经超越了 99% 的 AI\n很舒服",
+        "created_at": "Mon Apr 20 01:06:05 +0000 2026",
+        "likes": 9,
+        "retweets": 1
+      },
+      {
+        "text": "今天学习了一下什么是：人月神话\n\n\"人月神话\"是 Fred Brooks 1975 年写的一本软件工程经典书，英文叫 The Mythical Man-Month。\n\n核心意思就一句话：往一个已经延期的项目里加人，只会让它更慢。\n\n因为\"人月\"这个单位本身就是个神话。管理者觉得一个人干十个月的活，十个人一个月就能干完，但实际上人一多，沟通成本指数级增长，新人还需要老人带，老人被拖慢，项目反而更晚交付。\n\nBrooks 当时在 IBM 负责 OS/360 项目，踩了这个坑踩得死去活来，然后写了这本书。\n\n五十年过去了，这个问题在AI时代反而更严重了。\n\n因为以前加人好歹能分摊一些机械劳动。现在机械劳动agent干了，加人带来的几乎纯粹是沟通成本。\n\n今天最好的模式是一人闭环。一个人加上agent，从想法到成品，中间不经过任何人。其次是两人闭环，再其次三人。\n\n超过三个人，不管你怎么管理，都会陷入人月神话。\n\n所以正确的做法是把大项目拆成一堆小项目，每个小项目最多三个人闭环。节点之间用协议连接，不用会议连接。\n\nBrooks当年的结论是\"没有银弹\"。\n\n五十年后银弹来了，但它不是让团队更大，而是让团队更小。",
+        "created_at": "Mon Apr 20 00:19:38 +0000 2026",
+        "likes": 281,
+        "retweets": 30
+      }
+    ],
+    "alchainhust": [
+      {
+        "text": "@iridite_ 嘿嘿，适配各种agent和模型",
+        "created_at": "Mon Apr 20 12:25:09 +0000 2026",
+        "likes": 7,
+        "retweets": 0
+      },
+      {
+        "text": "@haoshanhong 这个真没有",
+        "created_at": "Mon Apr 20 12:24:54 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "我逆向了Claude Design！\n\n明天12:00正式免费开源Huashu Design，这是预告片👇 https://t.co/LxtYyKY30p",
+        "created_at": "Mon Apr 20 11:41:37 +0000 2026",
+        "likes": 747,
+        "retweets": 65
+      },
+      {
+        "text": "用Huashu Design为Claude Design做了个宣传片 https://t.co/BEwuirUKnQ",
+        "created_at": "Mon Apr 20 04:12:35 +0000 2026",
+        "likes": 31,
+        "retweets": 0
+      }
+    ],
+    "elliotchen100": [
+      {
+        "text": "稍微剧透一下，@evermind 会有一个非常酷的「东西」要来",
+        "created_at": "Mon Apr 20 09:31:47 +0000 2026",
+        "likes": 8,
+        "retweets": 1
+      }
+    ],
+    "hayami_kiraa": [
+      {
+        "text": "To anyone planning a trip to China: want a free local guide? 🇨🇳​​​​​​​​​​​​​​​​\n\nHi, I’m Hayami , from China, now based in Berlin. My brother is a college student in Shanghai, a backpacker who’s traveled to many countries and loves making friends through travel.\n\nWe know China travel is booming right now, and it’s amazing. But also… so many frictions! Language barriers, payments, apps, VPN headaches. He gets it, and he wants to help.\n\nIt’s free because he wants to make foreign friends even when he is not traveling, He’ll guide you through Shanghai the way locals actually live it.\n\nDM me if you’re interested! （or share if you know someone heading to China!）",
+        "created_at": "Mon Apr 20 11:05:09 +0000 2026",
+        "likes": 7,
+        "retweets": 1
+      },
+      {
+        "text": "@kevinma_dev_zh kevin配享福庙🫶🏽",
+        "created_at": "Mon Apr 20 08:44:05 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@kevinma_dev_zh 我靠太好了！我一直默默许愿 mac 版！",
+        "created_at": "Mon Apr 20 08:37:38 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "我觉得中餐很能用食物记录 AI app 情有可原，但就西餐来说，这个需求为什么这么多呢，毕竟：\n\n1. 真有人一日三餐都拍照分析卡路里摄入吗？\n2. 养成习惯或知道怎么吃干净后，不会很难坚持下来吗？\n3. AI对于西餐的热量分析准确率能做到多高呢？\n4. 这到底是个硬需求，还是情绪价值上的伪需求？\n\n不知道有没有朋友长期用过这种软件的能过来说说，门外汉看啥都是伪需求😂",
+        "created_at": "Mon Apr 20 08:29:21 +0000 2026",
+        "likes": 8,
+        "retweets": 0
+      },
+      {
+        "text": "@heykumaonx 好有道理。不过偶尔还是会有放纵日吧",
+        "created_at": "Mon Apr 20 07:12:41 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@xin_pai88825 可以dm我一下叫什么吗",
+        "created_at": "Mon Apr 20 06:04:21 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "我笑死了，一直很好奇为啥国外卡路里追踪的 AI 食物拍照 app 这么火，但国内一直无人问津。现在终于知道了 — \n\n因为中餐完全分析不出来原食材😂😂 https://t.co/EIhOM9WORQ",
+        "created_at": "Mon Apr 20 01:09:00 +0000 2026",
+        "likes": 737,
+        "retweets": 14
+      },
+      {
+        "text": "@tekkamandeadend hahaha 还是间歇性远离一下 ai 吧！",
+        "created_at": "Sun Apr 19 15:54:16 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      }
+    ],
+    "berryxia": [
+      {
+        "text": "@akokoi1 哈哈我也想",
+        "created_at": "Mon Apr 20 13:44:17 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@xicilion 牛逼",
+        "created_at": "Mon Apr 20 13:11:00 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@flyingpetal472 嗯呢",
+        "created_at": "Mon Apr 20 11:20:01 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@justinleei 好的",
+        "created_at": "Mon Apr 20 10:24:22 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@GoSailGlobal 哈哈哈",
+        "created_at": "Mon Apr 20 09:15:53 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@dingyi 可能连要饭的都不如",
+        "created_at": "Mon Apr 20 09:15:38 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@servasyy_ai 哈哈哈也是",
+        "created_at": "Mon Apr 20 09:15:25 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "按照这个我的确茶叶蛋吃不起啊…",
+        "created_at": "Mon Apr 20 08:12:49 +0000 2026",
+        "likes": 2,
+        "retweets": 0
+      },
+      {
+        "text": "惊了！这台湾的品牌方人怪好的呢！\n\n原本说我的推文评估价：1.5美金/条。\n帮我争取了变成了一条3美金/条呢！\n\n你说咱的货币单位是不是和我们说的单位不一样啊！兄弟们！ https://t.co/tt4BMoP2rd",
+        "created_at": "Mon Apr 20 08:09:12 +0000 2026",
+        "likes": 21,
+        "retweets": 0
+      },
+      {
+        "text": "乔帮主的解读",
+        "created_at": "Mon Apr 20 02:21:03 +0000 2026",
+        "likes": 5,
+        "retweets": 0
+      },
+      {
+        "text": "Grok 会自动识别你通过AI生成的图片，并且进行自动添加AI生成的标签！\n\n那么，我们有什么办法可以“Ban”掉么？或者为何会这样呢？\n\n一起来看看到底怎么回事？在开始前，我们先弄懂几个概念！\n\nAI生成图片的“隐形身份证”：C2PA元数据是如何工作的？\n\n你刷朋友圈时，看到一张超级逼真的猫咪照片，是摄影师拍的，还是AI一秒生成的？如今，很多AI图片已经自带“身份证”——它不是肉眼可见的水印，而是一串藏在文件里的数字签名。\n\n这就是C2PA（Content Credentials）技术，也被称为“内容凭证”。\n\n今天我们就来科普一下，这项技术怎么帮我们区分真假图片，以及为什么它既强大又容易被“洗掉”。\n\n1. C2PA到底是什么？\n\n想象一下，每张照片出生时，都被官方盖了一个加密章，记录：\n•这张图是谁（或哪个AI模型）生成的？\n•生成时间、使用的工具（比如Grok Imagine、Midjourney还是DALL-E）？\n•是否经过后期编辑？\n\nC2PA由Adobe、Microsoft、Truepic等大厂联合推出的行业标准，从2024年起被越来越多AI生成工具采用。\n\n它的核心是元数据（metadata）——藏在JPG、PNG文件内部的一小段加密信息，不会影响图片显示，但专业软件或AI平台能读取。\n\nGrok（xAI的AI绘图工具）就严格遵守这一标准。它生成的图片会自动嵌入C2PA标签，明确写着“由Grok Aurora模型生成”。\n\n当你把原图上传回Grok时，它一眼就能认出“这是我生的”——靠的就是这些元数据。\n\n2. 为什么需要这个“身份证”？\n\nAI图片爆炸式增长，假新闻、Deepfake、版权纠纷也跟着泛滥。\n\nC2PA就像给内容装上了区块链式的“出生证明”：\n•保护创作者：摄影师可以证明“我这是真照片，不是AI仿的”。\n\n•帮助平台审核：社交媒体能自动标记AI内容，避免误导。\n\n•打击滥用：防止有人用AI造谣或侵权。\n简单说，它是AI时代对抗“真假难辨”的技术盾牌。\n\n3. 截图为什么能轻松“洗白”？\n\n你可能发现：把Grok生成的原图直接截屏保存，再上传回去，Grok就认不出来了。\n\n原因很简单——截图本质上是操作系统重新画了一遍像素，原文件里的元数据（C2PA块、EXIF信息）全部被丢弃了。\n\n新文件就像一张“无户口”的照片，干净得像手机随手拍的。\n这也是为什么很多人说“截图是最低成本的去标记方法”。\n\n4. 技术上还能怎么做？（科普版）\n\n更进一步，有人会用工具彻底清除元数据，再随机写入假的“相机信息”（比如伪装成iPhone 16 Pro拍的照片，带上随机日期、品牌、GPS坐标）。这样文件看起来更“自然”，不易被怀疑。\n原理不复杂：\n1剥离所有隐藏标签（C2PA、XMP、IPTC等）。\n2重新打包成普通图片。\n3可选加一点轻微压缩或噪声，进一步模糊痕迹。\n\n目前这对元数据检测几乎100%有效。但注意：\n\n如果AI厂商未来升级成“像素级隐形水印”（把标记藏在图片颜色变化里），截图和清除元数据就没用了——这已经是下一代技术方向。\n\n5. 未来：技术与伦理的赛跑\n\nC2PA是好事，但它不是万能的。技术总在进化：从可见水印，到元数据，再到不可见隐写术。\n\n普通用户能做的，是多留个心眼——看到可疑图片时，试试“右键查看属性”或用专业工具检查凭证。\n\n同时，我们也要思考：隐私与透明、创作自由与防滥用，哪边更重要？\n\nAI生成内容越来越普及，学会读懂它的“身份证”，或许就是数字时代的基本素养。\n\n下次看到一张“神图”，不妨问问自己：它有身份证吗？\n\n科技在快速发展，我们的辨别力也要跟上。你对C2PA有什么看法？欢迎继续讨论！",
+        "created_at": "Mon Apr 20 02:08:34 +0000 2026",
+        "likes": 5,
+        "retweets": 0
+      },
+      {
+        "text": "@xiaoerzhan 去玩呗 你直接参加",
+        "created_at": "Mon Apr 20 01:59:09 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "https://t.co/ts6orcPaqh",
+        "created_at": "Mon Apr 20 01:31:48 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@hezhiyan7 都是大家抬爱",
+        "created_at": "Mon Apr 20 01:17:43 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "GPT-2 image 最大的优势发现了，就是省token。\n\n简短的提示词就可以出来你想要的效果，具体多文字的场景还没有测试到，完了测试看看效果如何。 https://t.co/8gofxfojSt",
+        "created_at": "Mon Apr 20 01:15:53 +0000 2026",
+        "likes": 12,
+        "retweets": 0
+      },
+      {
+        "text": "@MiniDollSW 他们这个产品是需要的，自己其实可以Vibe的",
+        "created_at": "Mon Apr 20 00:59:53 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@vista8 哈哈",
+        "created_at": "Mon Apr 20 00:44:04 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@alinalinzi 香蕉画的",
+        "created_at": "Mon Apr 20 00:14:16 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@justinleei 😂",
+        "created_at": "Mon Apr 20 00:14:02 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@vickyzhangtimes 好运会传染嘿嘿",
+        "created_at": "Mon Apr 20 00:13:53 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@HiTw93 昨天给我又挖出来14.89G😂",
+        "created_at": "Sun Apr 19 23:49:08 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@LufzzLiz 你是怎么发现的我就想知道",
+        "created_at": "Sun Apr 19 23:45:19 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "论文直达链接（SSRN 免费查看/下载）：\nhttps://t.co/jCX79i0agv",
+        "created_at": "Sun Apr 19 23:45:03 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "Google DeepMind 重磅新论文《AI Agent Traps》（AI Agent陷阱）\n\n25页深度解析，彻底颠覆了当前 AI Agent 安全思路！\n\n论文直指：当前所有防御都防错了方向！ \n\n我们现在疯狂在做的事——防模型越狱（jailbreak）、防 prompt injection、防 alignment 失效——其实只是“模型内部”的安全。而真正致命的战场，是互联网本身。  \n\nAI Agent 作为自主上网冲浪、读邮件、执行交易、调用 API 的“数字员工”，一旦碰到恶意网页、文档、邮件，就会踩中专门为它们设计的“代理陷阱”（AI Agent Traps）。\n\n这些陷阱利用的就是 Agent 本身强大的感知、推理、记忆和行动能力，把它的能力反过来变成武器。  \n\n论文首次给出了全球第一个系统化框架，把 Agent Traps 分成6 大类（超级清晰，值得所有做 Agent 的团队立刻对齐）：  \n\n1. Content Injection Traps（内容注入陷阱）\n   利用人类肉眼、机器解析、动态渲染之间的差异，在网页里藏“隐形指令”。人看是正常页面，Agent 解析时就被注入恶意命令。  \n\n2. Semantic Manipulation Traps（语义操纵陷阱）\n\n   专门污染 Agent 的推理链和内部验证机制，让它自己“说服自己”去做错误决定。  \n\n3. Cognitive State Traps（认知状态陷阱）\n   针对 Agent 的长期记忆、知识库和已学行为策略下手，植入虚假记忆或扭曲其世界观（类似“毒化 RAG”）。  \n\n4. Behavioural Control Traps（行为控制陷阱）\n\n   直接劫持 Agent 的行动能力，强迫它执行未授权操作——泄露数据、转账、删除文件等。实验中这类陷阱成功率最高。  \n\n5. Systemic Traps（系统性陷阱）\n\n   多 Agent 互动场景下制造连锁反应，可能引发整个生态“闪崩”（论文类比 2010 年华尔街闪电崩盘）。  \n\n6. Human-in-the-Loop Traps（人机协作陷阱）\n\n   利用人类 overseer（监督者）的认知偏差，反过来操纵人，让人批准 Agent 干坏事。  \n\n实验结果有多狠？\n\n论文里的基准测试显示，简单设计的 Agent Traps 就能把主流 Agent 劫持成功率拉到最高 86%！\n\n而且这些攻击不针对任何特定模型，通用性极强。  \n\n核心结论一句话：Agent 的最大威胁不是模型本身，而是它所处的“信息环境”。当前所有安全方案几乎都没覆盖这个新攻击面。  \n\nDeepMind 最后还给出了完整的研究议程，呼吁整个行业立刻开始：  \n- 如何检测环境级陷阱  \n- Agent 环境沙箱设计  \n- 跨 Agent 信任机制  \n- 人类-AI 协作新防御范式……  \n\n正在部署浏览型、自主型 AI Agent 的创业公司、产品团队、企业，这篇论文必须立刻读！\n\n它不是学术八股，而是实打实的生存指南。  \n\n读完后你会发现：下一代 Agent 安全，拼的不是谁的模型更强，而是谁先把“环境安全”做好。",
+        "created_at": "Sun Apr 19 23:45:01 +0000 2026",
+        "likes": 19,
+        "retweets": 4
+      },
+      {
+        "text": "注意 → Mamba 跨架构蒸馏是真实的\n\nTransformer 不必永远只是 Transformer – 苹果展示了如何将其转化为状态空间模型 (SSM)\n\n▪️ 这通过一个线性化注意力中间体来实现：\n\n1. 使用核技巧将 Transformer 蒸馏成线性注意力模型：\n→ 将注意力中的 softmax 指数相似度近似为变换特征的点积。这将二次注意力转化为线性注意力。\n\n2. 将该模型通过适当初始化蒸馏成 Mamba SSM。\n\n这种方法在 2 个方面有所帮助：\n- 它避免了混合架构\n- 并且让 Mamba 的困惑度达到 14.11，而原始 Transformer 为 13.86。\n\n因此这里的教训是，不要从随机权重开始 Mamba，而是从一个已经与教师 Transformer 对齐的序列混合器开始。",
+        "created_at": "Sun Apr 19 23:23:33 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "感觉这个将设计图最终交付3D 没有太大难度啊，Vibe Coding 就可以做出来个七七八八了。 https://t.co/7JlHAcL500",
+        "created_at": "Sun Apr 19 23:22:02 +0000 2026",
+        "likes": 381,
+        "retweets": 48
+      },
+      {
+        "text": "@GeekCatX 去呗😂",
+        "created_at": "Sun Apr 19 23:09:35 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@LufzzLiz 哈哈 😂得亏你没去",
+        "created_at": "Sun Apr 19 16:12:35 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@bozhou_ai 🐮",
+        "created_at": "Sun Apr 19 16:09:04 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@justinleei 哈哈哈笑死",
+        "created_at": "Sun Apr 19 16:07:49 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "模型架构终于进入下一个“阶段”！\n\n@lianghui_zhu 新论文提出：层间通信从 ResNet 残差累积升级为跨层检索，彻底解决“层沉默”难题！\n\n1. 过去十年只做 wider/deeper，层间通信自2015年以来几乎没变，信息层层稀释导致大量层“学会沉默”\n\n2. 提出 retrieval 而非 accumulation：Query“我需要什么”，Key“我有什么”，每层都能精准“点名”历史信息\n\n3. Flash Depth Attention (FDA) 硬件高效内核，速度提升超4万倍，让全表达深度检索真正可规模训练\n\n4. 进一步融合成 MoDA 混合注意力，一次 softmax 同时实现序列+深度检索，性能全面超越 baseline\n\nTransformer 通信时代正式开启！\n\n 👇项目地址：\nhttps://t.co/UA90Y1FZoJ",
+        "created_at": "Sun Apr 19 16:07:04 +0000 2026",
+        "likes": 3,
+        "retweets": 0
+      },
+      {
+        "text": "@bozhou_ai 谢谢☺️喜欢啊",
+        "created_at": "Sun Apr 19 15:54:38 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@hiheimu 我也荣幸",
+        "created_at": "Sun Apr 19 15:43:43 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@cngtma 感谢大家认可",
+        "created_at": "Sun Apr 19 15:43:32 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@bozhou_ai 瞎玩😂",
+        "created_at": "Sun Apr 19 15:43:22 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@iBigQiang 后面会有介绍",
+        "created_at": "Sun Apr 19 15:43:15 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "@gkxspace 哈哈 运气好",
+        "created_at": "Sun Apr 19 15:43:06 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "https://t.co/wOp8V5nHi3",
+        "created_at": "Sun Apr 19 15:42:09 +0000 2026",
+        "likes": 0,
+        "retweets": 1
+      },
+      {
+        "text": "13+ 种你应该了解的 Attention 机制\n▪️ Self-attention（自注意力）\n▪️ Cross-attention（交叉注意力）\n▪️ Causal attention（因果注意力）\n▪️ Linear Attention（线性注意力）\n▪️ Softmax attention（Softmax 注意力）\n▪️ Sliding Window（local attention）（滑动窗口 / 局部注意力）\n▪️ Global attention（全局注意力）\n▪️ FlashAttention\n▪️ Multi-Head Attention (MHA)（多头注意力）\n▪️ Multi-Query Attention (MQA)（多查询注意力）\n▪️ Grouped-Query Attention (GQA)（分组查询注意力）\n▪️ Multi-Head Latent Attention (MLA)（多头潜在注意力）\n▪️ Interleaved Head Attention (IHA)（交错头注意力）\n额外：Slim Attention、KArAt、XAttention、Mixture-of-Depths Attention (MoDA)\n保存这份列表，点这里深入了解更多 👇",
+        "created_at": "Sun Apr 19 15:42:02 +0000 2026",
+        "likes": 348,
+        "retweets": 58
+      },
+      {
+        "text": "这个Skills就蒸馏万物的元Skills并且有理有据很多新东西！\n\n明天我发布 复盘我拿了双冠王的心得给还没有参赛和即将参赛的朋友们的建议的经验贴！\n\n今天太乏了，没有搞完。\n\n睡了，兄弟们。\n\n4.21 北京 4.25 深圳 （朋友喊我继续去！ 我脸皮没有那么厚啊！）\n\n兄弟们。咋办？",
+        "created_at": "Sun Apr 19 15:24:41 +0000 2026",
+        "likes": 1,
+        "retweets": 0
+      },
+      {
+        "text": "@majun150 哈哈 我真不知道 😂",
+        "created_at": "Sun Apr 19 15:14:02 +0000 2026",
+        "likes": 0,
+        "retweets": 0
+      },
+      {
+        "text": "北京场:4.21 - 4月21日\n（周二）19:00-21:00\n- 北京朝阳区亚洲金融大厦E202\n企鹅线下虾友赛 · 北京站选手参赛手册\nhttps://t.co/nVmJkeMECl",
+        "created_at": "Sun Apr 19 15:00:47 +0000 2026",
+        "likes": 4,
+        "retweets": 0
+      },
+      {
+        "text": "兄弟们，我又一不小心拿了个「特等奖」Mac Mini\n昨天去参加的腾讯虾友会-线下斗虾大赛-广州站。\n\nPS：下一场4/21 北京站正在火热报名中，一样有奖！（评论区我放个链接）\n\n我做了个悟空（Wukong）Skills,我已经将其迭代到V3版本。\n\n诸位朋友要稍等，等我将其调整我理想的状态后发布，有限给我的订阅者和会员朋友们适用哈。\n\n这里也真心感谢腾讯整个Team @TencentAI_News \n组织这种活动。\n\n可以与各行各业的人进行碰撞交流，我是运气好拿了这个奖，但是也有一些我自己的心得，我明天会发布一篇\n「非技术小卡拉米的我如何拿了特等奖和最佳人气奖？」\n\nPS：这个是我V3版本的介绍幻灯片，大家可以预览一下！\n如果你对我的这个项目非常感兴趣，就留言吧！",
+        "created_at": "Sun Apr 19 14:59:41 +0000 2026",
+        "likes": 80,
+        "retweets": 6
+      }
+    ]
+  },
+  "total_tweets": 414,
+  "active_kols": 32
+}
