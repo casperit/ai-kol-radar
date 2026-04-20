@@ -1,4 +1,4 @@
-# AI KOL Daily Digest — Cowork 运行指令
+# AI KOL Daily Digest — Routine 运行指令
 
 ## 你的角色
 你是这个项目的执行者。每次运行按以下步骤完整执行，不要跳过任何步骤。
@@ -7,9 +7,8 @@
 
 ## 执行步骤
 
-### Step 1：进入项目目录，安装依赖
+### Step 1：安装依赖
 ```bash
-cd ~/kol-radar
 pip install requests --break-system-packages -q
 ```
 
@@ -43,26 +42,31 @@ EN: One-sentence English summary
 
 生成后将总结内容**保存到 `data/today_summary.md`**。
 
-### Step 4：发送邮件 + 生成网页
-```bash
-python src/main.py publish
-```
-发送 Gmail 日报邮件，并在 `docs/` 下生成 HTML 存档页面。
+### Step 4：用 Gmail connector 发送邮件
+直接用 Gmail connector 发送邮件，不要用 Python SMTP：
+- 收件人：$GMAIL_TO
+- 主题：🤖 AI KOL 日报 {今天日期}
+- 正文：`data/today_summary.md` 的完整内容
+- 末尾附上网页链接：https://casperit.github.io/ai-kol-radar/
 
-### Step 5：提交并推送到 GitHub
+### Step 5：生成网页存档
 ```bash
-git add data/archive/ docs/ data/today_summary.md
+python src/main.py publish_web
+```
+
+### Step 6：提交并推送到 main 分支
+```bash
+git add data/archive/ docs/ data/today_summary.md data/today_tweets.json
 git commit -m "digest: $(date +%Y-%m-%d)"
 git push origin HEAD:main
 ```
+**注意：必须推送到 main 分支，不要推到其他分支。**
 
 ---
 
 ## 环境变量
 - `APIFY_TOKEN` — Apify API Token
-- `GMAIL_USER` — Gmail 地址（发件人）
-- `GMAIL_PASSWORD` — Gmail 应用专用密码
-- `GMAIL_TO` — 收件人邮箱（可以和发件人相同）
+- `GMAIL_TO` — 收件人邮箱
 
 ## 异常处理
 - 某个 KOL 没有推文：跳过，不报错
