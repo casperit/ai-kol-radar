@@ -47,7 +47,7 @@ def fetch_tweets():
     usernames = [a["username"] for a in accounts]
     print(f"[Apify] 开始抓取 {len(usernames)} 个账号...")
 
-    since = (datetime.datetime.now(datetime.UTC) - datetime.timedelta(hours=24)).strftime("%Y-%m-%d_%H:%M:00_UTC")
+    since = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=24)).strftime("%Y-%m-%d_%H:%M:00_UTC")
     actor_id = "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest"
     run_url = f"https://api.apify.com/v2/acts/{actor_id}/runs?token={APIFY_TOKEN}"
 

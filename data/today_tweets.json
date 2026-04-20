@@ -1,0 +1,8 @@
+{
+  "date": "2026-04-19",
+  "accounts": [],
+  "tweets": {},
+  "total_tweets": 0,
+  "active_kols": 0,
+  "_fetch_error": "Apify API unreachable: sandbox egress proxy blocked api.apify.com (403 Forbidden, blocked-by-allowlist)"
+}
