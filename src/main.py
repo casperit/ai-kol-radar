@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 AI KOL Daily Digest
-  fetch       - 从 Apify 抓推文 → data/today_tweets.json
+  fetch       - 从 Apify 抓推文 + 行业新闻 → data/today_tweets.json
   publish_web - 读 today_summary.md → 生成 docs/ 网页存档
   publish     - 同上 + 发 Gmail（备用）
 """
@@ -26,6 +26,16 @@ SUMMARY_FILE  = DATA_DIR / "today_summary.md"
 
 MAX_TWEETS_PER_USER = 8
 
+# 行业新闻搜索关键词（每组独立搜索，取热门结果）
+NEWS_QUERIES = [
+    "AI model release OR launch min_faves:500",
+    "OpenAI OR Anthropic OR Google DeepMind announcement min_faves:300",
+    "LLM benchmark OR AI research paper min_faves:200",
+    "AI startup funding OR AI product launch min_faves:200",
+    "AGI OR AI safety news min_faves:300",
+]
+MAX_NEWS_PER_QUERY = 5
+
 
 def load_accounts():
     with open(ACCOUNTS_FILE, encoding="utf-8") as f:
@@ -37,13 +47,13 @@ def load_accounts():
 def fetch_tweets():
     accounts = load_accounts()
     usernames = [a["username"] for a in accounts]
-    print(f"[Apify] 开始抓取 {len(usernames)} 个账号...")
-
     since = (datetime.datetime.now(datetime.UTC) - datetime.timedelta(hours=24)).strftime("%Y-%m-%d_%H:%M:00_UTC")
     actor_id = "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest"
     run_url = f"https://api.apify.com/v2/acts/{actor_id}/runs?token={APIFY_TOKEN}"
 
-    results = {}
+    # ── 1. 抓 KOL 推文 ──
+    print(f"[Apify] 抓取 {len(usernames)} 个 KOL 账号...")
+    kol_results = {}
     for i in range(0, len(usernames), 10):
         batch = usernames[i:i+10]
         payload = {
@@ -54,29 +64,73 @@ def fetch_tweets():
         resp = requests.post(run_url, json=payload, timeout=30)
         resp.raise_for_status()
         run_id = resp.json()["data"]["id"]
-        print(f"  批次 {i//10+1}: run_id={run_id}")
+        print(f"  KOL 批次 {i//10+1}: run_id={run_id}")
         for tweet in _wait_for_run(run_id):
             author = tweet.get("author", {}).get("userName", "").lower()
             if author:
-                results.setdefault(author, []).append({
-                    "text": tweet.get("text", ""),
-                    "created_at": tweet.get("createdAt", ""),
-                    "likes": tweet.get("likeCount", 0),
-                    "retweets": tweet.get("retweetCount", 0),
-                    "url": tweet.get("url", ""),
-                })
+                kol_results.setdefault(author, []).append(_parse_tweet(tweet))
         time.sleep(2)
+
+    print(f"[Apify] KOL 推文完成，共 {sum(len(v) for v in kol_results.values())} 条")
+
+    # ── 2. 抓行业新闻 ──
+    print(f"[Apify] 抓取行业新闻...")
+    news_results = []
+    for query in NEWS_QUERIES:
+        payload = {
+            "searchTerms": [f"{query} since:{since}"],
+            "maxTweets": MAX_NEWS_PER_QUERY,
+            "queryType": "Top",
+        }
+        try:
+            resp = requests.post(run_url, json=payload, timeout=30)
+            resp.raise_for_status()
+            run_id = resp.json()["data"]["id"]
+            items = _wait_for_run(run_id)
+            for tweet in items:
+                news_results.append({
+                    **_parse_tweet(tweet),
+                    "author_name": tweet.get("author", {}).get("name", ""),
+                    "author_handle": tweet.get("author", {}).get("userName", ""),
+                    "query": query.split(" min_faves")[0],
+                })
+            time.sleep(2)
+        except Exception as e:
+            print(f"  [警告] 新闻查询失败: {query[:30]}... {e}")
+
+    # 去重（按推文 id）
+    seen = set()
+    deduped_news = []
+    for n in news_results:
+        tid = n.get("text", "")[:50]
+        if tid not in seen:
+            seen.add(tid)
+            deduped_news.append(n)
+
+    print(f"[Apify] 行业新闻完成，共 {len(deduped_news)} 条")
 
     today = datetime.date.today().strftime("%Y-%m-%d")
     output = {
         "date": today,
         "accounts": accounts,
-        "tweets": results,
-        "total_tweets": sum(len(v) for v in results.values()),
-        "active_kols": len(results),
+        "tweets": kol_results,
+        "news": deduped_news,
+        "total_tweets": sum(len(v) for v in kol_results.values()),
+        "active_kols": len(kol_results),
+        "total_news": len(deduped_news),
     }
     TWEETS_FILE.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[Apify] 完成，共 {output['total_tweets']} 条推文")
+    print(f"[完成] KOL {output['total_tweets']} 条 + 新闻 {output['total_news']} 条")
+
+
+def _parse_tweet(tweet: dict) -> dict:
+    return {
+        "text": tweet.get("text", ""),
+        "created_at": tweet.get("createdAt", ""),
+        "likes": tweet.get("likeCount", 0),
+        "retweets": tweet.get("retweetCount", 0),
+        "url": tweet.get("url", ""),
+    }
 
 
 def _wait_for_run(run_id, timeout=300):
@@ -127,6 +181,7 @@ def _save_archive(date_str, summary, tweets_data):
         "summary": summary,
         "tweet_count": tweets_data.get("total_tweets", 0),
         "kol_count": tweets_data.get("active_kols", 0),
+        "news_count": tweets_data.get("total_news", 0),
     }, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"[存档] {path}")
 
