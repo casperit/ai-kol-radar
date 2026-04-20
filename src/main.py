@@ -47,7 +47,7 @@ def fetch_tweets():
     usernames = [a["username"] for a in accounts]
     print(f"[Apify] 开始抓取 {len(usernames)} 个账号...")
 
-    since = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=24)).strftime("%Y-%m-%d_%H:%M:00_UTC")
+    since = (datetime.datetime.now(datetime.UTC) - datetime.timedelta(hours=24)).strftime("%Y-%m-%d_%H:%M:00_UTC")
     actor_id = "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest"
     run_url = f"https://api.apify.com/v2/acts/{actor_id}/runs?token={APIFY_TOKEN}"
 
@@ -191,7 +191,24 @@ if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "help"
     if cmd == "fetch":
         fetch_tweets()
+    elif cmd == "publish_web":
+        publish_web()
     elif cmd == "publish":
         publish()
     else:
         print("用法：python src/main.py fetch | publish")
+
+
+def publish_web():
+    """只生成网页存档，不发邮件（邮件由 Gmail connector 负责）"""
+    if not SUMMARY_FILE.exists():
+        print("[错误] data/today_summary.md 不存在")
+        sys.exit(1)
+
+    summary = SUMMARY_FILE.read_text(encoding="utf-8")
+    tweets_data = json.loads(TWEETS_FILE.read_text(encoding="utf-8")) if TWEETS_FILE.exists() else {}
+    today = tweets_data.get("date", datetime.date.today().strftime("%Y-%m-%d"))
+
+    _save_archive(today, summary, tweets_data)
+    _generate_web(today, summary)
+    print(f"\n✅ 网页存档完成！日期：{today}")
