@@ -19,26 +19,36 @@ python src/main.py fetch
 从 Apify 抓取所有 KOL 过去24小时的推文，保存到 `data/today_tweets.json`。
 
 ### Step 3：生成总结（你来写）
-读取 `data/today_tweets.json`，根据推文内容，生成一份中英双语日报总结。
+读取 `data/today_tweets.json`，根据推文内容，生成一份详细的中英双语日报总结。
 
-**总结格式：**
+**总结格式要求：**
 
 ```
 【整体摘要 / Daily Overview】
 
-（中文：100-150字，提炼今天3-5个最重要的 AI 话题趋势）
+（中文：200字左右，提炼今天最重要的3-5个话题趋势，要有观点，不要流水账）
 
-(English: 100-150 words, key AI trends and highlights of the day)
+(English: 150 words, key AI trends and highlights, with your own perspective)
 
 ---
 【各KOL详情 / KOL Details】
 
 **@username（备注标签）**
-中文：一句话说他今天讲了什么
-EN: One-sentence English summary
+话题标签：#标签1 #标签2 #标签3
+中文：2-4句话，详细说明他今天发了什么，核心观点是什么，有什么值得关注的
+EN: 2-4 sentences summary in English
+推文原文摘录：
+- "推文关键内容1"（保留原文，如有链接一并保留：https://...）
+- "推文关键内容2"（保留原文）
 
 （每个有推文的 KOL 都列一条，没有推文的跳过）
 ```
+
+**注意：**
+- 每个 KOL 的内容要详细，不要只写一句话
+- 推文里的链接必须保留，放在对应推文后面
+- 话题标签从以下选择：#模型发布 #Vibe编程 #Prompt工程 #AI创业 #开源项目 #AI智能体 #大模型 #AI教育 #独立开发 #MCP工具 #AI工具 #AI研究
+- 如果推文内容很少或不重要，可以简短处理，但不要捏造内容
 
 生成后将总结内容**保存到 `data/today_summary.md`**。
 
@@ -47,7 +57,7 @@ EN: One-sentence English summary
 - 收件人：$GMAIL_TO
 - 主题：🤖 AI KOL 日报 {今天日期}
 - 正文：`data/today_summary.md` 的完整内容
-- 末尾附上网页链接：https://casperit.github.io/ai-kol-radar/
+- 末尾附上：查看网页版 → https://casperit.github.io/ai-kol-radar/
 
 ### Step 5：生成网页存档
 ```bash
