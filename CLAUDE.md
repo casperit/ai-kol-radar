@@ -53,7 +53,7 @@ python src/main.py publish
 ```bash
 git add data/archive/ docs/ data/today_summary.md
 git commit -m "digest: $(date +%Y-%m-%d)"
-git push
+git push origin HEAD:main
 ```
 
 ---
