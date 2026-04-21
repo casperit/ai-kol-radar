@@ -166,7 +166,7 @@ def _build_digest(data: dict):
         acc = accounts_map.get(username, {})
 
         # C方案：按点赞排序，取前5条
-        sorted_tweets = sorted(tweets, key=lambda t: t.get("likes", 0), reverse=True)[:5]
+        sorted_tweets = sorted(tweets, key=lambda t: t.get("likes", 0), reverse=True)[:3]
 
         compressed = []
         for t in sorted_tweets:
@@ -201,10 +201,10 @@ def _build_digest(data: dict):
     news = data.get("news", [])
     # C方案：只保留点赞300+，按点赞排序，最多50条
     filtered_news = sorted(
-        [n for n in news if n.get("likes", 0) >= 300],
+        [n for n in news if n.get("likes", 0) >= 500],
         key=lambda n: n.get("likes", 0),
         reverse=True
-    )[:50]
+    )[:15]
 
     compressed_news = []
     for n in filtered_news:
