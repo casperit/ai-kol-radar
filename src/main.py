@@ -2,11 +2,12 @@
 """
 AI KOL Daily Digest
   fetch       - 从 Apify 抓推文 + 行业新闻 → data/today_tweets.json
+  summarize   - 压缩 + 筛选数据 → data/today_digest.json（供 Claude 读取）
   publish_web - 读 today_summary.md → 生成 docs/ 网页存档
   publish     - 同上 + 发 Gmail（备用）
 """
 
-import json, os, sys, time, smtplib, datetime, requests
+import json, os, sys, time, smtplib, datetime, requests, re
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
@@ -22,11 +23,11 @@ ARCHIVE_DIR   = DATA_DIR / "archive"
 DOCS_DIR      = BASE_DIR / "docs"
 ACCOUNTS_FILE = DATA_DIR / "accounts.json"
 TWEETS_FILE   = DATA_DIR / "today_tweets.json"
+DIGEST_FILE   = DATA_DIR / "today_digest.json"   # 压缩后的精简数据
 SUMMARY_FILE  = DATA_DIR / "today_summary.md"
 
 MAX_TWEETS_PER_USER = 8
 
-# 行业新闻搜索关键词（每组独立搜索，取热门结果）
 NEWS_QUERIES = [
     "AI model release OR launch min_faves:500",
     "OpenAI OR Anthropic OR Google DeepMind announcement min_faves:300",
@@ -34,7 +35,7 @@ NEWS_QUERIES = [
     "AI startup funding OR AI product launch min_faves:200",
     "AGI OR AI safety news min_faves:300",
 ]
-MAX_NEWS_PER_QUERY = 5
+MAX_NEWS_PER_QUERY = 10  # 抓多一点，筛选后留精华
 
 
 def load_accounts():
@@ -51,7 +52,7 @@ def fetch_tweets():
     actor_id = "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest"
     run_url = f"https://api.apify.com/v2/acts/{actor_id}/runs?token={APIFY_TOKEN}"
 
-    # ── 1. 抓 KOL 推文 ──
+    # 1. 抓 KOL 推文
     print(f"[Apify] 抓取 {len(usernames)} 个 KOL 账号...")
     kol_results = {}
     for i in range(0, len(usernames), 10):
@@ -70,10 +71,9 @@ def fetch_tweets():
             if author:
                 kol_results.setdefault(author, []).append(_parse_tweet(tweet))
         time.sleep(2)
+    print(f"[Apify] KOL 完成，共 {sum(len(v) for v in kol_results.values())} 条")
 
-    print(f"[Apify] KOL 推文完成，共 {sum(len(v) for v in kol_results.values())} 条")
-
-    # ── 2. 抓行业新闻 ──
+    # 2. 抓行业新闻
     print(f"[Apify] 抓取行业新闻...")
     news_results = []
     for query in NEWS_QUERIES:
@@ -86,28 +86,26 @@ def fetch_tweets():
             resp = requests.post(run_url, json=payload, timeout=30)
             resp.raise_for_status()
             run_id = resp.json()["data"]["id"]
-            items = _wait_for_run(run_id)
-            for tweet in items:
+            for tweet in _wait_for_run(run_id):
                 news_results.append({
                     **_parse_tweet(tweet),
                     "author_name": tweet.get("author", {}).get("name", ""),
                     "author_handle": tweet.get("author", {}).get("userName", ""),
-                    "query": query.split(" min_faves")[0],
+                    "query_category": query.split(" min_faves")[0],
                 })
             time.sleep(2)
         except Exception as e:
-            print(f"  [警告] 新闻查询失败: {query[:30]}... {e}")
+            print(f"  [警告] 新闻查询失败: {e}")
 
-    # 去重（按推文 id）
-    seen = set()
-    deduped_news = []
+    # 去重
+    seen, deduped_news = set(), []
     for n in news_results:
-        tid = n.get("text", "")[:50]
-        if tid not in seen:
-            seen.add(tid)
+        key = n.get("text", "")[:60]
+        if key not in seen:
+            seen.add(key)
             deduped_news.append(n)
 
-    print(f"[Apify] 行业新闻完成，共 {len(deduped_news)} 条")
+    print(f"[Apify] 新闻完成，共 {len(deduped_news)} 条（去重后）")
 
     today = datetime.date.today().strftime("%Y-%m-%d")
     output = {
@@ -120,7 +118,10 @@ def fetch_tweets():
         "total_news": len(deduped_news),
     }
     TWEETS_FILE.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[完成] KOL {output['total_tweets']} 条 + 新闻 {output['total_news']} 条")
+    print(f"[完成] KOL {output['total_tweets']} 条 + 新闻 {output['total_news']} 条，已保存原始数据")
+
+    # 自动生成精简摘要供 Claude 读取
+    _build_digest(output)
 
 
 def _parse_tweet(tweet: dict) -> dict:
@@ -147,6 +148,95 @@ def _wait_for_run(run_id, timeout=300):
             return []
         time.sleep(10)
     return []
+
+
+# ── 预处理：压缩 + 筛选 ────────────────────────────────────────────────
+
+def _build_digest(data: dict):
+    """
+    A方案：截断长推文到150字，提取链接
+    C方案：KOL 按点赞排序取前5条；新闻只保留点赞300+，最多50条
+    """
+    accounts_map = {a["username"].lower(): a for a in data.get("accounts", [])}
+    today = data.get("date", "")
+
+    # ── KOL 部分 ──
+    kol_digest = []
+    for username, tweets in data.get("tweets", {}).items():
+        acc = accounts_map.get(username, {})
+
+        # C方案：按点赞排序，取前5条
+        sorted_tweets = sorted(tweets, key=lambda t: t.get("likes", 0), reverse=True)[:5]
+
+        compressed = []
+        for t in sorted_tweets:
+            text = t.get("text", "")
+            # 提取链接
+            urls = re.findall(r'https?://\S+', text)
+            # A方案：截断正文到150字
+            clean = re.sub(r'https?://\S+', '', text).strip()
+            if len(clean) > 150:
+                clean = clean[:150] + "..."
+
+            compressed.append({
+                "text": clean,
+                "links": urls[:3],
+                "likes": t.get("likes", 0),
+                "retweets": t.get("retweets", 0),
+            })
+
+        if compressed:
+            kol_digest.append({
+                "username": username,
+                "display_name": acc.get("display_name", username),
+                "note": acc.get("note", ""),
+                "tweets": compressed,
+                "tweet_count": len(tweets),  # 原始总数
+            })
+
+    # 按最高点赞排序 KOL
+    kol_digest.sort(key=lambda k: max((t["likes"] for t in k["tweets"]), default=0), reverse=True)
+
+    # ── 新闻部分 ──
+    news = data.get("news", [])
+    # C方案：只保留点赞300+，按点赞排序，最多50条
+    filtered_news = sorted(
+        [n for n in news if n.get("likes", 0) >= 300],
+        key=lambda n: n.get("likes", 0),
+        reverse=True
+    )[:50]
+
+    compressed_news = []
+    for n in filtered_news:
+        text = n.get("text", "")
+        urls = re.findall(r'https?://\S+', text)
+        clean = re.sub(r'https?://\S+', '', text).strip()
+        if len(clean) > 150:
+            clean = clean[:150] + "..."
+        compressed_news.append({
+            "text": clean,
+            "links": urls[:2],
+            "likes": n.get("likes", 0),
+            "author_handle": n.get("author_handle", ""),
+            "author_name": n.get("author_name", ""),
+            "category": n.get("query_category", ""),
+        })
+
+    digest = {
+        "date": today,
+        "kols": kol_digest,
+        "news": compressed_news,
+        "stats": {
+            "total_kols": len(kol_digest),
+            "total_tweets_raw": data.get("total_tweets", 0),
+            "total_news_raw": data.get("total_news", 0),
+            "news_after_filter": len(compressed_news),
+        }
+    }
+
+    DIGEST_FILE.write_text(json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8")
+    stats = digest["stats"]
+    print(f"[Digest] 压缩完成：{stats['total_kols']} 个KOL，新闻 {stats['total_news_raw']} → {stats['news_after_filter']} 条（300+赞）")
 
 
 # ── publish_web ────────────────────────────────────────────────────────
