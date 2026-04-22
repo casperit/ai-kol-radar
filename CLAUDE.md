@@ -12,51 +12,26 @@
 pip install requests --break-system-packages -q
 ```
 
-### Step 2：抓取推文并预处理
+### Step 2：抓取推文并生成草稿
 ```bash
 python src/main.py fetch
 python src/main.py build_prompt
 ```
-第一条命令抓取数据并生成 `data/today_digest.json`。
-第二条命令把数据转成紧凑文本 `data/today_prompt.txt`，这是你生成总结的数据源。
+完成后会生成 `data/today_prompt.txt`，这是一个带骨架的草稿文件，推文原文已经填好。
 
-### Step 3：生成总结
-读取 `data/today_prompt.txt`，根据里面的内容生成完整日报，**保存到 `data/today_summary.md`**。
+### Step 3：填写总结（你来做）
+读取 `data/today_prompt.txt`，将文件中所有 `[TODO]` 替换为实际内容：
 
-文件格式说明：
-- `=== AI KOL 日报数据 ===` 开头是统计信息
-- `--- 行业新闻 ---` 是 AI 行业热点推文
-- `--- KOL 推文 ---` 是各 KOL 的推文，格式为 `[@handle 备注]` + `♥点赞数 推文内容 | 链接`
+- `[TODO: 中文150字...]` → 写整体中文摘要
+- `[TODO: English 100 words...]` → 写整体英文摘要
+- `[TODO: 中文一句话摘要]` → 每条新闻写一句中文说明
+- `[TODO: #标签1 #标签2]` → 从预设标签选2-3个
+- `[TODO: 1-2句话说核心内容和观点]` → 每个KOL写中文总结
+- `[TODO: 1-2 sentences]` → 每个KOL写英文总结
 
-**日报格式：**
+预设话题标签：#模型发布 #Vibe编程 #Prompt工程 #AI创业 #开源项目 #AI智能体 #大模型 #AI教育 #独立开发 #MCP工具 #AI工具 #AI研究
 
-```
-【整体摘要 / Daily Overview】
-
-（中文：150字，提炼今天3-5个最重要的AI话题趋势，要有观点）
-
-(English: 100 words, key AI trends with your perspective)
-
----
-【行业新闻 / Industry News】
-
-- **事件摘要**：一句话 → 链接（如有）（@handle ♥点赞数）
-
-（选最重要的5-8条）
-
----
-【各KOL详情 / KOL Details】
-
-**@username（备注）**
-话题：#标签1 #标签2
-中文：1-2句话说核心内容和观点
-EN: 1-2 sentences
-摘录："推文内容" → 链接（如有）♥点赞数
-
-（每个有推文的 KOL 都列一条，没有推文的跳过）
-```
-
-话题标签从以下选：#模型发布 #Vibe编程 #Prompt工程 #AI创业 #开源项目 #AI智能体 #大模型 #AI教育 #独立开发 #MCP工具 #AI工具 #AI研究
+填完后将完整内容**保存到 `data/today_summary.md`**（不是修改 today_prompt.txt）。
 
 ### Step 4：用 Gmail connector 发送邮件
 读取 `data/today_summary.md` 完整内容，用 Gmail connector 发送：
