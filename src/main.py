@@ -329,38 +329,56 @@ if __name__ == "__main__":
 
 def build_prompt_text(data: dict) -> str:
     """
-    把 digest 数据转成紧凑的纯文本，供 Claude 直接读取生成总结
-    目标：信息密度高，体积小，Claude 处理快
+    生成带骨架的草稿文件，Claude 只需填写 [TODO] 部分。
+    推文原文已放好，Claude 只加总结句，输出量极小不会超时。
     """
     lines = []
     date = data.get("date", "")
     stats = data.get("stats", {})
 
-    lines.append(f"=== AI KOL 日报数据 {date} ===")
-    lines.append(f"活跃KOL: {stats.get('total_kols',0)} | 原始推文: {stats.get('total_tweets_raw',0)} | 行业新闻: {stats.get('news_after_filter',0)}条(筛选后)")
+    lines.append(f"# AI KOL 日报草稿 {date}")
+    lines.append(f"# 统计：{stats.get('total_kols',0)}个KOL活跃 | 原始推文{stats.get('total_tweets_raw',0)}条 | 新闻{stats.get('news_after_filter',0)}条")
+    lines.append("")
+    lines.append("## 请将下方所有 [TODO] 替换为实际内容，其他内容保持不变，直接保存为 data/today_summary.md")
     lines.append("")
 
+    # 整体摘要占位
+    lines.append("【整体摘要 / Daily Overview】")
+    lines.append("[TODO: 中文150字，提炼今天3-5个最重要的AI话题趋势，要有观点，不要流水账]")
+    lines.append("")
+    lines.append("[TODO: English 100 words, key AI trends with your own perspective]")
+    lines.append("")
+    lines.append("---")
+
     # 行业新闻
-    lines.append("--- 行业新闻 ---")
+    lines.append("【行业新闻 / Industry News】")
+    lines.append("")
     for n in data.get("news", []):
         handle = n.get("author_handle", "")
         text = n.get("text", "").replace("\n", " ")
         likes = n.get("likes", 0)
-        links = " ".join(n.get("links", []))
-        lines.append(f"[@{handle} ♥{likes}] {text}" + (f" | {links}" if links else ""))
+        link = n.get("links", [""])[0] if n.get("links") else ""
+        link_str = f" → {link}" if link else ""
+        lines.append(f"- **[TODO: 中文一句话摘要]**：{text}{link_str} (@{handle} ♥{likes})")
     lines.append("")
+    lines.append("---")
 
-    # KOL 推文
-    lines.append("--- KOL 推文 ---")
+    # KOL 详情
+    lines.append("【各KOL详情 / KOL Details】")
+    lines.append("")
     for kol in data.get("kols", []):
         username = kol.get("username", "")
         note = kol.get("note", "")
-        lines.append(f"[@{username} {note}]")
+        lines.append(f"**@{username}（{note}）**")
+        lines.append("话题：[TODO: #标签1 #标签2]")
+        lines.append("中文：[TODO: 1-2句话说核心内容和观点]")
+        lines.append("EN: [TODO: 1-2 sentences]")
         for t in kol.get("tweets", []):
             text = t.get("text", "").replace("\n", " ")
             likes = t.get("likes", 0)
-            links = " ".join(t.get("links", []))
-            lines.append(f"  ♥{likes} {text}" + (f" | {links}" if links else ""))
+            link = t.get("links", [""])[0] if t.get("links") else ""
+            link_str = f" → {link}" if link else ""
+            lines.append(f'- "{text}"{link_str} ♥{likes}')
         lines.append("")
 
     return "\n".join(lines)
