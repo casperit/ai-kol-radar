@@ -15,11 +15,20 @@ pip install requests --break-system-packages -q
 ### Step 2：抓取推文并预处理
 ```bash
 python src/main.py fetch
+python src/main.py build_prompt
 ```
-生成 `data/today_digest.json`（精简版）和 `data/today_tweets.json`（原始版）。
+第一条命令抓取数据并生成 `data/today_digest.json`。
+第二条命令把数据转成紧凑文本 `data/today_prompt.txt`，这是你生成总结的数据源。
 
-### Step 3a：生成第一部分——整体摘要 + 行业新闻
-读取 `data/today_digest.json` 的 `stats` 和 `news` 字段，生成以下内容并**保存到 `data/today_summary.md`**（覆盖写入）：
+### Step 3：生成总结
+读取 `data/today_prompt.txt`，根据里面的内容生成完整日报，**保存到 `data/today_summary.md`**。
+
+文件格式说明：
+- `=== AI KOL 日报数据 ===` 开头是统计信息
+- `--- 行业新闻 ---` 是 AI 行业热点推文
+- `--- KOL 推文 ---` 是各 KOL 的推文，格式为 `[@handle 备注]` + `♥点赞数 推文内容 | 链接`
+
+**日报格式：**
 
 ```
 【整体摘要 / Daily Overview】
@@ -31,39 +40,30 @@ python src/main.py fetch
 ---
 【行业新闻 / Industry News】
 
-（从 news 字段选最重要的5-8条，格式：）
-- **事件摘要**：一句话说清楚 → 链接（如有）（来源：@handle ♥ 点赞数）
-```
+- **事件摘要**：一句话 → 链接（如有）（@handle ♥点赞数）
 
-完成后告诉我"第一部分完成"。
+（选最重要的5-8条）
 
-### Step 3b：生成第二部分——KOL 详情
-读取 `data/today_digest.json` 的 `kols` 字段，生成以下内容并**追加到 `data/today_summary.md`**（不要覆盖）：
-
-```
 ---
 【各KOL详情 / KOL Details】
 
-**@username（备注标签）**
-话题标签：#标签1 #标签2
-中文：2-3句话说明今天的核心内容和观点
-EN: 2-3 sentences English summary
-推文摘录：
-- "推文内容" → 链接（如有）♥ 点赞数
+**@username（备注）**
+话题：#标签1 #标签2
+中文：1-2句话说核心内容和观点
+EN: 1-2 sentences
+摘录："推文内容" → 链接（如有）♥点赞数
 
 （每个有推文的 KOL 都列一条，没有推文的跳过）
 ```
 
 话题标签从以下选：#模型发布 #Vibe编程 #Prompt工程 #AI创业 #开源项目 #AI智能体 #大模型 #AI教育 #独立开发 #MCP工具 #AI工具 #AI研究
 
-完成后告诉我"第二部分完成"。
-
 ### Step 4：用 Gmail connector 发送邮件
 读取 `data/today_summary.md` 完整内容，用 Gmail connector 发送：
 - 收件人：$GMAIL_TO
 - 主题：🤖 AI KOL 日报 {今天日期}
-- 正文：today_summary.md 的完整内容
-- 末尾附：查看网页版 → https://casperit.github.io/ai-kol-radar/
+- 正文：today_summary.md 完整内容
+- 末尾：查看网页版 → https://casperit.github.io/ai-kol-radar/
 
 ### Step 5：生成网页存档
 ```bash
@@ -72,7 +72,7 @@ python src/main.py publish_web
 
 ### Step 6：提交并推送到 main 分支
 ```bash
-git add data/archive/ docs/ data/today_summary.md data/today_tweets.json data/today_digest.json
+git add data/archive/ docs/ data/today_summary.md data/today_tweets.json data/today_digest.json data/today_prompt.txt
 git commit -m "digest: $(date +%Y-%m-%d)"
 git push origin HEAD:main
 ```
