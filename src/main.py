@@ -312,9 +312,55 @@ if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "help"
     if cmd == "fetch":
         fetch_tweets()
+    elif cmd == "build_prompt":
+        data = json.loads(DIGEST_FILE.read_text(encoding="utf-8"))
+        prompt_text = build_prompt_text(data)
+        prompt_file = DATA_DIR / "today_prompt.txt"
+        prompt_file.write_text(prompt_text, encoding="utf-8")
+        size_kb = len(prompt_text.encode()) / 1024
+        print(f"[Prompt] 已生成 today_prompt.txt，大小 {size_kb:.1f} KB，共 {len(prompt_text.splitlines())} 行")
     elif cmd == "publish_web":
         publish_web()
     elif cmd == "publish":
         publish()
     else:
         print("用法: python src/main.py fetch | publish_web | publish")
+
+
+def build_prompt_text(data: dict) -> str:
+    """
+    把 digest 数据转成紧凑的纯文本，供 Claude 直接读取生成总结
+    目标：信息密度高，体积小，Claude 处理快
+    """
+    lines = []
+    date = data.get("date", "")
+    stats = data.get("stats", {})
+
+    lines.append(f"=== AI KOL 日报数据 {date} ===")
+    lines.append(f"活跃KOL: {stats.get('total_kols',0)} | 原始推文: {stats.get('total_tweets_raw',0)} | 行业新闻: {stats.get('news_after_filter',0)}条(筛选后)")
+    lines.append("")
+
+    # 行业新闻
+    lines.append("--- 行业新闻 ---")
+    for n in data.get("news", []):
+        handle = n.get("author_handle", "")
+        text = n.get("text", "").replace("\n", " ")
+        likes = n.get("likes", 0)
+        links = " ".join(n.get("links", []))
+        lines.append(f"[@{handle} ♥{likes}] {text}" + (f" | {links}" if links else ""))
+    lines.append("")
+
+    # KOL 推文
+    lines.append("--- KOL 推文 ---")
+    for kol in data.get("kols", []):
+        username = kol.get("username", "")
+        note = kol.get("note", "")
+        lines.append(f"[@{username} {note}]")
+        for t in kol.get("tweets", []):
+            text = t.get("text", "").replace("\n", " ")
+            likes = t.get("likes", 0)
+            links = " ".join(t.get("links", []))
+            lines.append(f"  ♥{likes} {text}" + (f" | {links}" if links else ""))
+        lines.append("")
+
+    return "\n".join(lines)
