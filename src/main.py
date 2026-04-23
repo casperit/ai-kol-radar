@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 AI KOL Daily Digest
-  fetch       - 抓推文 + 行业新闻 → today_tweets.json + today_digest.json
-  summarize   - Python整理内容 + Claude API写摘要 → today_summary.md
-  publish_web - 生成网页存档
-  publish     - publish_web + 发Gmail
+  fetch       - 抓推文 + 行业新闻
+  summarize   - 生成总结（Claude API 写摘要，Python 整理详情）
+  publish_web - 生成网页
+  publish     - publish_web + Gmail
 """
 
 import json, os, sys, time, re, smtplib, datetime, requests
@@ -26,7 +26,7 @@ TWEETS_FILE   = DATA_DIR / "today_tweets.json"
 DIGEST_FILE   = DATA_DIR / "today_digest.json"
 SUMMARY_FILE  = DATA_DIR / "today_summary.md"
 
-MAX_TWEETS_PER_USER = 8
+MAX_TWEETS_PER_USER = 10
 NEWS_QUERIES = [
     "AI model release OR launch min_faves:500",
     "OpenAI OR Anthropic OR Google DeepMind announcement min_faves:300",
@@ -51,7 +51,6 @@ def fetch_tweets():
     actor_id = "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest"
     run_url = f"https://api.apify.com/v2/acts/{actor_id}/runs?token={APIFY_TOKEN}"
 
-    # KOL 推文
     print(f"[Apify] 抓取 {len(usernames)} 个KOL...")
     kol_results = {}
     for i in range(0, len(usernames), 10):
@@ -71,7 +70,6 @@ def fetch_tweets():
                 kol_results.setdefault(author, []).append(_parse_tweet(tweet))
         time.sleep(2)
 
-    # 行业新闻
     print("[Apify] 抓取行业新闻...")
     news_results = []
     for query in NEWS_QUERIES:
@@ -95,7 +93,6 @@ def fetch_tweets():
         except Exception as e:
             print(f"  [警告] {e}")
 
-    # 去重
     seen, deduped = set(), []
     for n in news_results:
         key = n.get("text", "")[:60]
@@ -114,8 +111,6 @@ def fetch_tweets():
         "total_news": len(deduped),
     }
     TWEETS_FILE.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    # 自动生成 digest
     _build_digest(output)
     print(f"[完成] KOL {output['total_tweets']} 条 + 新闻 {output['total_news']} 条")
 
@@ -140,33 +135,52 @@ def _wait_for_run(run_id, timeout=300):
             items = requests.get(dataset_url, timeout=10).json()
             return items if isinstance(items, list) else []
         elif status in ("FAILED", "ABORTED", "TIMED-OUT"):
-            print(f"  [警告] run {run_id}: {status}")
+            print(f"  [警告] {run_id}: {status}")
             return []
         time.sleep(10)
     return []
 
 
+def _is_quality_tweet(text: str) -> bool:
+    """过滤低质量推文：纯回复、无内容、太短"""
+    t = text.strip()
+    # 纯回复（以 @某人 开头且正文很短）
+    if re.match(r'^@\w+\s*$', t):
+        return False
+    if re.match(r'^@\w+\s+\S{0,20}\s*$', t):
+        return False
+    # 去掉链接后太短
+    clean = re.sub(r'https?://\S+', '', t).strip()
+    if len(clean) < 20:
+        return False
+    return True
+
+
 def _build_digest(data):
     accounts_map = {a["username"].lower(): a for a in data.get("accounts", [])}
 
-    # KOL：按点赞排序，每人最多3条，正文截断150字
     kol_digest = []
     for username, tweets in data.get("tweets", {}).items():
         acc = accounts_map.get(username, {})
-        sorted_tweets = sorted(tweets, key=lambda t: t.get("likes", 0), reverse=True)[:3]
+
+        # 过滤低质量推文，再按点赞排序取前5条
+        quality = [t for t in tweets if _is_quality_tweet(t.get("text", ""))]
+        top = sorted(quality, key=lambda t: t.get("likes", 0), reverse=True)[:5]
+
         compressed = []
-        for t in sorted_tweets:
+        for t in top:
             text = t.get("text", "")
             urls = re.findall(r'https?://\S+', text)
             clean = re.sub(r'https?://\S+', '', text).strip()
-            if len(clean) > 150:
-                clean = clean[:150] + "..."
+            if len(clean) > 200:
+                clean = clean[:200] + "..."
             compressed.append({
                 "text": clean,
                 "links": urls[:2],
                 "likes": t.get("likes", 0),
                 "retweets": t.get("retweets", 0),
             })
+
         if compressed:
             kol_digest.append({
                 "username": username,
@@ -174,25 +188,32 @@ def _build_digest(data):
                 "note": acc.get("note", ""),
                 "tweets": compressed,
             })
-    kol_digest.sort(key=lambda k: max((t["likes"] for t in k["tweets"]), default=0), reverse=True)
 
-    # 新闻：500赞以上，最多15条
+    kol_digest.sort(
+        key=lambda k: max((t["likes"] for t in k["tweets"]), default=0),
+        reverse=True
+    )
+
+    # 新闻：过滤低质量，500赞以上，最多15条
     filtered_news = sorted(
-        [n for n in data.get("news", []) if n.get("likes", 0) >= 500],
+        [n for n in data.get("news", [])
+         if n.get("likes", 0) >= 500 and _is_quality_tweet(n.get("text", ""))],
         key=lambda n: n.get("likes", 0), reverse=True
     )[:15]
+
     compressed_news = []
     for n in filtered_news:
         text = n.get("text", "")
         urls = re.findall(r'https?://\S+', text)
         clean = re.sub(r'https?://\S+', '', text).strip()
-        if len(clean) > 150:
-            clean = clean[:150] + "..."
+        if len(clean) > 200:
+            clean = clean[:200] + "..."
         compressed_news.append({
             "text": clean,
             "links": urls[:2],
             "likes": n.get("likes", 0),
             "author_handle": n.get("author_handle", ""),
+            "author_name": n.get("author_name", ""),
             "category": n.get("category", ""),
         })
 
@@ -208,101 +229,97 @@ def _build_digest(data):
         }
     }
     DIGEST_FILE.write_text(json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[Digest] {len(kol_digest)}个KOL，新闻{len(compressed_news)}条")
+    print(f"[Digest] {len(kol_digest)}个KOL，新闻{len(compressed_news)}条（过滤后）")
 
 
 # ── summarize ──────────────────────────────────────────────────────────
 
 def summarize():
-    """
-    Python 直接生成 KOL 详情和新闻列表
-    只调用 Claude API 生成整体摘要（输出很短，不会超时）
-    """
     digest = json.loads(DIGEST_FILE.read_text(encoding="utf-8"))
-    date = digest.get("date", datetime.date.today().strftime("%Y-%m-%d"))
 
     print("[摘要] 调用 Claude API 生成整体摘要...")
     overview = _call_claude_for_overview(digest)
 
-    print("[摘要] Python 生成详细内容...")
+    print("[摘要] 生成详细内容...")
     body = _build_body(digest)
 
     full = f"{overview}\n\n---\n{body}"
     SUMMARY_FILE.write_text(full, encoding="utf-8")
-    print(f"[摘要] 已保存 today_summary.md ({len(full)} 字符)")
+    print(f"[摘要] 完成，{len(full)} 字符")
 
 
 def _call_claude_for_overview(digest: dict) -> str:
-    """只让 Claude 写整体摘要，输出控制在200字以内"""
+    # 给 Claude 的精简输入：每个KOL最高赞推文 + 前10条新闻
+    kol_lines = []
+    for kol in digest.get("kols", [])[:25]:
+        top = kol.get("tweets", [{}])[0].get("text", "")[:100]
+        kol_lines.append(f"@{kol['username']}({kol['note']}): {top}")
 
-    # 构造给 Claude 的简短数据描述
-    kol_highlights = []
-    for kol in digest.get("kols", [])[:20]:  # 只取前20个
-        username = kol.get("username", "")
-        note = kol.get("note", "")
-        top_tweet = kol.get("tweets", [{}])[0].get("text", "")[:80]
-        kol_highlights.append(f"@{username}({note}): {top_tweet}")
-
-    news_highlights = []
+    news_lines = []
     for n in digest.get("news", [])[:10]:
-        news_highlights.append(f"♥{n.get('likes',0)} {n.get('text','')[:80]}")
+        news_lines.append(f"♥{n.get('likes',0)} @{n.get('author_handle','')}: {n.get('text','')[:100]}")
 
-    prompt = f"""以下是今日({digest.get('date','')}) AI领域的推文摘要，请用中英双语各写一段整体摘要（各100字左右），提炼最重要的3-5个话题趋势，要有观点。
+    prompt = f"""今日({digest.get('date','')}) AI领域动态，请写中英双语整体摘要（各约100字），提炼3-5个最重要话题趋势，要有观点不要流水账。
 
-KOL动态：
-{chr(10).join(kol_highlights)}
+KOL动态（按热度）：
+{chr(10).join(kol_lines)}
 
 行业新闻：
-{chr(10).join(news_highlights)}
+{chr(10).join(news_lines)}
 
-输出格式：
+输出格式（严格遵守）：
 【整体摘要 / Daily Overview】
 
-（中文摘要，100字左右）
+（中文摘要100字）
 
-(English summary, ~100 words)"""
+(English summary ~100 words)"""
 
     try:
         import anthropic
         client = anthropic.Anthropic()
-        message = client.messages.create(
+        msg = client.messages.create(
             model="claude-sonnet-4-20250514",
-            max_tokens=500,
+            max_tokens=600,
             messages=[{"role": "user", "content": prompt}],
         )
-        return message.content[0].text
+        print("  [Claude API] 摘要生成成功 ✓")
+        return msg.content[0].text
     except Exception as e:
-        print(f"  [警告] Claude API 调用失败: {e}，使用备用摘要")
+        print(f"  [警告] Claude API 失败: {e}，使用备用摘要")
         return _fallback_overview(digest)
 
 
 def _fallback_overview(digest: dict) -> str:
-    """Claude API 失败时的备用摘要"""
     stats = digest.get("stats", {})
-    date = digest.get("date", "")
     return f"""【整体摘要 / Daily Overview】
 
-今日共有 {stats.get('total_kols', 0)} 位 AI 领域 KOL 活跃，发布 {stats.get('total_tweets_raw', 0)} 条推文，行业新闻 {stats.get('news_after_filter', 0)} 条。
+今日共 {stats.get('total_kols', 0)} 位 KOL 活跃，发布 {stats.get('total_tweets_raw', 0)} 条推文，精选行业新闻 {stats.get('news_after_filter', 0)} 条。
 
-Today {stats.get('total_kols', 0)} AI KOLs were active with {stats.get('total_tweets_raw', 0)} tweets and {stats.get('news_after_filter', 0)} industry news items."""
+Today {stats.get('total_kols', 0)} KOLs were active with {stats.get('total_tweets_raw', 0)} tweets and {stats.get('news_after_filter', 0)} curated industry news items."""
 
 
 def _build_body(digest: dict) -> str:
-    """Python 直接生成新闻列表和 KOL 详情，无需 AI"""
     lines = []
 
     # 行业新闻
     lines.append("【行业新闻 / Industry News】")
     lines.append("")
-    for n in digest.get("news", []):
-        handle = n.get("author_handle", "")
-        text = n.get("text", "")
-        likes = n.get("likes", 0)
-        links = n.get("links", [])
-        link_str = f" → {links[0]}" if links else ""
-        lines.append(f"- {text}{link_str} (@{handle} ♥{likes:,})")
-    lines.append("")
+    news = digest.get("news", [])
+    if news:
+        for n in news:
+            handle = n.get("author_handle", "")
+            text = n.get("text", "")
+            likes = n.get("likes", 0)
+            links = n.get("links", [])
+            link_str = f"  \n  → {links[0]}" if links else ""
+            lines.append(f"- **@{handle}** ♥{likes:,}  \n  {text}{link_str}")
+            lines.append("")
+    else:
+        lines.append("（今日无符合条件的行业新闻）")
+        lines.append("")
+
     lines.append("---")
+    lines.append("")
 
     # KOL 详情
     lines.append("【各KOL详情 / KOL Details】")
@@ -311,12 +328,18 @@ def _build_body(digest: dict) -> str:
         username = kol.get("username", "")
         note = kol.get("note", "")
         lines.append(f"**@{username}（{note}）**")
+        lines.append("")
         for t in kol.get("tweets", []):
             text = t.get("text", "")
             likes = t.get("likes", 0)
+            retweets = t.get("retweets", 0)
             links = t.get("links", [])
-            link_str = f" → {links[0]}" if links else ""
-            lines.append(f"- {text}{link_str} ♥{likes:,}")
+            lines.append(f"> {text}")
+            if links:
+                lines.append(f"> → {links[0]}")
+            lines.append(f"> ♥{likes:,} &nbsp; ↺{retweets:,}")
+            lines.append("")
+        lines.append("---")
         lines.append("")
 
     return "\n".join(lines)
@@ -326,11 +349,12 @@ def _build_body(digest: dict) -> str:
 
 def publish_web():
     if not SUMMARY_FILE.exists():
-        print("[错误] data/today_summary.md 不存在，请先运行 summarize")
+        print("[错误] today_summary.md 不存在")
         sys.exit(1)
 
     summary = SUMMARY_FILE.read_text(encoding="utf-8")
     tweets_data = json.loads(TWEETS_FILE.read_text(encoding="utf-8")) if TWEETS_FILE.exists() else {}
+    digest_data = json.loads(DIGEST_FILE.read_text(encoding="utf-8")) if DIGEST_FILE.exists() else {}
     accounts = load_accounts()
     today = tweets_data.get("date", datetime.date.today().strftime("%Y-%m-%d"))
 
@@ -339,11 +363,11 @@ def publish_web():
     sys.path.insert(0, str(Path(__file__).parent))
     from web_generator import build_daily_page, build_index_page, build_kol_page, build_topic_page
 
-    build_daily_page(today, summary, DOCS_DIR, tweets_data)
+    build_daily_page(today, digest_data, DOCS_DIR)
     build_index_page(ARCHIVE_DIR, DOCS_DIR)
     build_kol_page(ARCHIVE_DIR, DOCS_DIR, accounts)
     build_topic_page(ARCHIVE_DIR, DOCS_DIR)
-    print(f"[网页] 已生成 ✓")
+    print("[网页] 生成完成 ✓")
 
 
 def _save_archive(date_str, summary, tweets_data):
@@ -359,8 +383,6 @@ def _save_archive(date_str, summary, tweets_data):
     print(f"[存档] {path}")
 
 
-# ── publish ────────────────────────────────────────────────────────────
-
 def publish():
     publish_web()
     if not GMAIL_USER:
@@ -372,24 +394,20 @@ def publish():
 
 
 def _send_email(summary, date_str):
-    print("[Gmail] 发送邮件...")
-    html_body = summary.replace("\n", "<br>")
+    print("[Gmail] 发送...")
     msg = MIMEMultipart("alternative")
     msg["Subject"] = f"🤖 AI KOL 日报 {date_str}"
     msg["From"] = GMAIL_USER
     msg["To"] = GMAIL_TO
     msg.attach(MIMEText(summary, "plain", "utf-8"))
-    msg.attach(MIMEText(f"<html><body style='font-family:sans-serif;max-width:700px;margin:0 auto;padding:20px'>{html_body}</body></html>", "html", "utf-8"))
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
             s.login(GMAIL_USER, GMAIL_PASSWORD)
             s.sendmail(GMAIL_USER, GMAIL_TO, msg.as_string())
-        print(f"[Gmail] 发送成功 → {GMAIL_TO} ✓")
+        print(f"[Gmail] 发送成功 ✓")
     except Exception as e:
-        print(f"[Gmail] 发送失败: {e}")
+        print(f"[Gmail] 失败: {e}")
 
-
-# ── 入口 ───────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "help"
