@@ -1,0 +1,965 @@
+{
+  "date": "2026-04-23",
+  "kols": [
+    {
+      "username": "hayami_kiraa",
+      "display_name": "Hayami_kiraa",
+      "note": "AI Builder和内容创作者路线，连接产品、创作和增长",
+      "tweets": [
+        {
+          "text": "我觉得 Tim Cook 有一个贡献很少被提及的，就是他公开的同性恋身份。不管是本人形象，还是 apple 产品里这几年越来越多的彩虹元素。\n\nApple 的 emoji 体系也是一大体现。举个例子，如果你打「攀岩」表情，会出现男性、女性和非二元性别。这个在2019年后，就被 Unicode Con...",
+          "links": [],
+          "likes": 5423,
+          "retweets": 482
+        },
+        {
+          "text": "@craigaryhart 对特权者来说，平等即是一种压迫🤷",
+          "links": [],
+          "likes": 434,
+          "retweets": 13
+        },
+        {
+          "text": "下个月去挪威 solo trip, 本来只是想去迎接30岁生日。没想到福至心灵搜了一下，发现《世界上最糟糕的人》居然就是在奥斯陆拍的!!!! 天呐呐呐呐呐，这是我人生最爱电影没有之一。一想到我将在29岁最后一天落地奥斯陆，进入最爱的电影拍摄地里圣地巡礼，就觉得幸福冲昏了天灵盖啊啊啊啊。\n\n而且我的生...",
+          "links": [],
+          "likes": 41,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "hesamation",
+      "display_name": "ℏεsam",
+      "note": "AI/ML综合之王（深度学习前沿）",
+      "tweets": [
+        {
+          "text": "Kimi K2.6 is the only thing at this point that’s stopping frontier companies from raising their prices. they’ve earned respect.",
+          "links": [
+            "https://t.co/WZ7uET1xAk"
+          ],
+          "likes": 2660,
+          "retweets": 100
+        },
+        {
+          "text": "Codex users when there’s a 10 minute outage.",
+          "links": [
+            "https://t.co/7sFkale6IK"
+          ],
+          "likes": 1139,
+          "retweets": 36
+        },
+        {
+          "text": "“Yes, I did delete your live database. I should’ve warned you. Would you like me to make a table on what happened? 👉🏻👈🏻”",
+          "links": [
+            "https://t.co/VfbYNqQpUH"
+          ],
+          "likes": 860,
+          "retweets": 35
+        }
+      ]
+    },
+    {
+      "username": "op7418",
+      "display_name": "op7418",
+      "note": "AIGC周刊主理人，AI绘画、视频生成、设计工作流和工具趋势",
+      "tweets": [
+        {
+          "text": "坏了！这下真能玩了\n\n用 Seedance 2.0 直接把GPT Image 2 生成的 ARPG 《金瓶梅》游戏做成动态的了\n\nUI 交互和两个画面之间的衔接都做了",
+          "links": [
+            "https://t.co/mIobnn5iJw"
+          ],
+          "likes": 2553,
+          "retweets": 204
+        },
+        {
+          "text": "又跑了一条《黑神话：林冲》的游戏演示，这个效果超级好！\n\nGPT-Image-2.0 + Seedance 2.0\n\n所有的交互 UI 全都是动的，而且还有台词。\n\n要不是画面这个涂抹感，我真看不出来！",
+          "links": [
+            "https://t.co/ekm8vjrksx"
+          ],
+          "likes": 701,
+          "retweets": 72
+        },
+        {
+          "text": "Agent 可以被分享以后，协作自然而然发生\n\n发现一个非常有意思的产品！\n\nBloome 可以把你本地的 Agent 和线上 Agent 拉群。\n\n比如说龙虾、Claude Code 和 CodeX 都能在一个群里协作。\n\n这样的话，你完全可以让你多个 Agent 的上下文和能力都在一个群里协作完...",
+          "links": [],
+          "likes": 64,
+          "retweets": 5
+        }
+      ]
+    },
+    {
+      "username": "levelsio",
+      "display_name": "@levelsio",
+      "note": "单人创业之神（不靠VC硬核造产品）",
+      "tweets": [
+        {
+          "text": "IT WORKS!!\n\nI can now successfully find gyms with a REAL gym with barbells, plates, and power racks 🏋️‍♀️\n\nNo shitty hotel gyms with just a treadmill ...",
+          "links": [
+            "https://t.co/l9dHPYdmrM"
+          ],
+          "likes": 1385,
+          "retweets": 24
+        },
+        {
+          "text": "I got that little Home Assistant box \n\nI can highly recommend Home Assistant in general, I was recommended it by @johnonolan and @daniellockyer I reme...",
+          "links": [
+            "https://t.co/q6afmz6k14"
+          ],
+          "likes": 659,
+          "retweets": 15
+        },
+        {
+          "text": "Today I hacked my Home Assistant with AI to nuke the bright white LED spots that came with my house when I bought it\n\nThey're absolutely horrific to l...",
+          "links": [],
+          "likes": 399,
+          "retweets": 3
+        }
+      ]
+    },
+    {
+      "username": "emollick",
+      "display_name": "Ethan Mollick",
+      "note": "AI科学之王（最靠谱研究解读）",
+      "tweets": [
+        {
+          "text": "Every system that was regulated, either explicitly or implicitly, by the fact that they were effortful for humans (letters of recommendation, lawsuits...",
+          "links": [],
+          "likes": 962,
+          "retweets": 149
+        },
+        {
+          "text": "This wasn't the case with previous image generators, but the LLM you select has a huge effect on GPT-imagegen-2  output. GPT-5.4 Thinking and GPT-5.4 ...",
+          "links": [],
+          "likes": 754,
+          "retweets": 29
+        },
+        {
+          "text": "GPT-ImageGen-2 did this in one shot, with just the prompt \"turn all of Tennyson's Ulysses into a comic, across as many pages as needed. make it great,...",
+          "links": [
+            "https://t.co/Fg2qLlA0vj"
+          ],
+          "likes": 289,
+          "retweets": 27
+        }
+      ]
+    },
+    {
+      "username": "steipete",
+      "display_name": "Peter Steinberger 🦞",
+      "note": "OpenClaw缔造者（实战黑马）",
+      "tweets": [
+        {
+          "text": "8 React components per line 😅",
+          "links": [],
+          "likes": 747,
+          "retweets": 20
+        },
+        {
+          "text": "I love these",
+          "links": [],
+          "likes": 76,
+          "retweets": 3
+        },
+        {
+          "text": "@Psychohistory0 @openclaw This one looks great, taking over.",
+          "links": [],
+          "likes": 59,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "gregisenberg",
+      "display_name": "GREG ISENBERG",
+      "note": "创业点子之神（每天脑洞大开）",
+      "tweets": [
+        {
+          "text": "You know what fires me up?\n\nThat this is the greatest time ever to build a company (thanks to AI).\n\nMy first startup I built in college took 1.5 years...",
+          "links": [],
+          "likes": 546,
+          "retweets": 49
+        },
+        {
+          "text": "chatgpt images 2.0 has been live for 24h so let's dig in\n\nhow to use ChatGPT Images 2.0 to create product photos, brand books, UI mockups, and ad crea...",
+          "links": [],
+          "likes": 295,
+          "retweets": 21
+        },
+        {
+          "text": "I have 3 open guest spots on @startupideaspod \n\nIf you could sit in on a conversation between me and anyone in the AI or startup world, who would it b...",
+          "links": [],
+          "likes": 167,
+          "retweets": 5
+        }
+      ]
+    },
+    {
+      "username": "rileybrown",
+      "display_name": "Riley Brown",
+      "note": "Vibecode天皇（氛围感拉满的代码）",
+      "tweets": [
+        {
+          "text": "This animation is one shotted on Codex with 5.4.\n\nWorking on a skill that uses @QuiverAI to generate SVG characters then animates the character.\n\nI'm ...",
+          "links": [
+            "https://t.co/S5HPGGggkD"
+          ],
+          "likes": 380,
+          "retweets": 9
+        },
+        {
+          "text": "GPT-Image-2 Doesn't have transparent background.\nWhat is the best background remover API.",
+          "links": [],
+          "likes": 265,
+          "retweets": 1
+        },
+        {
+          "text": "So many people are sending me their Codex workflows. This is wild. Here’s the YouTube video.",
+          "links": [
+            "https://t.co/FhgfwRMSkL"
+          ],
+          "likes": 189,
+          "retweets": 4
+        }
+      ]
+    },
+    {
+      "username": "lijigang",
+      "display_name": "lijigang",
+      "note": "深度Prompt探索者，AI思考、创意应用和方法论总结",
+      "tweets": [
+        {
+          "text": "弄了个高桥流skill，赶场分享时，五分钟可以掏出一个PPT来。",
+          "links": [
+            "https://t.co/q09sMEa5RO"
+          ],
+          "likes": 314,
+          "retweets": 52
+        },
+        {
+          "text": "举办活动的第一要义：\n\n要对得起大家的时间",
+          "links": [],
+          "likes": 28,
+          "retweets": 0
+        },
+        {
+          "text": "“一句话直出 x”，意味着稀缺性不再是 x。",
+          "links": [],
+          "likes": 28,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "amirmushich",
+      "display_name": "AmirMušić",
+      "note": "AI广告之王（投放直接起飞）",
+      "tweets": [
+        {
+          "text": "Nano Banana smart prompt:\n\n3D brand icon render \nPrompt 👇\n\nGrab more designer prompts in my pinned 📌",
+          "links": [
+            "https://t.co/SgOoeYHyUm"
+          ],
+          "likes": 263,
+          "retweets": 24
+        },
+        {
+          "text": "Nano Banana + Figma = ad creative\n\nCrafted a 3-min sketch using this generated mockup\n\n> Head font: Druk Medium\n      └──  Letter spacing = \"0%\"\n     ...",
+          "links": [],
+          "likes": 127,
+          "retweets": 17
+        },
+        {
+          "text": "Warner Music Group rebrand kit in GPT Image 2\n\nSingle-prompted the \"new brand style\"\nNo refs, just text (prompt below) \n\n\"Good & bad\" notes:\n🟢 visual ...",
+          "links": [],
+          "likes": 68,
+          "retweets": 4
+        }
+      ]
+    },
+    {
+      "username": "dotey",
+      "display_name": "dotey",
+      "note": "中文AI圈高频信息源，Prompt工程、AI实战、前沿工具与模型解读",
+      "tweets": [
+        {
+          "text": "这个通过寓言故事学习概念的提示词真的很棒，我做了一点点小调整，方便你使用\n\n--- 提示词 ---\n\n我在学习：【Agent Harness】 这个概念。\n\n我希望你通过写一个寓言的方式，间接地把这个概念完整讲出来。最好一直到快结尾时，人才会慢慢意识到这个概念究竟是什么。然后在故事之后，再补一段解释...",
+          "links": [],
+          "likes": 241,
+          "retweets": 35
+        },
+        {
+          "text": "陈天桥的推文，借 Manus 的事谈在监管、地缘政治和公众审视都在快速变化的时代，跨多个司法管辖区建一家 AI 公司，到底需要什么。\n\n他的主要观点：\n\n第一，AI 的最高目标不是模仿人类，而是扩展人类的发现和认知边界。这个判断来自他和太太过去十多年通过 TCCI（陈天桥雒芊芊研究院）做脑科学研究的...",
+          "links": [],
+          "likes": 175,
+          "retweets": 27
+        },
+        {
+          "text": "OpenAI 今天发布了 ChatGPT 的“工作区智能体”（Workspace Agents）功能，让企业用户可以在 ChatGPT 里直接搭建能跨工具、跨团队自动执行工作流的 AI 智能体。\n\n这个功能的核心思路是：你描述一项工作的逻辑和规则，ChatGPT 帮你把它变成一个可以自己跑起来的智能...",
+          "links": [],
+          "likes": 90,
+          "retweets": 11
+        }
+      ]
+    },
+    {
+      "username": "marclou",
+      "display_name": "Marc Lou",
+      "note": "单人创业之神（又一个狠人）",
+      "tweets": [
+        {
+          "text": "✅ ACQUIRED on @trust_mrr\n\n$0 MRR SaaS sold for $800.\n\nI was surprised, too, but apparently, you can still sell code in the AI era.",
+          "links": [
+            "https://t.co/jQk8wGb1s4"
+          ],
+          "likes": 221,
+          "retweets": 4
+        },
+        {
+          "text": "... we're already 300 🤯\n\nThis is likely going to be the biggest meetup I've hosted, which makes me excited and terrified at the same time 😂 \n\nIf you l...",
+          "links": [],
+          "likes": 150,
+          "retweets": 0
+        },
+        {
+          "text": "My little app has made 306 people sit like functioning humans for 2,791,980 seconds\n\n🦐➡️🪑",
+          "links": [],
+          "likes": 114,
+          "retweets": 2
+        }
+      ]
+    },
+    {
+      "username": "eptwts",
+      "display_name": "EP",
+      "note": "AI赚钱推特之王（变现套路最狠）",
+      "tweets": [
+        {
+          "text": "10% of \"AI startups\" just:\n\n&gt; take users task\n&gt; integrate external tools/API's\n&gt; inject proprietary domain-specific data into the prompts\n&gt...",
+          "links": [],
+          "likes": 201,
+          "retweets": 3
+        }
+      ]
+    },
+    {
+      "username": "xiaohu",
+      "display_name": "xiaohu",
+      "note": "科技与AI工具分享，ChatGPT、AI工具导航、产品资讯和使用技巧",
+      "tweets": [
+        {
+          "text": "世上最强联名\n\n....",
+          "links": [
+            "https://t.co/Kble5iHkbX"
+          ],
+          "likes": 201,
+          "retweets": 7
+        },
+        {
+          "text": "试了下codex\n\n确实在编程上比Claude code 稳很多\n\n打个比喻，就像追小姑娘，Claude code 特别急切的想上床把事情干了\n\n而 codex 会，先请你吃饭、唱歌、看电影、逛街，一步一步的详细规划，慢慢达到目的。\n\nClaude code一上来就写代码，迫不及待想证明自己是个快男...",
+          "links": [],
+          "likes": 118,
+          "retweets": 12
+        },
+        {
+          "text": "兄弟们这个功能好\n\n Claude Code 新加了 /recap 命令\n\n当你把终端切到后台，过一会儿再切回来，Claude Code 会自动在顶部显示一段这个会话刚才干了什么、下一步打算做什么的回顾。\n\n怎么用\n\n什么都不用改，升级到最新版 Claude Code 就自动开了。\n\n触发条件：会话...",
+          "links": [],
+          "likes": 45,
+          "retweets": 6
+        }
+      ]
+    },
+    {
+      "username": "egeberkina",
+      "display_name": "Ege",
+      "note": "AI图像之王（画面感炸裂）",
+      "tweets": [
+        {
+          "text": "Omni reference in Seedance 2.0 is really a powerful feature",
+          "links": [
+            "https://t.co/rpJLhNEqbU"
+          ],
+          "likes": 190,
+          "retweets": 12
+        },
+        {
+          "text": "Born into the brand",
+          "links": [
+            "https://t.co/Q9r9TRJHgk"
+          ],
+          "likes": 67,
+          "retweets": 1
+        },
+        {
+          "text": "Wait… GPT Image 2 actually understands dimensions perfectly??\n\nIt matches real specs, proportions and layout like a proper product sheet 🤯\n\nPrompt 👇",
+          "links": [
+            "https://t.co/QXItCnjGvP"
+          ],
+          "likes": 43,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "gorden_sun",
+      "display_name": "Gorden_Sun",
+      "note": "AI资讯日报和前沿动态整理，追踪新模型、新产品和热点变化",
+      "tweets": [
+        {
+          "text": "Google开源DESIGN.md\n给Agent的设计系统规范，Agent读完这份文件，就能持续按照品牌规范生成UI，能跨工具、跨项目复用。\nGithub：",
+          "links": [
+            "https://t.co/OkOd9rk4Pn",
+            "https://t.co/0i8uDUX2kh"
+          ],
+          "likes": 181,
+          "retweets": 39
+        },
+        {
+          "text": "",
+          "links": [
+            "https://t.co/sK4mD8nBHl"
+          ],
+          "likes": 27,
+          "retweets": 13
+        },
+        {
+          "text": "沉浸式翻译火了这么多年，目前来看，依旧是最值得用的翻译工具，不花钱也能用的很舒适。\n\n官方下载地址：\n购买年度会员时输入优惠码“202604”，可以享受额外9折优惠。",
+          "links": [
+            "https://t.co/NQjqEZUfe5"
+          ],
+          "likes": 20,
+          "retweets": 4
+        }
+      ]
+    },
+    {
+      "username": "exm7777",
+      "display_name": "Machina",
+      "note": "AI运营+系统之王（全栈效率拉满）",
+      "tweets": [
+        {
+          "text": "1 week ago i'd have told you this is not AI...\n\nthis is the first time ever i genuinely can't tell what is AI and what isn't\n\nthe window is closing ve...",
+          "links": [],
+          "likes": 172,
+          "retweets": 4
+        },
+        {
+          "text": "i came to the conclusion that the best use cases for OpenClaw & Hermes were the simple daily tasks...\n\n- launching an auto-research workflow on the si...",
+          "links": [],
+          "likes": 156,
+          "retweets": 8
+        },
+        {
+          "text": "how to grow your product from $0 to $10k MRR with AI influencers (using GPT Images 2.0 and Seedance 2.0):\n\n> start on Pinterest, save 15-20 reference ...",
+          "links": [],
+          "likes": 144,
+          "retweets": 9
+        }
+      ]
+    },
+    {
+      "username": "kloss_xyz",
+      "display_name": "klöss",
+      "note": "系统架构之王（底层硬核）",
+      "tweets": [
+        {
+          "text": "OpenAI users when Sam is shipping daily, drunk shitposting nightly, and resetting their rate limits weekly.",
+          "links": [
+            "https://t.co/WZQJxB5sNS"
+          ],
+          "likes": 155,
+          "retweets": 8
+        },
+        {
+          "text": "Codex, build me a time machine.\n\nTo think about the Roman Empire.\n\nMake no mistakes.",
+          "links": [
+            "https://t.co/56rZM7cENA"
+          ],
+          "likes": 38,
+          "retweets": 5
+        },
+        {
+          "text": "the 𝕏 timeline has AI psychosis.\n\nlet me explain…\n\nnon-designers with AI:\n\n“designers are cooked”\n\n*proceeds to show us garbage slop*\n\nactual designer...",
+          "links": [],
+          "likes": 27,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "shao__meng",
+      "display_name": "shao__meng",
+      "note": "Web与AI技术实践，AI论文、开源项目和产品落地思考",
+      "tweets": [
+        {
+          "text": "DESIGN.md 成为公开标准后 @stitchbygoogle \n\nDesign 模板资源网站也开始有爆发的迹象了，前两天咱们分享过 getdesign.md 包含 69 个知名团队的设计风格\n\n今天 @bidah 也发布了「 DESIGN.md 文件，也涵盖了很多知名团队的设计风格，支持效果预...",
+          "links": [
+            "https://t.co/qQeo4GAT8j」，精选了多个分类的"
+          ],
+          "likes": 145,
+          "retweets": 17
+        },
+        {
+          "text": "HuggingFace 联创 & CTO @julien_c 基于团队内代码提交中 agent 标签的统计，对 Claude Code / Codex / Cursor 和 Antigravity 的使用数据分析\n\n04.20 最新数据：\n· Claude Code 是 Codex 的 4 倍，且占...",
+          "links": [],
+          "likes": 9,
+          "retweets": 3
+        },
+        {
+          "text": "脉脉企业号的信息，一贯的咋咋呼呼，无视用户智商 😂\n\n而且，这么强调「大厂HR」，打开刷了几屏都是猎头，而且基本都是很假的骗简历的 JD... 最可恶的是，我真的点进去了，贡献点击 +1",
+          "links": [
+            "https://t.co/aIRdkow9H2"
+          ],
+          "likes": 2,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "vasuman",
+      "display_name": "vas",
+      "note": "AI Agent之王（智能体实战派）",
+      "tweets": [
+        {
+          "text": "We're hiring top-tier Forward Deployed Engineers/Strategists at Varick. Apply if you:\n\n- are technical\n- want to talk to and build for customers\n- enj...",
+          "links": [],
+          "likes": 124,
+          "retweets": 3
+        },
+        {
+          "text": "and the weather so breezy\nman why can't life always be this easy",
+          "links": [
+            "https://t.co/sVUODzGLw7"
+          ],
+          "likes": 38,
+          "retweets": 0
+        },
+        {
+          "text": "@adrian_caliman1 Every large company has an IT department and 99% do not have AI expertise in house",
+          "links": [],
+          "likes": 12,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "vista8",
+      "display_name": "vista8",
+      "note": "AI产品、工作流、Vibe Coding和趋势判断，兼具产品感和表达能力",
+      "tweets": [
+        {
+          "text": "",
+          "links": [
+            "https://t.co/4KjcIHiShS"
+          ],
+          "likes": 124,
+          "retweets": 19
+        },
+        {
+          "text": "谷歌生态是真好啊，突然发现Youtube多了“NotebookLM”入口。\n\n点击就能创建新Notebook解读视频。",
+          "links": [
+            "https://t.co/7CdaWMaP38"
+          ],
+          "likes": 120,
+          "retweets": 15
+        },
+        {
+          "text": "如果DeepSeek V4只有文本模型，现在很难跟其他家竞争啊。",
+          "links": [],
+          "likes": 51,
+          "retweets": 1
+        }
+      ]
+    },
+    {
+      "username": "alchainhust",
+      "display_name": "AlchainHust",
+      "note": "AI编程、AI Native产品和具体工具实操，内容落地性强",
+      "tweets": [
+        {
+          "text": "帮我生成美股市值最高的100家公司的logo图，10*10 一个个清晰排列，有合理的间距，白底，logo下方有公司名称。需要方便我写脚本抠图获取所有公司的png logo",
+          "links": [
+            "https://t.co/q9Faunoxmf"
+          ],
+          "likes": 99,
+          "retweets": 10
+        },
+        {
+          "text": "太离谱了！GPT-Image-2能直接生成16个中文成语，并且每个成语下有准确的表达对应成语意向的绘画，没出任何问题。",
+          "links": [
+            "https://t.co/dfAfhkKw2X"
+          ],
+          "likes": 37,
+          "retweets": 1
+        },
+        {
+          "text": "nb…给GPT-Image-2丢了我的GitHub仓库直接生成的宣传海报，知识定义了下风格，甚至连二维码都是直接生成的，还真能扫。",
+          "links": [
+            "https://t.co/MVHwxfE47h"
+          ],
+          "likes": 23,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "xicilion",
+      "display_name": "xicilion",
+      "note": "LLM、AI实战和开发者视角，信息密度较高",
+      "tweets": [
+        {
+          "text": "不要忘记让 ai 给你的个人知识库或者在线文档写一个 summary.md（需要安装  v3.2.1）。",
+          "links": [
+            "https://t.co/m5NU23Aste",
+            "https://t.co/Yd1ivTRjuF"
+          ],
+          "likes": 61,
+          "retweets": 10
+        },
+        {
+          "text": "6 还没整明白呢。。。😳",
+          "links": [],
+          "likes": 4,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "oran_ge",
+      "display_name": "oran_ge",
+      "note": "AI创业者视角，关注Agent、产品机会和模型能力变化",
+      "tweets": [
+        {
+          "text": "群里今天最多的话：\n这是真的吗？\n\n有图有真相的世界\n不存在了",
+          "links": [],
+          "likes": 61,
+          "retweets": 2
+        },
+        {
+          "text": "GPT-Image-2 正式登陆 ListenHub\n24小时限时福利:  \n每位用户均可享100 张免费生图额度\n数量有限，先到先得，送完为止",
+          "links": [],
+          "likes": 50,
+          "retweets": 2
+        },
+        {
+          "text": "前几天 OpenRouter 有个 Elephant 免费匿名模型冲到了趋势榜第一，周榜第8名。\n今天蚂蚁的百灵大模型团队认领了Elephant，官方名字叫Ling-2.6-flash。\n\nLing-2.6-flash，是一款总参数量 104B、激活参数 7.4B 的 Instruct 模型。这个模...",
+          "links": [],
+          "likes": 50,
+          "retweets": 4
+        }
+      ]
+    },
+    {
+      "username": "jackfriks",
+      "display_name": "jack friks",
+      "note": "单人App之王（真实数据说话）",
+      "tweets": [
+        {
+          "text": "@athcanft not true, stay broke thinking this",
+          "links": [],
+          "likes": 56,
+          "retweets": 0
+        },
+        {
+          "text": "@simonsarris i also consider myself invincible \n\nyet i messed up my finger grating cheese",
+          "links": [],
+          "likes": 5,
+          "retweets": 0
+        },
+        {
+          "text": "@_ss1ngh @athcanft i met will back 4 years ago irl in our crypto days so i have the right to joke around with him ;)",
+          "links": [],
+          "likes": 4,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "elliotchen100",
+      "display_name": "elliotchen100",
+      "note": "AI工具拆解、项目观察和开发者生态内容，追踪新项目",
+      "tweets": [
+        {
+          "text": "我们在这 4 个地方招人，职位很多，活儿很多，如果你能用 AI 武装自己成为小小全能手，请大胆投递简历。\n\nP.S. 最近事儿比较多，之前投递的简历会陆续安排面试，表急表急。\n\n借用了 @dotey 老师的提示词",
+          "links": [
+            "https://t.co/v4eBHf4r2z",
+            "https://t.co/DQon8qIixh"
+          ],
+          "likes": 51,
+          "retweets": 6
+        },
+        {
+          "text": "Loving it😍",
+          "links": [
+            "https://t.co/OWWVsAEpW9"
+          ],
+          "likes": 10,
+          "retweets": 0
+        },
+        {
+          "text": "@dotey 补个背景，盛大下面现在在跑众多 AI native 公司，\n@evermind , @miromind_ai , @TankaChat , @ChenInstitute , @alayastd，@mirofish_ai, @DYJ_Science , Tokyo Research 和 ...",
+          "links": [],
+          "likes": 5,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "corbin_braun",
+      "display_name": "corbin",
+      "note": "Cursor之王（AI写代码最爽工具）",
+      "tweets": [
+        {
+          "text": "who in SF is building something cool and wants to hop on a podcast today in person?",
+          "links": [],
+          "likes": 32,
+          "retweets": 0
+        },
+        {
+          "text": "who is at @fdotinc right now \n\nand is building something cool?",
+          "links": [],
+          "likes": 8,
+          "retweets": 0
+        },
+        {
+          "text": "W @fdotinc \n\nwill be back this week to shoot more podcast with canopy founders",
+          "links": [
+            "https://t.co/h7GEgT59yX"
+          ],
+          "likes": 4,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "berryxia",
+      "display_name": "berryxia",
+      "note": "创意型AI应用、提示词、自动化和生产流",
+      "tweets": [
+        {
+          "text": "",
+          "links": [
+            "https://t.co/bQrIkedK1v"
+          ],
+          "likes": 24,
+          "retweets": 2
+        },
+        {
+          "text": "OpenAI 把 Workspace Agents 正式推到 ChatGPT 了！\n\n共享 Agent 终于来了，能跨工具、跨团队处理复杂长流程任务：\n\n✅ 自动协调文档、邮件、聊天、代码、系统  \n✅ 自主完成资格审核、反馈路由、报告拉取、供应商调研等  \n✅ 支持后台运行 + 定时执行",
+          "links": [
+            "https://t.co/rgsl81NIax"
+          ],
+          "likes": 2,
+          "retweets": 0
+        },
+        {
+          "text": "@ModengSir 他们的开源模型8B本地就可以跑！\n比",
+          "links": [],
+          "likes": 1,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "godofprompt",
+      "display_name": "God of Prompt",
+      "note": "Prompt之神（调教AI的顶级艺术）",
+      "tweets": [
+        {
+          "text": "AI logo makers empower your brand.\nEstablish identity efficiently and affordably.\n• Choose the right tool\n• Customize designs\n• Launch your brand\n\n🔗 C...",
+          "links": [
+            "https://t.co/OvKi7rjKtp",
+            "https://t.co/1VTkB6llJI"
+          ],
+          "likes": 18,
+          "retweets": 0
+        },
+        {
+          "text": "@dvwag Hey! I’m DMing access to anyone who requests it. The official mailbox is restored as well at info@godofprompt.ai",
+          "links": [],
+          "likes": 1,
+          "retweets": 0
+        },
+        {
+          "text": "@ShahidHLal Hey! The official update is on  \n\nI am dming you accesses as we speak. Deeply sorry for the disruption and all the inconveniences",
+          "links": [
+            "https://t.co/YdH0MsnzA7"
+          ],
+          "likes": 0,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "0xroas",
+      "display_name": "0x ROAS",
+      "note": "AI UGC之王（病毒式用户内容狂魔）",
+      "tweets": [
+        {
+          "text": "@hookrate_ heat🔥🔥🔥🔥",
+          "links": [],
+          "likes": 2,
+          "retweets": 0
+        },
+        {
+          "text": "@andreilunev @JasonKutasi @iamgalba sick🔥",
+          "links": [],
+          "likes": 2,
+          "retweets": 0
+        },
+        {
+          "text": "@SithAffiliate 🔥",
+          "links": [],
+          "likes": 0,
+          "retweets": 0
+        }
+      ]
+    },
+    {
+      "username": "rryssf_",
+      "display_name": "Robert Youssef",
+      "note": "自动化之王（懒人福音）",
+      "tweets": [
+        {
+          "text": "@nikitabier *never have friends that try to hijack your X accounts and use it as leverage in business negotiations",
+          "links": [
+            "https://t.co/6BXXHof8U2"
+          ],
+          "likes": 1,
+          "retweets": 0
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "text": "this is really good .@OpenAI",
+      "links": [
+        "https://t.co/4RiEngOytX"
+      ],
+      "likes": 13691,
+      "author_handle": "catdaddyissues",
+      "category": "OpenAI OR Anthropic OR Google DeepMind announcement"
+    },
+    {
+      "text": "Introducing USVC - a single basket of high-growth venture capital, for everyone. \n\nNo accreditation required, SEC-registered, and a very low $500 mini...",
+      "links": [
+        "https://t.co/pAj1sqUsG0"
+      ],
+      "likes": 10119,
+      "author_handle": "naval",
+      "category": "OpenAI OR Anthropic OR Google DeepMind announcement"
+    },
+    {
+      "text": "🚨 BREAKING: Anthropic’s Most Dangerous Model Ever Breached By Hackers \n\n> anthropic builds a cyberweapon \n> calls it mythos\n> “can hack every major OS...",
+      "links": [],
+      "likes": 7311,
+      "author_handle": "ns123abc",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "FUN FACT a lotta people use all these tools to add emulated games into steam, when really, as long as the file type is set by windows to open in a cer...",
+      "links": [
+        "https://t.co/C4F0VQrqKf"
+      ],
+      "likes": 5766,
+      "author_handle": "goldisflammable",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "“how have you felt six months into hard launch?”\n“free.”\noh -",
+      "links": [
+        "https://t.co/pcZkNznBgv"
+      ],
+      "likes": 4869,
+      "author_handle": "pinofdnp",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "Goodbye Claude Code subscription fees.\n\nSomeone just built a proxy that runs Claude Code completely free... and it's wild.\n\nYou literally plug in a fr...",
+      "links": [],
+      "likes": 4206,
+      "author_handle": "hasantoxr",
+      "category": "OpenAI OR Anthropic OR Google DeepMind announcement"
+    },
+    {
+      "text": "🚨 BREAKING: Canada just spent $200 million on a “spaceport.”\n\nIt’s just a gravel pad near Canso, Nova Scotia.\n\nFor context, SpaceX spent $200 million ...",
+      "links": [],
+      "likes": 3844,
+      "author_handle": "mario4thenorth",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "Hey @ShefVaidya - here is Isha Ambani without a bindi in a public appearance. I dare you to launch a campaign against her.",
+      "links": [],
+      "likes": 3485,
+      "author_handle": "peeleraja",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "Connor Storrie’s Instagram post from Tiffany &amp; Co.’s Blue Book 2026: Hidden Garden Gala was the event’s top-performing post, generating $811K in M...",
+      "links": [
+        "https://t.co/KOa13Ko0Yv",
+        "https://t.co/XJ2dqxkD19"
+      ],
+      "likes": 3424,
+      "author_handle": "connorstupdates",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "🇨🇦: oh my. 😬 \n\n🇨🇦’s space program is paying $200m to a Ukrainian-American company called MLS to use its “launch pad”—a concrete slab on gravel at the ...",
+      "links": [
+        "https://t.co/gWKseUmGcX",
+        "https://t.co/4JkVGrEmxe"
+      ],
+      "likes": 3351,
+      "author_handle": "StephenPunwasi",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "Say what...\nThe Canadian Spaceport land is owned by the Government of Canada, who leases it to Maritime Launch for $13,500 a year, who then leases it ...",
+      "links": [],
+      "likes": 3276,
+      "author_handle": "HaveWeAllGoneM1",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "The hard launch was the best thing to ever happen to tactile phil. Always resting his hand in an awkward claw bc he couldn't instinctually put it on d...",
+      "links": [
+        "https://t.co/gUXKmv52kl"
+      ],
+      "likes": 3201,
+      "author_handle": "phreakyogurt",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "We’re approaching the critical 6-month mark before the GTA 6 launch.\n\nThat’s typically when Rockstar decides whether the release date is fully locked ...",
+      "links": [],
+      "likes": 2890,
+      "author_handle": "GTAVI_Countdown",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "Hilarious 🤣 \n\n#RiteshRana custom speech to #Satya 😂😂 #Jetlee Trailer Launch",
+      "links": [
+        "https://t.co/XrsEztP6tz"
+      ],
+      "likes": 2889,
+      "author_handle": "BheeshmaTalks",
+      "category": "AI model release OR launch"
+    },
+    {
+      "text": "#Kara audio launch",
+      "links": [
+        "https://t.co/6p1nufAujK"
+      ],
+      "likes": 2822,
+      "author_handle": "gvprakash",
+      "category": "AI model release OR launch"
+    }
+  ],
+  "stats": {
+    "total_kols": 31,
+    "total_tweets_raw": 461,
+    "total_news_raw": 957,
+    "news_after_filter": 15
+  }
+}

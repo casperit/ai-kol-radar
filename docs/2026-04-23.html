@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI KOL 日报 2026-04-23</title>
+<style>
+:root {
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+  --surface2: #f1efe8;
+  --border: rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.14);
+  --text: #1a1a18;
+  --muted: #5f5e5a;
+  --hint: #888780;
+  --purple-bg: #eeedfe;
+  --purple-text: #3c3489;
+  --teal-bg: #e1f5ee;
+  --teal-text: #085041;
+  --amber-bg: #faeeda;
+  --amber-text: #633806;
+  --coral-bg: #faece7;
+  --coral-text: #4a1b0c;
+  --blue-bg: #e6f1fb;
+  --blue-text: #0c447c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18181a;
+    --surface: #222224;
+    --surface2: #2c2c2e;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+    --text: #e8e8e6;
+    --muted: #a0a09c;
+    --hint: #6a6a66;
+    --purple-bg: #26215c;
+    --purple-text: #cecbf6;
+    --teal-bg: #04342c;
+    --teal-text: #9fe1cb;
+    --amber-bg: #412402;
+    --amber-text: #fac775;
+    --coral-bg: #4a1b0c;
+    --coral-text: #f5c4b3;
+    --blue-bg: #042c53;
+    --blue-text: #b5d4f4;
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+/* nav */
+.nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.nav-logo { font-size: 16px; font-weight: 500; }
+.nav-tabs { display: flex; gap: 2px; background: var(--surface2); border-radius: 8px; padding: 3px; }
+.nav-tab { font-size: 13px; padding: 5px 14px; border-radius: 6px; color: var(--muted); cursor: pointer; border: none; background: none; }
+.nav-tab.active { background: var(--surface); color: var(--text); font-weight: 500; box-shadow: 0 0.5px 2px var(--border2); }
+.nav-tab:hover:not(.active) { color: var(--text); }
+
+/* stats */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 2rem; }
+.stat { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.stat-num { font-size: 24px; font-weight: 500; }
+.stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* day card */
+.day-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 10px; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s; }
+.day-card:hover { border-color: var(--border2); box-shadow: 0 2px 8px var(--border); }
+.day-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.day-date { font-size: 15px; font-weight: 500; }
+.day-meta { display: flex; gap: 6px; align-items: center; }
+.badge { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 20px; }
+.badge-kol { background: var(--purple-bg); color: var(--purple-text); }
+.badge-tweet { background: var(--teal-bg); color: var(--teal-text); }
+.badge-topic { background: var(--amber-bg); color: var(--amber-text); }
+.day-summary { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.topics { display: flex; gap: 6px; flex-wrap: wrap; }
+.topic-tag { font-size: 11px; padding: 2px 8px; background: var(--surface2); color: var(--hint); border-radius: 20px; border: 0.5px solid var(--border); }
+.arrow { color: var(--hint); margin-left: 8px; }
+
+/* detail page */
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); margin-bottom: 1.5rem; }
+.back-link:hover { color: var(--text); }
+.overview-box { background: var(--surface2); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+.overview-label { font-size: 11px; color: var(--hint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-weight: 500; }
+.overview-text { font-size: 14px; color: var(--text); line-height: 1.75; }
+.section-title { font-size: 13px; font-weight: 500; color: var(--muted); margin: 1.5rem 0 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.kol-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 10px; }
+.kol-header { margin-bottom: 10px; }
+.kol-name { font-size: 15px; font-weight: 500; }
+.kol-handle { font-size: 12px; color: var(--hint); margin-top: 1px; }
+.tweet-item { padding: 10px 0; border-top: 0.5px solid var(--border); }
+.tweet-text { font-size: 13px; color: var(--text); line-height: 1.65; }
+.tweet-link { display: inline-block; margin-top: 5px; font-size: 12px; color: var(--blue-text); word-break: break-all; }
+.tweet-stats { font-size: 11px; color: var(--hint); margin-top: 5px; }
+.zh-summary { font-size: 13px; color: var(--muted); margin-top: 8px; padding-top: 8px; border-top: 0.5px solid var(--border); line-height: 1.65; }
+
+/* kol index */
+.kol-index-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; cursor: pointer; transition: border-color 0.15s; }
+.kol-index-card:hover { border-color: var(--border2); }
+.kol-index-header { display: flex; align-items: center; justify-content: space-between; }
+.kol-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--purple-bg); color: var(--purple-text); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; flex-shrink: 0; }
+.kol-info { flex: 1; margin-left: 10px; }
+.kol-note { font-size: 11px; color: var(--hint); margin-top: 1px; }
+.kol-stats-row { display: flex; gap: 8px; margin-top: 8px; }
+
+/* topic index */
+.topic-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; }
+.topic-name { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+.topic-kols { font-size: 12px; color: var(--muted); }
+
+/* empty */
+.empty { text-align: center; padding: 3rem; color: var(--hint); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+    <nav class="nav">
+      <span class="nav-logo">🤖 AI KOL 日报</span>
+      <div class="nav-tabs"><a href="index.html"><button class="nav-tab active">按日期</button></a><a href="kol.html"><button class="nav-tab ">按 KOL</button></a><a href="topic.html"><button class="nav-tab ">按话题</button></a></div>
+    </nav>
+    <a class="back-link" href="index.html">← 返回列表</a>
+    <div style="margin-bottom:1.5rem;">
+      <div style="font-size:22px;font-weight:500;margin-bottom:4px;">2026-04-23</div>
+      <div style="font-size:13px;color:var(--muted);">AI KOL 日报</div>
+    </div>
+    
+    <div class="overview-box">
+      <div class="overview-label">整体摘要</div>
+      <div class="overview-text">今日共有 31 位 AI 领域 KOL 活跃，发布 461 条推文，行业新闻 15 条。</div>
+    </div>
+    <div class="overview-box" style="margin-top:10px;">
+      <div class="overview-label">Daily Overview</div>
+      <div class="overview-text">Today 31 AI KOLs were active with 461 tweets and 15 industry news items.</div>
+    </div>
+    <div class="section-title">各 KOL 详情</div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">H</div>
+        <div class="kol-info">
+          <div class="kol-name">@hayami_kiraa</div>
+          <div class="kol-note">AI Builder和内容创作者路线，连接产品、创作和增长</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@FearedBuck @grok who is ray??</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">啊所以 Open AI 的 CEO 也是同性恋吗？我这个月和 chatgpt 聊的时候还教训了一下呢……
+
+（起因是我说“朋友的男朋友”，然后那个朋友也是男生，AI 全都默认成女生😅</div>
+          <a class="tweet-link" href="https://t.co/7sHOd9WSkZ" target="_blank">→ https://t.co/7sHOd9WSkZ</a>
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@eudaemoniany 是的 我（作为小个子女生）之前就研究了很久的人体工学椅 还是上 herman miller aeron 吧 没什么选择</div>
+          
+          <div class="tweet-stats">♥ 27 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@craigaryhart 对特权者来说，平等即是一种压迫🤷</div>
+          
+          <div class="tweet-stats">♥ 434 &nbsp; ↺ 13</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">下个月去挪威 solo trip, 本来只是想去迎接30岁生日。没想到福至心灵搜了一下，发现《世界上最糟糕的人》居然就是在奥斯陆拍的!!!! 天呐呐呐呐呐，这是我人生最爱电影没有之一。一想到我将在29岁最后一天落地奥斯陆，进入最爱的电影拍摄地里圣地巡礼，就觉得幸福冲昏了天灵盖啊啊啊啊。
+
+而且我的生日正好还是挪威国庆日，据说街上会很多热烈欢乐的游行，是北欧冷冽日常中很难得的氛围。ai说「举国上下和你一起庆祝生日，这样的场景这辈子不会有第二次了。」
+
+原来此时此刻我来到此地都有冥冥之中的注定。呜哇😭</div>
+          
+          <div class="tweet-stats">♥ 41 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">H</div>
+        <div class="kol-info">
+          <div class="kol-name">@hesamation</div>
+          <div class="kol-note">AI/ML综合之王（深度学习前沿）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text"></div>
+          <a class="tweet-link" href="https://t.co/Nv8JFKgSsp" target="_blank">→ https://t.co/Nv8JFKgSsp</a>
+          <div class="tweet-stats">♥ 4 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">“so what’s the plan guys?”
+“just watch him do it to himself”</div>
+          <a class="tweet-link" href="https://t.co/XJVHyOglv2" target="_blank">→ https://t.co/XJVHyOglv2</a>
+          <div class="tweet-stats">♥ 18 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">this is super cool. imagine spending 4 seconds and 10 liters of water for a single page to load! but honestly, it's really nice that you never see the same content twice.</div>
+          <a class="tweet-link" href="https://t.co/jJJPxJEdHA" target="_blank">→ https://t.co/jJJPxJEdHA</a>
+          <div class="tweet-stats">♥ 21 &nbsp; ↺ 3</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">one of these days Anthropic will A/B test bumping up their subscription prices 10x, PERMANENTLY, FOR ALL,</div>
+          
+          <div class="tweet-stats">♥ 45 &nbsp; ↺ 2</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">this is easy 
+37 + 48 = 
+eml(eml(1,eml(eml(1,37),1)), eml(eml(eml(1,eml(eml(1,eml(1,eml(eml(1,1),1))),1)), eml(48,1)), 1))</div>
+          <a class="tweet-link" href="https://t.co/nQr1Wd9uoR" target="_blank">→ https://t.co/nQr1Wd9uoR</a>
+          <div class="tweet-stats">♥ 6 &nbsp; ↺ 1</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">O</div>
+        <div class="kol-info">
+          <div class="kol-name">@op7418</div>
+          <div class="kol-note">AIGC周刊主理人，AI绘画、视频生成、设计工作流和工具趋势</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">火回国内了🐶</div>
+          <a class="tweet-link" href="https://t.co/Hpt4WTqNeu" target="_blank">→ https://t.co/Hpt4WTqNeu</a>
+          <div class="tweet-stats">♥ 20 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@Jackywine 哈哈哈哈</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@nash_su 是 那个效果实在太好</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@alin_zone 🙏</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">进群跟我的 Agent 聊聊？</div>
+          <a class="tweet-link" href="https://t.co/U6myeX18x6" target="_blank">→ https://t.co/U6myeX18x6</a>
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">L</div>
+        <div class="kol-info">
+          <div class="kol-name">@levelsio</div>
+          <div class="kol-note">单人创业之神（不靠VC硬核造产品）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@Pran_Ker ???</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@dreem_lense No they're not</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@therno Amadeus</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">✨ New assets are now in  and I've improved the soldier AI, they now start running around like mad men when they're in combat
+
+Also I managed to bake the collision maps (BVH) on the server so the game finally loads fast again
+
+I have about 9 days left in the #vibejam so I think I need to add multiplayer very soon so you can all fight each other as drones vs soldier!</div>
+          <a class="tweet-link" href="https://t.co/q1vYLwMhcW" target="_blank">→ https://t.co/q1vYLwMhcW</a>
+          <div class="tweet-stats">♥ 56 &nbsp; ↺ 3</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">Yes  has watched about 1 million photos of 60,000 hotels until now and described them with AI all running on @xAI</div>
+          <a class="tweet-link" href="https://t.co/kH0hX7lK10" target="_blank">→ https://t.co/kH0hX7lK10</a>
+          <div class="tweet-stats">♥ 30 &nbsp; ↺ 1</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">E</div>
+        <div class="kol-info">
+          <div class="kol-name">@emollick</div>
+          <div class="kol-note">AI科学之王（最靠谱研究解读）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@danielrock</div>
+          <a class="tweet-link" href="https://t.co/R2Abt4724y" target="_blank">→ https://t.co/R2Abt4724y</a>
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@babyak Wrong Kandinsky and Klint, sadly. But otherwise great.</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">And I cut the prompt a short due to character limits, I specifically asked for Klint's Grupp IX/SUW, Svanen, nr 17. Which is exactly what I got.
+
+Here are the paintings as represented by super cute animals.</div>
+          <a class="tweet-link" href="https://t.co/GhORt3p4Q5" target="_blank">→ https://t.co/GhORt3p4Q5</a>
+          <div class="tweet-stats">♥ 11 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">I didn't specify which Bathers, so can't quite tell if this is one of the 200+ Cezanne painted or a Fauvist reaction or some sort of amalgam.
+
+Anyway, here they are as cakes.</div>
+          <a class="tweet-link" href="https://t.co/SUCITa58Vz" target="_blank">→ https://t.co/SUCITa58Vz</a>
+          <div class="tweet-stats">♥ 22 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">"a gallery of shoes, where each shoe is under a painting & is styled matched to that painting: Starry Night, The Bathers, The Girl with the Pearl Earring, The Bayeux Tapestry, Klint's Grupp Svanen nr 17, Kandinsky's Swinging, The Garden of Earthly Delights"
+
+"now the full outfits"</div>
+          
+          <div class="tweet-stats">♥ 84 &nbsp; ↺ 9</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">S</div>
+        <div class="kol-info">
+          <div class="kol-name">@steipete</div>
+          <div class="kol-note">OpenClaw缔造者（实战黑马）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@KomMechanic I posted a workaround in Discord, or you remove/reinstall or wait for next release. Moved dependencies around to reduce supply chain risk. Security is hard.</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@BradGroux @NetworksChat @Alphainvest20 We're working with Microsoft, Atlassian and Tencent on a LTS release schedule, will take a few more weeks but getting there. They are all rolling it out in their orgs.</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@NeeravMakwana @hgruenhagen @woofadu @openclaw @thsottiaux don't forget to run codex /review on these. I'll fix it up and land!</div>
+          <a class="tweet-link" href="https://t.co/1K58bN6wgt" target="_blank">→ https://t.co/1K58bN6wgt</a>
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">I love these</div>
+          
+          <div class="tweet-stats">♥ 76 &nbsp; ↺ 3</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@MichealColhoun Our side works but Anthropic doesn't want that anymore.</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">G</div>
+        <div class="kol-info">
+          <div class="kol-name">@gregisenberg</div>
+          <div class="kol-note">创业点子之神（每天脑洞大开）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@thesamparr *come!</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@IMJustinBrooke @alejandroreyes @startupideaspod @mcuban @Teknium needed drinkMRR today cc @jrdnmix</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@thesamparr you gotta some on my youtube show sometime</div>
+          <a class="tweet-link" href="https://t.co/kryGzEghy6" target="_blank">→ https://t.co/kryGzEghy6</a>
+          <div class="tweet-stats">♥ 4 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@signulll @startupideaspod @MurrayHillGuy1 @signulll get on the pod!</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@TheoTabah stoked</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">R</div>
+        <div class="kol-info">
+          <div class="kol-name">@rileybrown</div>
+          <div class="kol-note">Vibecode天皇（氛围感拉满的代码）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text"></div>
+          <a class="tweet-link" href="https://t.co/KEFbuadEQv" target="_blank">→ https://t.co/KEFbuadEQv</a>
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text"></div>
+          <a class="tweet-link" href="https://t.co/nbFVL4geje" target="_blank">→ https://t.co/nbFVL4geje</a>
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@QuiverAI</div>
+          <a class="tweet-link" href="https://t.co/fvI6VgZRlV" target="_blank">→ https://t.co/fvI6VgZRlV</a>
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">This animation is one shotted on Codex with 5.4.
+
+Working on a skill that uses @QuiverAI to generate SVG characters then animates the character.
+
+I'm working on a Codex x Remotion Video, i'll release skill when i'm done.</div>
+          <a class="tweet-link" href="https://t.co/S5HPGGggkD" target="_blank">→ https://t.co/S5HPGGggkD</a>
+          <div class="tweet-stats">♥ 380 &nbsp; ↺ 9</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@cjayls Waste of time and tokens</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">L</div>
+        <div class="kol-info">
+          <div class="kol-name">@lijigang</div>
+          <div class="kol-note">深度Prompt探索者，AI思考、创意应用和方法论总结</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@Vortex_o23 我不定期会办线下闭门会，这是对自己的要求和提醒。</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">举办活动的第一要义：
+
+要对得起大家的时间</div>
+          
+          <div class="tweet-stats">♥ 28 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">“一句话直出 x”，意味着稀缺性不再是 x。</div>
+          
+          <div class="tweet-stats">♥ 28 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">弄了个高桥流skill，赶场分享时，五分钟可以掏出一个PPT来。</div>
+          <a class="tweet-link" href="https://t.co/q09sMEa5RO" target="_blank">→ https://t.co/q09sMEa5RO</a>
+          <div class="tweet-stats">♥ 314 &nbsp; ↺ 52</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">A</div>
+        <div class="kol-info">
+          <div class="kol-name">@amirmushich</div>
+          <div class="kol-note">AI广告之王（投放直接起飞）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@TechieBySA ?/10 sir?</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@dcbruck I will!
+
+Banana still feels more... how to express... clean/pro
+GPT feels like it can endure more context with better consistency, but still feels exactly like GPT</div>
+          <a class="tweet-link" href="https://t.co/ayuueLyM7b" target="_blank">→ https://t.co/ayuueLyM7b</a>
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@dcbruck if you mean my breakdown - appreciate ya
+but for the design - it's quite an L for me :(</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@dcbruck curious what exactly you mean sir :D</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@dcbruck thanks for the inspo of breaking it down into details!</div>
+          <a class="tweet-link" href="https://t.co/gebqbipQb2" target="_blank">→ https://t.co/gebqbipQb2</a>
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">D</div>
+        <div class="kol-info">
+          <div class="kol-name">@dotey</div>
+          <div class="kol-note">中文AI圈高频信息源，Prompt工程、AI实战、前沿工具与模型解读</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">GPT Image 2 Prompt：
+
+宋代山水意境的中式国风插画，细腻的水墨勾线与柔和矿物颜料设色，银色月光洒落并映照水面，整体以浅蓝、青玉色为主调，点缀柔和粉色花枝，空气中带有朦胧雾气，河面流动倒影细腻，辅以若有若无的淡金色微光，电影感、诗意化灯光，空灵东方美学，高级国风绘本插画质感，4K 细节。
+
+近景特写：一位年轻女子倚坐在木窗边，安静地望向窗外月下流动的江河。月光从窗外倾入室内，柔和地照亮她的侧脸、衣袖与窗框，营造亲密、含蓄而富有情绪张力的氛围。窗外是开阔的江面，波光粼粼，仿佛被月色洗过一般洁净明亮，河水向远方延展，带有轻微流动感与层层 shimmering 反光。画面需突出“室内人物近景”与“窗外广阔月夜江景”之间的对比和平衡，传达安静、思念、诗意、情感亲密的感觉。
+
+可加入中式木窗、远山、岸边楼阁、轻舟、花枝等元素，但整体保持克制、雅致、留白感与绘本式高级审美。</div>
+          
+          <div class="tweet-stats">♥ 20 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">GPT Image 2 Prompt:
+
+Soft poetic children's book illustration with watercolor and gouache textures.Clear gentle daylight with slightly brighter highlights.Muted pastel colors with soft blue and warm tones.Visible brush strokes and paper grain.Minimalist composition with large negative space.Calm, thoughtful, slightly open-ended atmosphere.
+
+Child character (around 12 years old).Subtle visual metaphors like light, shadow, perspective, reflection.Hand-painted picture book style, not cartoon, not anime, not 3D.
+
+Two children in calm conversation,soft connection forming.</div>
+          
+          <div class="tweet-stats">♥ 31 &nbsp; ↺ 4</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">OpenAI 把 ChatGPT 做成了 Google Sheets 插件，现在可以直接在表格里用自然语言建表、编辑、分析数据。
+
+今年 3 月，OpenAI 先发布了 ChatGPT for Excel 测试版，当时就预告了 Google Sheets 版本即将到来。现在这个承诺兑现了。用户可以从 Google Workspace Marketplace 直接安装。
+
+用法很直观：打开一个空白表格，用自然语言告诉 ChatGPT 你想做什么，它会帮你建表、填数据、写公式、做分析。官方举的例子从婚礼策划到咖啡店商业计划再到财务规划，覆盖面很广，核心卖点就是"不用学公式，说人话就行"。
+
+Anthropic 已经有了 Claude for Excel，而 OpenAI 选择同时覆盖 Excel 和 Google Sheets 两个生态。Google 自己的 Gemini 也在往 Workspace 里深度整合 AI 能力。三家的战场正在从聊天窗口转移到办公工具里，谁能在用户日常工作流中站稳脚跟，谁的护城河就更深。
+
+对普通用户来说，以前想在表格里用 AI，要么装第三方插件（GPT for Sheets 之类的），要么在 ChatGPT 和表格之间来回复制粘贴。现在官方亲自下场，体验和稳定性理论上会好不少。目前 ChatGPT for Excel 的测试版已经开放给 Business、Enterprise、Edu、Pro 和 Plus 用户，Google Sheets 版本的具体订阅要求还没有明确公布，感兴趣的可以先去 Marketplace 页面看看自己的账号是否有权限安装。
+
+ChatGPT for Google Sheets Listing:</div>
+          <a class="tweet-link" href="https://t.co/6hHVOysds9" target="_blank">→ https://t.co/6hHVOysds9</a>
+          <div class="tweet-stats">♥ 43 &nbsp; ↺ 4</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@Amelia1799671 @Eejoylove ChatGPT</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@juyiBaib 好像有2d建模3d的AI工具，具体我不太懂</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">M</div>
+        <div class="kol-info">
+          <div class="kol-name">@marclou</div>
+          <div class="kol-note">单人创业之神（又一个狠人）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">My little app has made 306 people sit like functioning humans for 2,791,980 seconds
+
+🦐➡️🪑</div>
+          
+          <div class="tweet-stats">♥ 114 &nbsp; ↺ 2</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">lol crazy  
+
+i can't do much
+
+i believe there won't be many people with hundred k rev stripe account sharing their API keys randomly.
+
+when i'll spot one person doing this, i'll manually remove them! 
+
+plus, once an account is added to trustmrr, another key of that same account can't be used
+
+thanks for sharing Anthony!</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@sistilli @trust_mrr How does it work? 
+
+If you know the account API key, it's safe to assume you own it no?</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@matthias_mrc kinda ahah 
+
+swap cameras here, use iPhone continuity camera :D</div>
+          <a class="tweet-link" href="https://t.co/6833m22kQD" target="_blank">→ https://t.co/6833m22kQD</a>
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@idanmasas tweet was sent 20 hours ago!</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">E</div>
+        <div class="kol-info">
+          <div class="kol-name">@eptwts</div>
+          <div class="kol-note">AI赚钱推特之王（变现套路最狠）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">10% of "AI startups" just:
+
+&gt; take users task
+&gt; integrate external tools/API's
+&gt; inject proprietary domain-specific data into the prompts
+&gt; improve with usage
+&gt; use all tools at hand to get said task done better than raw models can
+&gt; charge $29/month</div>
+          
+          <div class="tweet-stats">♥ 201 &nbsp; ↺ 3</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">X</div>
+        <div class="kol-info">
+          <div class="kol-name">@xiaohu</div>
+          <div class="kol-note">科技与AI工具分享，ChatGPT、AI工具导航、产品资讯和使用技巧</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@HenrygSing GPT</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">试了下codex
+
+确实在编程上比Claude code 稳很多
+
+打个比喻，就像追小姑娘，Claude code 特别急切的想上床把事情干了
+
+而 codex 会，先请你吃饭、唱歌、看电影、逛街，一步一步的详细规划，慢慢达到目的。
+
+Claude code一上来就写代码，迫不及待想证明自己是个快男。
+
+Codex 一直在辛苦的规划，不停的测试，怎么做才最好，一步一步达到目标！</div>
+          
+          <div class="tweet-stats">♥ 118 &nbsp; ↺ 12</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">据The Information：腾讯与阿里巴巴正洽谈以超过200亿美元的估值投资DeepSeek。</div>
+          
+          <div class="tweet-stats">♥ 30 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">世上最强联名
+
+....</div>
+          <a class="tweet-link" href="https://t.co/Kble5iHkbX" target="_blank">→ https://t.co/Kble5iHkbX</a>
+          <div class="tweet-stats">♥ 201 &nbsp; ↺ 7</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">其他更新：
+
+/tui fullscreen：新命令切到无闪烁的全屏渲染模式，不用重启会话
+
+push notification 工具：Claude 在 agent 决定时机主动给你手机发推送（需要开 Remote Control 和配置）
+
+更详细↓</div>
+          <a class="tweet-link" href="https://t.co/wmLgqLDvJT" target="_blank">→ https://t.co/wmLgqLDvJT</a>
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">E</div>
+        <div class="kol-info">
+          <div class="kol-name">@egeberkina</div>
+          <div class="kol-note">AI图像之王（画面感炸裂）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@DryKhmaraa 🔥</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@HungryMinded @adidas haha thank you 😂 maybe it’s time to call up Adidas then</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">Omni reference in Seedance 2.0 is really a powerful feature</div>
+          <a class="tweet-link" href="https://t.co/rpJLhNEqbU" target="_blank">→ https://t.co/rpJLhNEqbU</a>
+          <div class="tweet-stats">♥ 190 &nbsp; ↺ 12</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">Prompt: {
+ "reference_images": {
+ "product_image": "UPLOADED_IMAGE",
+ "usage_rule": "Use the uploaded image as the exact visual reference for the product’s form, proportions, materials, and overall identity. Do not redesign or reinterpret the product."
+ },
+
+ "layout": {
+ "canvas": {
+ "orientation": "vertical",
+ "aspect_ratio": "3:4",
+ "background": "warm neutral paper-like surface"
+ },
+ "structure": {
+ "top_section": "lifestyle_hero",
+ "bottom_section": "technical_specification"
+ }
+ },
+
+ "top_section": {
+ "type": "lifestyle_product_image",
+ "composition": {
+ "placement": "top_center",
+ "scale": "dominant",
+ "margin": "generous whitespace around product"
+ },
+ "environment": {
+ "setting": "minimal architectural interior",
+ "lighting": {
+ "type": "natural sunlight",
+ "direction": "angled side light",
+ "quality": "soft but high-contrast shadows"
+ },
+ "floor": "subtle concrete or stone surface",
+ "background": "textured plaster wall"
+ },
+ "rendering": {
+ "style": "editorial lifestyle photography",
+ "detail": "high realism",
+ "color_grading": "warm, muted, premium"
+ }
+ },
+
+ "bottom_section": {
+ "type": "technical_specification_panel",
+ "layout": {
+ "grid": "modular",
+ "alignment": "clean, architectural"
+ },
+
+ "technical_drawings": {
+ "placement": "bottom_left_and_center",
+ "style": "architectural line drawings",
+ "views": [
+ "front view",
+ "side view",
+ "three-quarter cutaway or profile view"
+ ],
+ "projection": "orthographic",
+ "line_style": {
+ "color": "muted red or sepia",
+ "weight": "fine technical lines"
+ },
+ "annotations": {
+ "type": "measurement and construction callouts",
+ "language": "neutral technical labels",
+ "density": "minimal, editorial"
+ }
+ },
+
+ "materials_panel": {
+ "placement": "bottom_right",
+ "content": {
+ "type": "material_swatches",
+ "count": "3-4 depending on product",
+ "format": "square or rectangular samples"
+ },
+ "textures": {
+ "source": "derived from the product materials",
+ "examples": [
+ "fabric",
+ "leather",
+ "metal",
+ "wood",
+ "plastic"
+ ]
+ },
+ "labels": {
+ "style": "small editorial captions",
+ "tone": "technical but refined"
+ }
+ }
+ },
+
+ "typography": {
+ "style": "minimal editorial",
+ "usage": "subtle captions, no large headlines",
+ "color": "soft black or dark brown"
+ },
+
+ "overall_style": {
+ "mood": "design catalog / product design journal",
+ "aesthetic": "architectural, premium, calm",
+ "avoid": [
+ "clutter",
+ "bold colors",
+ "heavy branding",
+ "overly decorative graphics"
+ ]
+ },
+
+ "constraints": {
+ "do_not": [
+ "change product design",
+ "invent new materials",
+ "add logos unless present in reference",
+ "use perspective distortion in drawings"
+ ]
+ }
+}</div>
+          
+          <div class="tweet-stats">♥ 8 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">Wait… GPT Image 2 actually understands dimensions perfectly??
+
+It matches real specs, proportions and layout like a proper product sheet 🤯
+
+Prompt 👇</div>
+          <a class="tweet-link" href="https://t.co/QXItCnjGvP" target="_blank">→ https://t.co/QXItCnjGvP</a>
+          <div class="tweet-stats">♥ 43 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">G</div>
+        <div class="kol-info">
+          <div class="kol-name">@gorden_sun</div>
+          <div class="kol-note">AI资讯日报和前沿动态整理，追踪新模型、新产品和热点变化</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@Fyejc25 我这是第二次的结果</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">没错，这张图是GPT生成的</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">提示词：
+
+生成图片，比例3:4
+一张真实拍摄的手机照片，手机屏幕显示微信聊天界面（中文对话），有聊天气泡、文件（Word）附件，界面为绿色和灰色气泡，屏幕上有明显指纹、油渍、划痕，玻璃有强烈反光，光源直射形成眩光，画面略微倾斜，手持拍摄，环境自然光，不完美构图，真实感强，生活化随手拍，高细节，4K
+对话内容为老板和员工的对话，员工发文件给老板，老板回复说我先看看</div>
+          
+          <div class="tweet-stats">♥ 17 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">AI资讯日报，4月22日：</div>
+          <a class="tweet-link" href="https://t.co/HJzu0EbE7f" target="_blank">→ https://t.co/HJzu0EbE7f</a>
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">Google发布Deep Research API
+提供两档模型：
+Deep Research，低延迟、交互场景
+Deep Research Max，高质量、异步批处理
+
+支持MCP，可接入私有数据源，原生支持生成图表和信息图，是驱动Gemini App、NotebookLM、Google Search、Google Finance的同一套Agent基础设施</div>
+          
+          <div class="tweet-stats">♥ 5 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">E</div>
+        <div class="kol-info">
+          <div class="kol-name">@exm7777</div>
+          <div class="kol-note">AI运营+系统之王（全栈效率拉满）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">i came to the conclusion that the best use cases for OpenClaw & Hermes were the simple daily tasks...
+
+- launching an auto-research workflow on the side
+- growing and maintaining an obsidian knowledge base
+- implementing very simple features in software and updating docs
+
+anything that don't require much attention, where there isn't much thinking involved... basically anything you'd trust a cheap freelance to do</div>
+          
+          <div class="tweet-stats">♥ 156 &nbsp; ↺ 8</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">this new image model from OpenAI also drastically improves Codex's abilities when it comes to design...
+
+- best image model: ChatGPT
+- best video model: Seedance
+- best coding model: ChatGPT/Claude
+- best daily driver: ChatGPT/Claude
+
+there isn't a single task where i'd use Gemini (except for systems with embedding)... wake up Google</div>
+          
+          <div class="tweet-stats">♥ 112 &nbsp; ↺ 3</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">1 week ago i'd have told you this is not AI...
+
+this is the first time ever i genuinely can't tell what is AI and what isn't
+
+the window is closing very fast</div>
+          
+          <div class="tweet-stats">♥ 172 &nbsp; ↺ 4</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">how to grow your product from $0 to $10k MRR with AI influencers (using GPT Images 2.0 and Seedance 2.0):
+
+> start on Pinterest, save 15-20 reference bodies that fit your niche, after body type, lighting, styling, vibe, the raw material for an avatar you'll run for months
+
+> drop the refs into GPT Images 2.0 on thinking mode, have it extract the visual profile and generate a character sheet (front, side, 3-quarter, locked outfit, locked lighting), this sheet is the only asset that carries across every clip you ever ship
+
+> feed it into Higgsfield marketing studio as your avatar
+
+> paste your product link, prompt a 15-second UGC for tiktok, Seedance hands back a video with perfect lipsync and native audio in one pass
+
+> repeat that whole workflow per influencer, post daily per account, slip a product pitch in every 5-7 uploads, done
+
+and yes, you can literally create an army of influencers, but you'll need a proper system... lemme show you how it's done
+
+you need to factory reset an iphone, here's how to set it up:
+
+> set language and region to your target country (most likely US)
+> fresh gmail and fresh apple ID per device
+> match the app store region
+> run a paid dedicated-IP VPN
+> 2-3 accounts per device max, warm each one 1-2 days before the first post
+> VPN on at all times
+
+this is how you nail distribution at scale for cheap</div>
+          
+          <div class="tweet-stats">♥ 144 &nbsp; ↺ 9</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@cvssvrt ahahah wtf</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">K</div>
+        <div class="kol-info">
+          <div class="kol-name">@kloss_xyz</div>
+          <div class="kol-note">系统架构之王（底层硬核）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@beffjezos 🤣🤣</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@LLMJunky 👀👀</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@Mayhem4Markets 🤣🤣🤣</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@KingBootoshi Fascinating experiment we should stream and discuss?</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@boom_dart quite a few people I follow with massive followings larping about their design capabilities, I really don’t wanna start any wars but mfers need to be held accountable otherwise people just get dumber 😭🤣</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">S</div>
+        <div class="kol-info">
+          <div class="kol-name">@shao__meng</div>
+          <div class="kol-note">Web与AI技术实践，AI论文、开源项目和产品落地思考</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">OpenClaw 中配置使用 Codex harness + OpenAI 模型时，认证出错，系统静默回退到 Pi harness。用户以为自己在用 Codex，实际上一直在用 Pi ？
+
+Codex 成员 @pashmerepat 修复了这个问题，并对 Codex 和 Pi 在实际表现上做了 Harness 级全面对比。
+
+运行范式
+Pi Harness 是被动轮询：读文件 → 查 Discord → 无结果 → 报告完成
+Codex Harness 则是主动 Agent 循环：读上下文 → 解析清单 → 检查状态 → 执行 → 验证 → 报告
+
+指令理解
+Pi 将 HEARTBEAT.md 窄化为"查 Discord"指令，忽略其余义务
+Codex 泛化理解，识别 Discord、capcut-cli、推送进度、TikTok 音效研究等全部活跃义务
+
+执行闭环
+Pi 即使指令要求推进 capcut-cli，查完 Discord 无事后即停止
+Codex 检查仓库状态、读项目笔记、本地修改、尝试验证，形成完整闭环
+
+意图-行动断裂
+Pi 存在严重病理：模型推理"应该读心跳文件并查 Discord"，却以 HEARTBEAT_OK 结束，未发出任何工具调用
+Codex 消除此断裂，意图直接转化为实际工具调用——读文件、执行命令、仓库检查、编辑文件、diff 校验
+
+工具使用
+Pi 最小化且重复：读 HEARTBEAT.md + 一次 Discord 查询
+Codex 多步骤且有目的：读身份/上下文文件 → 检查工具 → 检查 capcut-cli → 读笔记 → 尝试 Discord → 编辑 .gitignore → 尝试测试 → 检查 diff/status
+
+项目推进
+Pi 几乎为零：浅层心跳期间 capcut-cli 无实质进展
+Codex 产生真实进展（虽小）：向 .gitignore 添加 .DS_Store，阻止导入的音效文件污染 git 状态
+
+阻塞处理
+Pi 遇阻即停：Discord 无内容或检查失败就终止
+Codex 自适应：Discord 被阻时转向本地 capcut-cli 工作；测试被阻时检查 diff/status 并报告限制
+
+验证机制
+Pi 基本缺失：因通常不做修改，无物可验
+Codex 尝试 cargo test；受阻时仍用 git diff 和 git status 验证实际编辑
+
+报告质量
+Pi 仅输出 HEARTBEAT_OK
+Codex 信息丰富：HEARTBEAT_OK + Discord 被阻说明 + .gitignore 编辑记录 + 测试受阻说明
+
+跨心跳连续性
+Pi 行为像重复的全新轮询
+Codex 改善：后续心跳识别已有的 .gitignore 修改，尝试推进至 commit/push，而非重复相同编辑
+
+失效模式
+Pi 机械性能力不足：最小检查、弱执行、意图与行动分离
+Codex 更具代理性但受约束：Agent 能行动，但 Discord 读取、测试、git 操作仍可能遇到权限墙</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">OpenAI 为 ChatGPT 带来 Workspace Agents
+
+这种面向企业工作流的共享式智能体带来的变化：
+· 从单点问答 → 长时运行工作流：基于 Codex 在云端执行，可写代码、调用工具、跨多步骤持续运行，即使用户离线也不中断
+· 从个人使用 → 组织级共享：一次构建，团队内多人可在 ChatGPT 或 Slack 中共同使用、迭代优化
+· 从通用能力 → 垂直业务流：深度嵌入企业既有流程（审批、工单、CRM 更新等），而非仅提供信息
+
+核心能力
+· 持续运行：可定时触发（如每周五拉取数据生成报告），或在 Slack 中被动响应请求
+· 工具集成：连接数十种业务系统，跨工具读取/写入数据、创建图表、发送邮件
+· 记忆与学习：保留上下文和经验，通过对话中被纠正而持续优化表现
+· 人机协作：敏感操作（发送邮件、修改表格等）可设置人工审批节点
+· 治理管控：企业管理员可配置数据权限、工具访问范围、用户角色，并通过 Compliance API 审计所有 Agent 的配置变更与运行记录
+
+OpenAI 内部已验证的 5 个典型场景
+1. Software Reviewer：审核员工软件申请，对照政策推荐方案，自动提交 IT 工单
+2. Product Feedback Router：监控 Slack、支持论坛、公开渠道，将反馈转为优先级工单并生成周报
+3. Weekly Metrics Reporter：定时拉数据、生成图表、撰写并分发报告
+4. Lead Outreach Agent：研究线索、按评分模型筛选、起草个性化跟进邮件、更新 CRM
+5. Third-Party Risk Manager：调研供应商，评估制裁风险、财务健康度、声誉风险，输出尽调报告
+
+关键架构与体验设计
+· 低代码构建：在 ChatGPT 侧边栏点击 Agents，描述工作流即可逐步配置步骤、工具、技能并测试
+· 模板化启动：提供财务、销售、市场等领域的预设模板，内置技能和推荐工具
+· 团队目录：类似内部应用商店，成员可发现并使用同事创建的 Agent，查看使用分析（运行次数、用户数）
+· 渐进式替代：GPTs 仍保留，未来将支持一键迁移为 Workspace Agent</div>
+          <a class="tweet-link" href="https://t.co/EVzoousOV5" target="_blank">→ https://t.co/EVzoousOV5</a>
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">OpenAI 成立 Codex Labs，引入一批全球系统集成商埃森哲、凯捷、普华永道等顶级咨询公司，要把 Codex 从“开发者个人工具”推向“企业级部署”
+
+Box CEO @levie 认为：
+企业级 AI Agent 的大规模落地，远比技术本身复杂得多，这将催生一个巨大的服务市场，"人"不会消失，反而会更加重要。
+
+# 为什么 Levie 认为"人不会消失"？
+1. 遗留技术栈的现代化负担
+大企业不是一张白纸。它们运行着几十年积累的遗留系统，这些系统往往缺乏现代 API，与 AI Agent 的对接需要大量定制开发。正如 Levie 在此前访谈中强调的，"大多数工作流程并不是为直接嵌入 Agent 而设计的"
+
+2. 数据碎片化与"暗知识"
+企业数据分散在数十个互不兼容的工具中，格式不统一、权限复杂。更棘手的是，大量关键知识并未被数字化或文档化——Levie 曾描述很多企业"实际上是在做学徒制"，新员工需要一到三个月的口传心授才能上手，因为"那些隐性知识根本没有被写下来"
+
+3. 变更管理的现实挑战
+企业必须在保持日常运营的同时完成转型。这与初创公司可以"推倒重来"完全不同。Levie 在近期与大量企业 IT 和 AI 负责人交流后指出，"变更管理仍然是一个重大挑战"，企业正在从广泛实验转向针对特定工作流的自动化，但组织阻力巨大
+
+4. 治理与安全的复杂性
+Levie 反复强调，"数据和 AI 治理仍然是核心挑战"——让数据达到 Agent 可以安全、便捷操作的状态，对大多数组织来说都是艰巨任务；而治理 Agent 在工作流中可以对数据做什么，仍是重大议题
+
+# "FDE 模式"为何会一直存在？
+企业希望供应商真正帮助推动变更管理和新工作流的实施，而不仅仅是提供工具。这与 OpenAI 推出 Codex Labs、将自有人员嵌入客户组织的做法完全吻合。
+
+# 深层启示：垂直领域的机会
+· 技术层：AI 模型本身（OpenAI、Anthropic 等）
+· 交付层：帮助企业落地实施的咨询与服务商（埃森哲、凯捷等）
+· 垂直层：在特定领域和 workflow 中部署 Agent 的专业公司（新老初创机会）</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">HuggingFace 联创 & CTO @julien_c 基于团队内代码提交中 agent 标签的统计，对 Claude Code / Codex / Cursor 和 Antigravity 的使用数据分析
+
+04.20 最新数据：
+· Claude Code 是 Codex 的 4 倍，且占据 Coding Agent 半壁江山
+· Codex 是 Cursor 的 2 倍，Codex 目前周活已超 400 万，涨势很猛
+· Antigravity ≈ Cursor？体感看 Antigravity 还有很大的差距，真的是 Google 全体在用？</div>
+          
+          <div class="tweet-stats">♥ 9 &nbsp; ↺ 3</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@bidah @stitchbygoogle Yeah, ROFI. Thank you for releasing the designmd directory, It's so useful for me, and I will use it to do some infographics and remotion videos.</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">V</div>
+        <div class="kol-info">
+          <div class="kol-name">@vasuman</div>
+          <div class="kol-note">AI Agent之王（智能体实战派）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">The majority of the anti-AI crowd insists that AI output is “slop” to try and win the argument.
+
+Yes there's a lot of slop, because people prompt poorly. But well-prompted AI now produces images, video, and code that's almost impossible to distinguish from great quality human work.
+
+Pretending it's low quality doesn't strengthen your case, it just makes you sound like you don’t know how to use AI well.
+
+You can be staunchly anti-AI and still admit that AI has gotten incredibly powerful. In fact that is the only honest version of the argument. 
+
+The reality is most people against AI parroted these talking points from people who only ever used GPT-3.5-Turbo and first gen image models. 
+
+Give the latest models a spin and update your worldview.</div>
+          
+          <div class="tweet-stats">♥ 5 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@sethsetse POV: You're Garry Tan changing the color of a button</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@loganmbrand 🙏 Appreciate it Logan!</div>
+          
+          <div class="tweet-stats">♥ 3 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@KentegrityAI Yes</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@jiratickets Concerning</div>
+          
+          <div class="tweet-stats">♥ 3 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">V</div>
+        <div class="kol-info">
+          <div class="kol-name">@vista8</div>
+          <div class="kol-note">AI产品、工作流、Vibe Coding和趋势判断，兼具产品感和表达能力</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@pingchn 你的判断可能是对的，而且因为图片宽度和字体大小问题，可读性非常差，哪怕你想读。</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@twikejin 对的，就是CF时快时慢，上传图片问题不大，上传视频偶尔会失败。</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">神佬熬夜写的评测，一看就抽卡抽了很多 哈哈哈哈。</div>
+          
+          <div class="tweet-stats">♥ 3 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@Wfgggggc 估计是x的bug，我看还不到350</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">上次参加继刚组织的活动，会后群里大家都在推荐各种科幻片。
+
+Human - Agent - Agent - Human的各种关系组合，一定会诞生出新的产品形态。
+
+这篇是好友Leon出的新产品Bloome的使用体验报告。
+
+方向很有意思，可以理解成融合了云端和本地Agent的社交产品，全拉到一个群对话。
+
+产品在内测，邀请注册地址：</div>
+          <a class="tweet-link" href="https://t.co/ObpQ43pzGj" target="_blank">→ https://t.co/ObpQ43pzGj</a>
+          <div class="tweet-stats">♥ 5 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">A</div>
+        <div class="kol-info">
+          <div class="kol-name">@alchainhust</div>
+          <div class="kol-note">AI编程、AI Native产品和具体工具实操，内容落地性强</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@rushandeai 哈哈，那就不合适了</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">唯一的问题是把风格词汇椰树牌椰汁带进去了</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">nb…给GPT-Image-2丢了我的GitHub仓库直接生成的宣传海报，知识定义了下风格，甚至连二维码都是直接生成的，还真能扫。</div>
+          <a class="tweet-link" href="https://t.co/MVHwxfE47h" target="_blank">→ https://t.co/MVHwxfE47h</a>
+          <div class="tweet-stats">♥ 23 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@Keji715 是的是的🙂‍↕️</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@Linee422379 可能是</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">X</div>
+        <div class="kol-info">
+          <div class="kol-name">@xicilion</div>
+          <div class="kol-note">LLM、AI实战和开发者视角，信息密度较高</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">不要忘记让 ai 给你的个人知识库或者在线文档写一个 summary.md（需要安装  v3.2.1）。</div>
+          <a class="tweet-link" href="https://t.co/m5NU23Aste" target="_blank">→ https://t.co/m5NU23Aste</a>
+          <div class="tweet-stats">♥ 61 &nbsp; ↺ 10</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">6 还没整明白呢。。。😳</div>
+          
+          <div class="tweet-stats">♥ 4 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">O</div>
+        <div class="kol-info">
+          <div class="kol-name">@oran_ge</div>
+          <div class="kol-note">AI创业者视角，关注Agent、产品机会和模型能力变化</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">领导力的核心是真理
+就是做对的事情
+其他都不是最重要的</div>
+          <a class="tweet-link" href="https://t.co/9niPP8vc4o" target="_blank">→ https://t.co/9niPP8vc4o</a>
+          <div class="tweet-stats">♥ 5 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">半天抢完了，还是挺火的</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@odyzhou 日本是终身雇用制 倒还好</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@vista8 当然重要</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@odyzhou 这个可以公开说的吗 😓</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">J</div>
+        <div class="kol-info">
+          <div class="kol-name">@jackfriks</div>
+          <div class="kol-note">单人App之王（真实数据说话）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@shl ouh</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@andupoto @MatthewBerman bigger limits on @postbridge_ but still not quite what mathew wants. still short form first as egress on super log. from is an insane cost</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@CompoundKFC @athcanft a lot of people can learn from what he did without having an audience and do numbers beyond what they think with a fraction of initial audience 
+
+his posts are just good and valuable, most people’s  aren’t</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@_ss1ngh @athcanft i met will back 4 years ago irl in our crypto days so i have the right to joke around with him ;)</div>
+          
+          <div class="tweet-stats">♥ 4 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@__cski @athcanft i disagree but that’s ok
+
+most of his money has certainly helped having posted a lot and followers but still his traffic for photoAI isnt mainly twitter</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">E</div>
+        <div class="kol-info">
+          <div class="kol-name">@elliotchen100</div>
+          <div class="kol-note">AI工具拆解、项目观察和开发者生态内容，追踪新项目</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">看下来我觉得关键词不是 agent,是 shared。 
+
+过去两年的 copilot 其实都是单机版,每个员工桌上一个。workspace agent 第一次把 AI 放进了团队工作流的中间,不再是侧边栏,而是传送带上的一节。
+
+Sales 链路最能看出差别。 
+
+SDR 约到会,要把背景甩给 AE;AE 开完会再把 action items 丢给 CS。今天这条路走下来,AI 侧其实是三个互不认识的 ChatGPT,每一棒都得把客户重新介绍一遍。 workspace agent 之后,三个角色看的是同一个 agent 实例,它自己在 CRM、邮件、日历、Slack 里记状态。
+
+所以下一阶段要卷的不再是模型更聪明,而是权限、交接、长任务的可追溯。 说白了,协作的「上下文容器」正在从文档迁到 agent。</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@dotey 补个背景，盛大下面现在在跑众多 AI native 公司，
+@evermind , @miromind_ai , @TankaChat , @ChenInstitute , @alayastd，@mirofish_ai, @DYJ_Science , Tokyo Research 和 Theta。  
+
+全是模型，镜，心智，脑波，觉知，帖子里讲的「扩展人类」四个字，其实在这些名字里就已经写明白了。</div>
+          
+          <div class="tweet-stats">♥ 5 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@Ironion2 @dotey bro 按下 f5</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@QuantumTransf @dotey 亦菲好眼力👀</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">我们在这 4 个地方招人，职位很多，活儿很多，如果你能用 AI 武装自己成为小小全能手，请大胆投递简历。
+
+P.S. 最近事儿比较多，之前投递的简历会陆续安排面试，表急表急。
+
+借用了 @dotey 老师的提示词</div>
+          <a class="tweet-link" href="https://t.co/v4eBHf4r2z" target="_blank">→ https://t.co/v4eBHf4r2z</a>
+          <div class="tweet-stats">♥ 51 &nbsp; ↺ 6</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">C</div>
+        <div class="kol-info">
+          <div class="kol-name">@corbin_braun</div>
+          <div class="kol-note">Cursor之王（AI写代码最爽工具）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@gauravsbuilding W</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">uber one has been purchased
+
+too key for going mobile</div>
+          
+          <div class="tweet-stats">♥ 3 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">W @fdotinc 
+
+will be back this week to shoot more podcast with canopy founders</div>
+          <a class="tweet-link" href="https://t.co/h7GEgT59yX" target="_blank">→ https://t.co/h7GEgT59yX</a>
+          <div class="tweet-stats">♥ 4 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">W podcast with @gauravsbuilding 🔥
+
+great product 
+
+gonna try for @thumio</div>
+          <a class="tweet-link" href="https://t.co/gZxeuhvq6M" target="_blank">→ https://t.co/gZxeuhvq6M</a>
+          <div class="tweet-stats">♥ 3 &nbsp; ↺ 1</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">how is it Wednesday</div>
+          
+          <div class="tweet-stats">♥ 4 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">B</div>
+        <div class="kol-info">
+          <div class="kol-name">@berryxia</div>
+          <div class="kol-note">创意型AI应用、提示词、自动化和生产流</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">官方博客👉</div>
+          <a class="tweet-link" href="https://t.co/wxYThIUt5g" target="_blank">→ https://t.co/wxYThIUt5g</a>
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">OpenAI 把 Workspace Agents 正式推到 ChatGPT 了！
+
+共享 Agent 终于来了，能跨工具、跨团队处理复杂长流程任务：
+
+✅ 自动协调文档、邮件、聊天、代码、系统  
+✅ 自主完成资格审核、反馈路由、报告拉取、供应商调研等  
+✅ 支持后台运行 + 定时执行</div>
+          <a class="tweet-link" href="https://t.co/rgsl81NIax" target="_blank">→ https://t.co/rgsl81NIax</a>
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@hy6898 amazing</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@LufzzLiz 😁</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@yhslgg 哈哈笑死</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">G</div>
+        <div class="kol-info">
+          <div class="kol-name">@godofprompt</div>
+          <div class="kol-note">Prompt之神（调教AI的顶级艺术）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@ShahidHLal Hey! The official update is on  
+
+I am dming you accesses as we speak. Deeply sorry for the disruption and all the inconveniences</div>
+          <a class="tweet-link" href="https://t.co/YdH0MsnzA7" target="_blank">→ https://t.co/YdH0MsnzA7</a>
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@o_ronimktpro @dvwag We are deeply sorry for this. I will deliver the access link to you immediately</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@dvwag Hey! I’m DMing access to anyone who requests it. The official mailbox is restored as well at info@godofprompt.ai</div>
+          
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">AI logo makers empower your brand.
+Establish identity efficiently and affordably.
+• Choose the right tool
+• Customize designs
+• Launch your brand
+
+🔗 Click below to read more:</div>
+          <a class="tweet-link" href="https://t.co/OvKi7rjKtp" target="_blank">→ https://t.co/OvKi7rjKtp</a>
+          <div class="tweet-stats">♥ 18 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@CeruleanRange Thanks a lot for the support! Do you need to access any of the products asap? Hmu</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">0</div>
+        <div class="kol-info">
+          <div class="kol-name">@0xroas</div>
+          <div class="kol-note">AI UGC之王（病毒式用户内容狂魔）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@SithAffiliate 🔥</div>
+          
+          <div class="tweet-stats">♥ 0 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@hookrate_ heat🔥🔥🔥🔥</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+        <div class="tweet-item">
+          <div class="tweet-text">@andreilunev @JasonKutasi @iamgalba sick🔥</div>
+          
+          <div class="tweet-stats">♥ 2 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+    <div class="kol-card">
+      <div class="kol-header" style="display:flex;align-items:center;gap:10px;">
+        <div class="kol-avatar">R</div>
+        <div class="kol-info">
+          <div class="kol-name">@rryssf_</div>
+          <div class="kol-note">自动化之王（懒人福音）</div>
+        </div>
+      </div>
+      
+        <div class="tweet-item">
+          <div class="tweet-text">@nikitabier *never have friends that try to hijack your X accounts and use it as leverage in business negotiations</div>
+          <a class="tweet-link" href="https://t.co/6BXXHof8U2" target="_blank">→ https://t.co/6BXXHof8U2</a>
+          <div class="tweet-stats">♥ 1 &nbsp; ↺ 0</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

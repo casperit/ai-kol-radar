@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOL 列表 - AI KOL 日报</title>
+<style>
+:root {
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+  --surface2: #f1efe8;
+  --border: rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.14);
+  --text: #1a1a18;
+  --muted: #5f5e5a;
+  --hint: #888780;
+  --purple-bg: #eeedfe;
+  --purple-text: #3c3489;
+  --teal-bg: #e1f5ee;
+  --teal-text: #085041;
+  --amber-bg: #faeeda;
+  --amber-text: #633806;
+  --coral-bg: #faece7;
+  --coral-text: #4a1b0c;
+  --blue-bg: #e6f1fb;
+  --blue-text: #0c447c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18181a;
+    --surface: #222224;
+    --surface2: #2c2c2e;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+    --text: #e8e8e6;
+    --muted: #a0a09c;
+    --hint: #6a6a66;
+    --purple-bg: #26215c;
+    --purple-text: #cecbf6;
+    --teal-bg: #04342c;
+    --teal-text: #9fe1cb;
+    --amber-bg: #412402;
+    --amber-text: #fac775;
+    --coral-bg: #4a1b0c;
+    --coral-text: #f5c4b3;
+    --blue-bg: #042c53;
+    --blue-text: #b5d4f4;
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+/* nav */
+.nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.nav-logo { font-size: 16px; font-weight: 500; }
+.nav-tabs { display: flex; gap: 2px; background: var(--surface2); border-radius: 8px; padding: 3px; }
+.nav-tab { font-size: 13px; padding: 5px 14px; border-radius: 6px; color: var(--muted); cursor: pointer; border: none; background: none; }
+.nav-tab.active { background: var(--surface); color: var(--text); font-weight: 500; box-shadow: 0 0.5px 2px var(--border2); }
+.nav-tab:hover:not(.active) { color: var(--text); }
+
+/* stats */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 2rem; }
+.stat { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.stat-num { font-size: 24px; font-weight: 500; }
+.stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* day card */
+.day-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 10px; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s; }
+.day-card:hover { border-color: var(--border2); box-shadow: 0 2px 8px var(--border); }
+.day-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.day-date { font-size: 15px; font-weight: 500; }
+.day-meta { display: flex; gap: 6px; align-items: center; }
+.badge { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 20px; }
+.badge-kol { background: var(--purple-bg); color: var(--purple-text); }
+.badge-tweet { background: var(--teal-bg); color: var(--teal-text); }
+.badge-topic { background: var(--amber-bg); color: var(--amber-text); }
+.day-summary { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.topics { display: flex; gap: 6px; flex-wrap: wrap; }
+.topic-tag { font-size: 11px; padding: 2px 8px; background: var(--surface2); color: var(--hint); border-radius: 20px; border: 0.5px solid var(--border); }
+.arrow { color: var(--hint); margin-left: 8px; }
+
+/* detail page */
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); margin-bottom: 1.5rem; }
+.back-link:hover { color: var(--text); }
+.overview-box { background: var(--surface2); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+.overview-label { font-size: 11px; color: var(--hint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-weight: 500; }
+.overview-text { font-size: 14px; color: var(--text); line-height: 1.75; }
+.section-title { font-size: 13px; font-weight: 500; color: var(--muted); margin: 1.5rem 0 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.kol-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 10px; }
+.kol-header { margin-bottom: 10px; }
+.kol-name { font-size: 15px; font-weight: 500; }
+.kol-handle { font-size: 12px; color: var(--hint); margin-top: 1px; }
+.tweet-item { padding: 10px 0; border-top: 0.5px solid var(--border); }
+.tweet-text { font-size: 13px; color: var(--text); line-height: 1.65; }
+.tweet-link { display: inline-block; margin-top: 5px; font-size: 12px; color: var(--blue-text); word-break: break-all; }
+.tweet-stats { font-size: 11px; color: var(--hint); margin-top: 5px; }
+.zh-summary { font-size: 13px; color: var(--muted); margin-top: 8px; padding-top: 8px; border-top: 0.5px solid var(--border); line-height: 1.65; }
+
+/* kol index */
+.kol-index-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; cursor: pointer; transition: border-color 0.15s; }
+.kol-index-card:hover { border-color: var(--border2); }
+.kol-index-header { display: flex; align-items: center; justify-content: space-between; }
+.kol-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--purple-bg); color: var(--purple-text); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; flex-shrink: 0; }
+.kol-info { flex: 1; margin-left: 10px; }
+.kol-note { font-size: 11px; color: var(--hint); margin-top: 1px; }
+.kol-stats-row { display: flex; gap: 8px; margin-top: 8px; }
+
+/* topic index */
+.topic-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 10px; }
+.topic-name { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+.topic-kols { font-size: 12px; color: var(--muted); }
+
+/* empty */
+.empty { text-align: center; padding: 3rem; color: var(--hint); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+    <nav class="nav">
+      <span class="nav-logo">🤖 AI KOL 日报</span>
+      <div class="nav-tabs"><a href="index.html"><button class="nav-tab ">按日期</button></a><a href="kol.html"><button class="nav-tab active">按 KOL</button></a><a href="topic.html"><button class="nav-tab ">按话题</button></a></div>
+    </nav><div style="margin-bottom:1.5rem;font-size:22px;font-weight:500;">KOL 列表</div>
+    <a href="https://twitter.com/karpathy" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">K</div>
+          <div class="kol-info">
+            <div class="kol-name">@karpathy</div>
+            <div class="kol-note">LLM之王（从零教你造大模型）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/steipete" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">S</div>
+          <div class="kol-info">
+            <div class="kol-name">@steipete</div>
+            <div class="kol-note">OpenClaw缔造者（实战黑马）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/gregisenberg" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">G</div>
+          <div class="kol-info">
+            <div class="kol-name">@gregisenberg</div>
+            <div class="kol-note">创业点子之神（每天脑洞大开）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/rileybrown" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">R</div>
+          <div class="kol-info">
+            <div class="kol-name">@rileybrown</div>
+            <div class="kol-note">Vibecode天皇（氛围感拉满的代码）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/corbin_braun" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">C</div>
+          <div class="kol-info">
+            <div class="kol-name">@corbin_braun</div>
+            <div class="kol-note">Cursor之王（AI写代码最爽工具）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/jackfriks" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">J</div>
+          <div class="kol-info">
+            <div class="kol-name">@jackfriks</div>
+            <div class="kol-note">单人App之王（真实数据说话）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/levelsio" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">L</div>
+          <div class="kol-info">
+            <div class="kol-name">@levelsio</div>
+            <div class="kol-note">单人创业之神（不靠VC硬核造产品）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/marclou" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">M</div>
+          <div class="kol-info">
+            <div class="kol-name">@marclou</div>
+            <div class="kol-note">单人创业之神（又一个狠人）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/EXM7777" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">E</div>
+          <div class="kol-info">
+            <div class="kol-name">@EXM7777</div>
+            <div class="kol-note">AI运营+系统之王（全栈效率拉满）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/eptwts" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">E</div>
+          <div class="kol-info">
+            <div class="kol-name">@eptwts</div>
+            <div class="kol-note">AI赚钱推特之王（变现套路最狠）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/godofprompt" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">G</div>
+          <div class="kol-info">
+            <div class="kol-name">@godofprompt</div>
+            <div class="kol-note">Prompt之神（调教AI的顶级艺术）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/vasuman" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">V</div>
+          <div class="kol-info">
+            <div class="kol-name">@vasuman</div>
+            <div class="kol-note">AI Agent之王（智能体实战派）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/AmirMushich" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">A</div>
+          <div class="kol-info">
+            <div class="kol-name">@AmirMushich</div>
+            <div class="kol-note">AI广告之王（投放直接起飞）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/0xROAS" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">0</div>
+          <div class="kol-info">
+            <div class="kol-name">@0xROAS</div>
+            <div class="kol-note">AI UGC之王（病毒式用户内容狂魔）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/egeberkina" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">E</div>
+          <div class="kol-info">
+            <div class="kol-name">@egeberkina</div>
+            <div class="kol-note">AI图像之王（画面感炸裂）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/MengTo" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">M</div>
+          <div class="kol-info">
+            <div class="kol-name">@MengTo</div>
+            <div class="kol-note">AI落地页之王（转化率机器）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/rryssf_" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">R</div>
+          <div class="kol-info">
+            <div class="kol-name">@rryssf_</div>
+            <div class="kol-note">自动化之王（懒人福音）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/kloss_xyz" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">K</div>
+          <div class="kol-info">
+            <div class="kol-name">@kloss_xyz</div>
+            <div class="kol-note">系统架构之王（底层硬核）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/emollick" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">E</div>
+          <div class="kol-info">
+            <div class="kol-name">@emollick</div>
+            <div class="kol-note">AI科学之王（最靠谱研究解读）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/Hesamation" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">H</div>
+          <div class="kol-info">
+            <div class="kol-name">@Hesamation</div>
+            <div class="kol-note">AI/ML综合之王（深度学习前沿）</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/dotey" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">D</div>
+          <div class="kol-info">
+            <div class="kol-name">@dotey</div>
+            <div class="kol-note">中文AI圈高频信息源，Prompt工程、AI实战、前沿工具与模型解读</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/op7418" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">O</div>
+          <div class="kol-info">
+            <div class="kol-name">@op7418</div>
+            <div class="kol-note">AIGC周刊主理人，AI绘画、视频生成、设计工作流和工具趋势</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/Gorden_Sun" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">G</div>
+          <div class="kol-info">
+            <div class="kol-name">@Gorden_Sun</div>
+            <div class="kol-note">AI资讯日报和前沿动态整理，追踪新模型、新产品和热点变化</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/xiaohu" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">X</div>
+          <div class="kol-info">
+            <div class="kol-name">@xiaohu</div>
+            <div class="kol-note">科技与AI工具分享，ChatGPT、AI工具导航、产品资讯和使用技巧</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/shao__meng" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">S</div>
+          <div class="kol-info">
+            <div class="kol-name">@shao__meng</div>
+            <div class="kol-note">Web与AI技术实践，AI论文、开源项目和产品落地思考</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/thinkingjimmy" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">T</div>
+          <div class="kol-info">
+            <div class="kol-name">@thinkingjimmy</div>
+            <div class="kol-note">AI工具普及与产品体验，面向普通用户和工具使用者</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/goocarlos" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">G</div>
+          <div class="kol-info">
+            <div class="kol-name">@goocarlos</div>
+            <div class="kol-note">AI开发与产品结合，偏开发者视角，工具构建和应用实践</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/Tumeng05" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">T</div>
+          <div class="kol-info">
+            <div class="kol-name">@Tumeng05</div>
+            <div class="kol-note">AI创业和LLM、RAG、Agent方向，技术趋势与商业落地</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/AxtonLiu" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">A</div>
+          <div class="kol-info">
+            <div class="kol-name">@AxtonLiu</div>
+            <div class="kol-note">把复杂AI技术讲清楚，AI产品、开发实践和工具应用心得</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/haibun" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">H</div>
+          <div class="kol-info">
+            <div class="kol-name">@haibun</div>
+            <div class="kol-note">AI视频和生成式视觉创作，创意类AI方向</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/nishuang" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">N</div>
+          <div class="kol-info">
+            <div class="kol-name">@nishuang</div>
+            <div class="kol-note">AI工具、生产力提升和趋势观察，信息密度高</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/vista8" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">V</div>
+          <div class="kol-info">
+            <div class="kol-name">@vista8</div>
+            <div class="kol-note">AI产品、工作流、Vibe Coding和趋势判断，兼具产品感和表达能力</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/lijigang" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">L</div>
+          <div class="kol-info">
+            <div class="kol-name">@lijigang</div>
+            <div class="kol-note">深度Prompt探索者，AI思考、创意应用和方法论总结</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/kaifulee" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">K</div>
+          <div class="kol-info">
+            <div class="kol-name">@kaifulee</div>
+            <div class="kol-note">华人AI领域最具影响力意见领袖之一，产业、创业和大模型趋势判断</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/WaytoAGI" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">W</div>
+          <div class="kol-info">
+            <div class="kol-name">@WaytoAGI</div>
+            <div class="kol-note">中文AI知识整理型头部账号，体系化学习和追踪前沿资源</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/xicilion" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">X</div>
+          <div class="kol-info">
+            <div class="kol-name">@xicilion</div>
+            <div class="kol-note">LLM、AI实战和开发者视角，信息密度较高</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/oran_ge" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">O</div>
+          <div class="kol-info">
+            <div class="kol-name">@oran_ge</div>
+            <div class="kol-note">AI创业者视角，关注Agent、产品机会和模型能力变化</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/AlchainHust" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">A</div>
+          <div class="kol-info">
+            <div class="kol-name">@AlchainHust</div>
+            <div class="kol-note">AI编程、AI Native产品和具体工具实操，内容落地性强</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/SamuelQZQ" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">S</div>
+          <div class="kol-info">
+            <div class="kol-name">@SamuelQZQ</div>
+            <div class="kol-note">AI工具、AI认知和开发者实践，一线新工具和新玩法</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/elliotchen100" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">E</div>
+          <div class="kol-info">
+            <div class="kol-name">@elliotchen100</div>
+            <div class="kol-note">AI工具拆解、项目观察和开发者生态内容，追踪新项目</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/Hayami_kiraa" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">H</div>
+          <div class="kol-info">
+            <div class="kol-name">@Hayami_kiraa</div>
+            <div class="kol-note">AI Builder和内容创作者路线，连接产品、创作和增长</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://twitter.com/berryxia" target="_blank">
+      <div class="kol-index-card">
+        <div class="kol-index-header">
+          <div class="kol-avatar">B</div>
+          <div class="kol-info">
+            <div class="kol-name">@berryxia</div>
+            <div class="kol-note">创意型AI应用、提示词、自动化和生产流</div>
+          </div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+</div>
+</body>
+</html>
