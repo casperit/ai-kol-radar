@@ -24,10 +24,12 @@ python src/main.py summarize
 自动生成 `data/today_summary.md`。
 
 ### Step 4：用 Gmail connector 发送邮件
-读取 `data/today_summary.md`，只取**前1000字**（整体摘要部分），用 Gmail connector 发送：
+读取 `data/today_summary.md`，只取**前1000字**（整体摘要部分），用 Gmail connector **直接发送邮件（send，不是创建草稿）**：
 - 收件人：$GMAIL_TO
 - 主题：🤖 AI KOL 日报 {今天日期}
-- 正文：today_summary.md 的前1000字 + "查看完整日报 → https://casperit.github.io/ai-kol-radar/"
+- 正文：today_summary.md 的前1000字 + "\n\n查看完整日报 → https://casperit.github.io/ai-kol-radar/"
+
+**重要：必须直接发送，不要创建草稿（draft）。**
 
 ### Step 5：生成网页存档
 ```bash
