@@ -263,28 +263,14 @@ KOL动态：
 (English summary, ~100 words)"""
 
     try:
-        headers = {
-            "anthropic-version": "2023-06-01",
-            "content-type": "application/json",
-        }
-        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-        if api_key:
-            headers["x-api-key"] = api_key
-        resp = requests.post(
-            "https://api.anthropic.com/v1/messages",
-            headers=headers,
-            json={
-                "model": "claude-sonnet-4-20250514",
-                "max_tokens": 500,
-                "messages": [{"role": "user", "content": prompt}],
-            },
-            timeout=30,
+        import anthropic
+        client = anthropic.Anthropic()
+        message = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=500,
+            messages=[{"role": "user", "content": prompt}],
         )
-        if resp.status_code == 200:
-            return resp.json()["content"][0]["text"]
-        else:
-            print(f"  [警告] Claude API 返回 {resp.status_code}，使用备用摘要")
-            return _fallback_overview(digest)
+        return message.content[0].text
     except Exception as e:
         print(f"  [警告] Claude API 调用失败: {e}，使用备用摘要")
         return _fallback_overview(digest)
