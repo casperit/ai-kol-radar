@@ -16,23 +16,18 @@ pip install requests --break-system-packages -q
 ```bash
 python src/main.py fetch
 ```
-抓取所有 KOL 推文 + 行业新闻，自动生成 `data/today_digest.json`。
 
 ### Step 3：生成总结
 ```bash
 python src/main.py summarize
 ```
-自动完成：
-- 调用 Claude API 生成整体摘要（中英双语）
-- Python 整理 KOL 详情和行业新闻
-- 保存到 `data/today_summary.md`
+自动生成 `data/today_summary.md`。
 
 ### Step 4：用 Gmail connector 发送邮件
-读取 `data/today_summary.md` 完整内容，用 Gmail connector 发送：
+读取 `data/today_summary.md`，只取**前1000字**（整体摘要部分），用 Gmail connector 发送：
 - 收件人：$GMAIL_TO
 - 主题：🤖 AI KOL 日报 {今天日期}
-- 正文：today_summary.md 完整内容
-- 末尾：查看网页版 → https://casperit.github.io/ai-kol-radar/
+- 正文：today_summary.md 的前1000字 + "查看完整日报 → https://casperit.github.io/ai-kol-radar/"
 
 ### Step 5：生成网页存档
 ```bash
@@ -50,11 +45,10 @@ git push origin HEAD:main
 
 ## 环境变量
 - `APIFY_TOKEN` — Apify API Token
-- `ANTHROPIC_API_KEY` — Claude API Key（用于生成整体摘要）
+- `ANTHROPIC_API_KEY` — Claude API Key
 - `GMAIL_TO` — 收件人邮箱
 
 ## 异常处理
-- Claude API 失败：自动用备用摘要，继续执行
-- 行业新闻查询失败：跳过继续
+- Claude API 失败：用备用摘要继续
 - 邮件发送失败：打印错误，继续后续步骤
 - git push 失败：打印错误，不影响本地存档
