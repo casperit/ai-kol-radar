@@ -1,423 +1,367 @@
-#!/usr/bin/env python3
 """
-AI KOL Daily Digest
-  fetch       - 抓推文 + 行业新闻
-  summarize   - 生成总结（Claude API 写摘要，Python 整理详情）
-  publish_web - 生成网页
-  publish     - publish_web + Gmail
+生成静态 HTML 存档页面
+- docs/index.html        按日期列表
+- docs/kol.html          KOL 历史汇总
+- docs/topic.html        话题汇总
+- docs/YYYY-MM-DD.html   每日详情页
 """
 
-import json, os, sys, time, re, smtplib, datetime, requests
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+import json, re
 from pathlib import Path
+from collections import defaultdict
 
-APIFY_TOKEN    = os.environ["APIFY_TOKEN"]
-GMAIL_USER     = os.environ.get("GMAIL_USER", "")
-GMAIL_PASSWORD = os.environ.get("GMAIL_PASSWORD", "")
-GMAIL_TO       = os.environ.get("GMAIL_TO", GMAIL_USER)
+TOPIC_KEYWORDS = {
+    "模型发布": ["release", "launch", "发布", "推出", "上线", "新模型", "gpt-5", "claude", "gemini", "opus", "sonnet"],
+    "Vibe Coding": ["vibe cod", "vibecode", "vibe code", "vibejam"],
+    "Prompt工程": ["prompt", "提示词", "提示工程"],
+    "AI创业": ["mrr", "arr", "创业", "startup", "founder", "bootstrapped", "revenue", "收入"],
+    "开源项目": ["open source", "开源", "github", "repo", "open-source"],
+    "AI Agent": ["agent", "智能体", "agentic", "automation", "自动化"],
+    "大模型": ["llm", "large language", "大模型", "benchmark", "reasoning"],
+    "AI教育": ["教育", "education", "学习", "course", "lecture", "teach"],
+    "独立开发": ["indie", "solo", "独立开发", "side project", "saas"],
+    "MCP工具": ["mcp", "model context protocol"],
+    "AI研究": ["paper", "research", "study", "论文", "研究"],
+    "AI工具": ["tool", "工具", "app", "product", "productivity"],
+}
 
-BASE_DIR      = Path(__file__).parent.parent
-DATA_DIR      = BASE_DIR / "data"
-ARCHIVE_DIR   = DATA_DIR / "archive"
-DOCS_DIR      = BASE_DIR / "docs"
-ACCOUNTS_FILE = DATA_DIR / "accounts.json"
-TWEETS_FILE   = DATA_DIR / "today_tweets.json"
-DIGEST_FILE   = DATA_DIR / "today_digest.json"
-SUMMARY_FILE  = DATA_DIR / "today_summary.md"
+BASE_CSS = """
+:root{--bg:#f8f7f4;--surface:#fff;--surface2:#f1efe8;--border:rgba(0,0,0,.08);--border2:rgba(0,0,0,.15);--text:#1a1a18;--muted:#5f5e5a;--hint:#888780;--pur-bg:#eeedfe;--pur-t:#3c3489;--teal-bg:#e1f5ee;--teal-t:#085041;--amber-bg:#faeeda;--amber-t:#633806;--blue-bg:#e6f1fb;--blue-t:#0c447c}
+@media(prefers-color-scheme:dark){:root{--bg:#18181a;--surface:#222224;--surface2:#2c2c2e;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);--text:#e8e8e6;--muted:#a0a09c;--hint:#6a6a66;--pur-bg:#26215c;--pur-t:#cecbf6;--teal-bg:#04342c;--teal-t:#9fe1cb;--amber-bg:#412402;--amber-t:#fac775;--blue-bg:#042c53;--blue-t:#b5d4f4}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:820px;margin:0 auto;padding:2rem 1.25rem 4rem}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
+.nav-logo{font-size:16px;font-weight:500}
+.nav-tabs{display:flex;gap:2px;background:var(--surface2);border-radius:8px;padding:3px}
+.nav-tab{font-size:13px;padding:5px 14px;border-radius:6px;color:var(--muted);cursor:pointer;border:none;background:none;transition:all .15s}
+.nav-tab.active{background:var(--surface);color:var(--text);font-weight:500}
+.nav-tab:hover:not(.active){color:var(--text)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:2rem}
+.stat{background:var(--surface);border:0.5px solid var(--border);border-radius:10px;padding:14px 16px}
+.stat-num{font-size:24px;font-weight:500}
+.stat-label{font-size:12px;color:var(--muted);margin-top:2px}
+.card{background:var(--surface);border:0.5px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;margin-bottom:10px;transition:border-color .15s}
+.card:hover{border-color:var(--border2)}
+.card-link{display:flex;align-items:center;justify-content:space-between}
+.card-date{font-size:15px;font-weight:500}
+.card-meta{display:flex;gap:6px;align-items:center}
+.badge{font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px}
+.badge-kol{background:var(--pur-bg);color:var(--pur-t)}
+.badge-tweet{background:var(--teal-bg);color:var(--teal-t)}
+.badge-topic{background:var(--amber-bg);color:var(--amber-t)}
+.card-summary{font-size:13px;color:var(--muted);line-height:1.65;margin:8px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:11px;padding:2px 8px;background:var(--surface2);color:var(--hint);border-radius:20px;border:0.5px solid var(--border)}
+.arrow{color:var(--hint);margin-left:8px;font-size:16px}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);margin-bottom:1.5rem}
+.back:hover{color:var(--text)}
+.page-title{font-size:22px;font-weight:500;margin-bottom:4px}
+.page-sub{font-size:13px;color:var(--muted);margin-bottom:1.5rem}
+.overview{background:var(--surface2);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem}
+.overview-label{font-size:11px;color:var(--hint);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;font-weight:500}
+.overview-text{font-size:14px;line-height:1.75}
+.section-title{font-size:12px;font-weight:500;color:var(--hint);text-transform:uppercase;letter-spacing:.06em;margin:1.5rem 0 .75rem}
+.news-item{padding:10px 0;border-bottom:0.5px solid var(--border)}
+.news-item:last-child{border-bottom:none}
+.news-handle{font-size:12px;color:var(--muted);margin-bottom:4px}
+.news-text{font-size:13px;line-height:1.65}
+.news-link{font-size:12px;color:var(--blue-t);display:inline-block;margin-top:4px;word-break:break-all}
+.news-likes{font-size:11px;color:var(--hint);margin-top:4px}
+.kol-card{background:var(--surface);border:0.5px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;margin-bottom:10px}
+.kol-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.avatar{width:36px;height:36px;border-radius:50%;background:var(--pur-bg);color:var(--pur-t);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;flex-shrink:0}
+.kol-name{font-size:15px;font-weight:500}
+.kol-note{font-size:12px;color:var(--hint);margin-top:1px}
+.tweet-item{padding:8px 0;border-top:0.5px solid var(--border)}
+.tweet-text{font-size:13px;line-height:1.65}
+.tweet-link{font-size:12px;color:var(--blue-t);display:inline-block;margin-top:3px;word-break:break-all}
+.tweet-stats{font-size:11px;color:var(--hint);margin-top:4px}
+.kol-index-card{background:var(--surface);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem;margin-bottom:8px}
+.kol-index-header{display:flex;align-items:center}
+.kol-index-info{flex:1;margin-left:10px}
+.topic-card{background:var(--surface);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem;margin-bottom:8px}
+.topic-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.topic-name{font-size:15px;font-weight:500}
+.topic-dates{font-size:12px;color:var(--muted);line-height:1.6}
+.topic-kols{font-size:12px;color:var(--hint);margin-top:4px}
+.empty{text-align:center;padding:3rem;color:var(--hint);font-size:14px}
+"""
 
-MAX_TWEETS_PER_USER = 10
-NEWS_QUERIES = [
-    "AI model release OR launch min_faves:500",
-    "OpenAI OR Anthropic OR Google DeepMind announcement min_faves:300",
-    "LLM benchmark OR AI research paper min_faves:200",
-    "AI startup funding OR AI product launch min_faves:200",
-    "AGI OR AI safety news min_faves:300",
-]
-MAX_NEWS_PER_QUERY = 10
+def _page(title, body):
+    return f"""<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title}</title>
+<style>{BASE_CSS}</style>
+</head>
+<body><div class="wrap">{body}</div></body>
+</html>"""
 
+def _nav(active, prefix=""):
+    tabs = [("date","按日期",f"{prefix}index.html"),
+            ("kol","按KOL",f"{prefix}kol.html"),
+            ("topic","按话题",f"{prefix}topic.html")]
+    html = "".join(f'<a href="{u}"><button class="nav-tab {"active" if k==active else ""}">{l}</button></a>' for k,l,u in tabs)
+    return f'<nav class="nav"><span class="nav-logo">🤖 AI KOL 日报</span><div class="nav-tabs">{html}</div></nav>'
 
-def load_accounts():
-    with open(ACCOUNTS_FILE, encoding="utf-8") as f:
-        return json.load(f)["accounts"]
+def _extract_topics(text):
+    text_lower = text.lower()
+    return [t for t, kws in TOPIC_KEYWORDS.items() if any(k in text_lower for k in kws)]
 
-
-# ── fetch ──────────────────────────────────────────────────────────────
-
-def fetch_tweets():
-    accounts = load_accounts()
-    usernames = [a["username"] for a in accounts]
-    since = (datetime.datetime.now(datetime.UTC) - datetime.timedelta(hours=24)).strftime("%Y-%m-%d_%H:%M:00_UTC")
-    actor_id = "kaitoeasyapi~twitter-x-data-tweet-scraper-pay-per-result-cheapest"
-    run_url = f"https://api.apify.com/v2/acts/{actor_id}/runs?token={APIFY_TOKEN}"
-
-    print(f"[Apify] 抓取 {len(usernames)} 个KOL...")
-    kol_results = {}
-    for i in range(0, len(usernames), 10):
-        batch = usernames[i:i+10]
-        payload = {
-            "searchTerms": [f"from:{u} since:{since}" for u in batch],
-            "maxTweets": MAX_TWEETS_PER_USER,
-            "queryType": "Latest",
-        }
-        resp = requests.post(run_url, json=payload, timeout=30)
-        resp.raise_for_status()
-        run_id = resp.json()["data"]["id"]
-        print(f"  批次 {i//10+1}: {run_id}")
-        for tweet in _wait_for_run(run_id):
-            author = tweet.get("author", {}).get("userName", "").lower()
-            if author:
-                kol_results.setdefault(author, []).append(_parse_tweet(tweet))
-        time.sleep(2)
-
-    print("[Apify] 抓取行业新闻...")
-    news_results = []
-    for query in NEWS_QUERIES:
-        payload = {
-            "searchTerms": [f"{query} since:{since}"],
-            "maxTweets": MAX_NEWS_PER_QUERY,
-            "queryType": "Top",
-        }
+def _all_archives(archive_dir):
+    entries = []
+    for f in sorted(archive_dir.glob("*.json"), reverse=True):
         try:
-            resp = requests.post(run_url, json=payload, timeout=30)
-            resp.raise_for_status()
-            run_id = resp.json()["data"]["id"]
-            for tweet in _wait_for_run(run_id):
-                news_results.append({
-                    **_parse_tweet(tweet),
-                    "author_name": tweet.get("author", {}).get("name", ""),
-                    "author_handle": tweet.get("author", {}).get("userName", ""),
-                    "category": query.split(" min_faves")[0],
-                })
-            time.sleep(2)
-        except Exception as e:
-            print(f"  [警告] {e}")
-
-    seen, deduped = set(), []
-    for n in news_results:
-        key = n.get("text", "")[:60]
-        if key not in seen:
-            seen.add(key)
-            deduped.append(n)
-
-    today = datetime.date.today().strftime("%Y-%m-%d")
-    output = {
-        "date": today,
-        "accounts": accounts,
-        "tweets": kol_results,
-        "news": deduped,
-        "total_tweets": sum(len(v) for v in kol_results.values()),
-        "active_kols": len(kol_results),
-        "total_news": len(deduped),
-    }
-    TWEETS_FILE.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
-    _build_digest(output)
-    print(f"[完成] KOL {output['total_tweets']} 条 + 新闻 {output['total_news']} 条")
+            entries.append(json.loads(f.read_text(encoding="utf-8")))
+        except:
+            pass
+    return entries
 
 
-def _parse_tweet(tweet):
-    return {
-        "text": tweet.get("text", ""),
-        "created_at": tweet.get("createdAt", ""),
-        "likes": tweet.get("likeCount", 0),
-        "retweets": tweet.get("retweetCount", 0),
-        "url": tweet.get("url", ""),
-    }
+# ── 按日期首页 ──────────────────────────────────────────────────────────
+
+def build_index_page(archive_dir, web_dir):
+    web_dir.mkdir(parents=True, exist_ok=True)
+    entries = _all_archives(archive_dir)
+
+    recent7 = entries[:7]
+    total_kols = sum(e.get("kol_count", 0) for e in recent7)
+    total_tweets = sum(e.get("tweet_count", 0) for e in recent7)
+
+    stats = f"""<div class="stats">
+      <div class="stat"><div class="stat-num">{len(entries)}</div><div class="stat-label">累计天数</div></div>
+      <div class="stat"><div class="stat-num">{total_kols}</div><div class="stat-label">近7日活跃KOL</div></div>
+      <div class="stat"><div class="stat-num">{total_tweets}</div><div class="stat-label">近7日推文</div></div>
+    </div>"""
+
+    cards = ""
+    for e in entries:
+        date = e.get("date","")
+        kol_count = e.get("kol_count", 0)
+        tweet_count = e.get("tweet_count", 0)
+        summary = e.get("summary","")
+        # 提取中文摘要第一段
+        first = ""
+        for line in summary.split("\n"):
+            line = line.strip()
+            if line and not line.startswith("【") and not line.startswith("(") and not line.startswith("-") and not line.startswith("*") and len(line) > 20:
+                first = line[:120]
+                break
+        topics = _extract_topics(summary)[:5]
+        tag_html = "".join(f'<span class="tag">{t}</span>' for t in topics)
+        cards += f"""<a href="{date}.html"><div class="card">
+          <div class="card-link">
+            <span class="card-date">{date}</span>
+            <div class="card-meta">
+              <span class="badge badge-kol">{kol_count} KOL</span>
+              <span class="badge badge-tweet">{tweet_count} 条</span>
+              <span class="arrow">→</span>
+            </div>
+          </div>
+          <div class="card-summary">{first}</div>
+          <div class="tags">{tag_html}</div>
+        </div></a>"""
+
+    if not cards:
+        cards = '<div class="empty">暂无存档</div>'
+
+    body = _nav("date") + stats + cards
+    (web_dir / "index.html").write_text(_page("AI KOL 日报", body), encoding="utf-8")
 
 
-def _wait_for_run(run_id, timeout=300):
-    status_url  = f"https://api.apify.com/v2/actor-runs/{run_id}?token={APIFY_TOKEN}"
-    dataset_url = f"https://api.apify.com/v2/actor-runs/{run_id}/dataset/items?token={APIFY_TOKEN}"
-    start = time.time()
-    while time.time() - start < timeout:
-        status = requests.get(status_url, timeout=10).json()["data"]["status"]
-        if status == "SUCCEEDED":
-            items = requests.get(dataset_url, timeout=10).json()
-            return items if isinstance(items, list) else []
-        elif status in ("FAILED", "ABORTED", "TIMED-OUT"):
-            print(f"  [警告] {run_id}: {status}")
-            return []
-        time.sleep(10)
-    return []
+# ── 每日详情页 ──────────────────────────────────────────────────────────
 
+def build_daily_page(date_str, digest_data, web_dir):
+    web_dir.mkdir(parents=True, exist_ok=True)
 
-def _is_quality_tweet(text: str) -> bool:
-    """过滤低质量推文：纯回复、无内容、太短"""
-    t = text.strip()
-    # 纯回复（以 @某人 开头且正文很短）
-    if re.match(r'^@\w+\s*$', t):
-        return False
-    if re.match(r'^@\w+\s+\S{0,20}\s*$', t):
-        return False
-    # 去掉链接后太短
-    clean = re.sub(r'https?://\S+', '', t).strip()
-    if len(clean) < 20:
-        return False
-    return True
+    # 整体摘要：从 today_summary.md 读取概览部分
+    summary_file = web_dir.parent / "data" / "today_summary.md"
+    overview_zh, overview_en = "", ""
+    if summary_file.exists():
+        summary = summary_file.read_text(encoding="utf-8")
+        lines = summary.split("\n")
+        collecting = False
+        for line in lines:
+            stripped = line.strip()
+            if "整体摘要" in stripped or "Daily Overview" in stripped:
+                collecting = True
+                continue
+            if stripped == "---":
+                break
+            if collecting and stripped and not stripped.startswith("【"):
+                if not overview_zh and not stripped.startswith("("):
+                    overview_zh = stripped
+                elif not overview_en and stripped.startswith("("):
+                    overview_en = stripped.strip("()")
 
-
-def _build_digest(data):
-    accounts_map = {a["username"].lower(): a for a in data.get("accounts", [])}
-
-    kol_digest = []
-    for username, tweets in data.get("tweets", {}).items():
-        acc = accounts_map.get(username, {})
-
-        # 过滤低质量推文，再按点赞排序取前5条
-        quality = [t for t in tweets if _is_quality_tweet(t.get("text", ""))]
-        top = sorted(quality, key=lambda t: t.get("likes", 0), reverse=True)[:5]
-
-        compressed = []
-        for t in top:
-            text = t.get("text", "")
-            urls = re.findall(r'https?://\S+', text)
-            clean = re.sub(r'https?://\S+', '', text).strip()
-            if len(clean) > 200:
-                clean = clean[:200] + "..."
-            compressed.append({
-                "text": clean,
-                "links": urls[:2],
-                "likes": t.get("likes", 0),
-                "retweets": t.get("retweets", 0),
-            })
-
-        if compressed:
-            kol_digest.append({
-                "username": username,
-                "display_name": acc.get("display_name", username),
-                "note": acc.get("note", ""),
-                "tweets": compressed,
-            })
-
-    kol_digest.sort(
-        key=lambda k: max((t["likes"] for t in k["tweets"]), default=0),
-        reverse=True
-    )
-
-    # 新闻：过滤低质量，500赞以上，最多15条
-    filtered_news = sorted(
-        [n for n in data.get("news", [])
-         if n.get("likes", 0) >= 500 and _is_quality_tweet(n.get("text", ""))],
-        key=lambda n: n.get("likes", 0), reverse=True
-    )[:15]
-
-    compressed_news = []
-    for n in filtered_news:
-        text = n.get("text", "")
-        urls = re.findall(r'https?://\S+', text)
-        clean = re.sub(r'https?://\S+', '', text).strip()
-        if len(clean) > 200:
-            clean = clean[:200] + "..."
-        compressed_news.append({
-            "text": clean,
-            "links": urls[:2],
-            "likes": n.get("likes", 0),
-            "author_handle": n.get("author_handle", ""),
-            "author_name": n.get("author_name", ""),
-            "category": n.get("category", ""),
-        })
-
-    digest = {
-        "date": data.get("date", ""),
-        "kols": kol_digest,
-        "news": compressed_news,
-        "stats": {
-            "total_kols": len(kol_digest),
-            "total_tweets_raw": data.get("total_tweets", 0),
-            "total_news_raw": data.get("total_news", 0),
-            "news_after_filter": len(compressed_news),
-        }
-    }
-    DIGEST_FILE.write_text(json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[Digest] {len(kol_digest)}个KOL，新闻{len(compressed_news)}条（过滤后）")
-
-
-# ── summarize ──────────────────────────────────────────────────────────
-
-def summarize():
-    digest = json.loads(DIGEST_FILE.read_text(encoding="utf-8"))
-
-    print("[摘要] 调用 Claude API 生成整体摘要...")
-    overview = _call_claude_for_overview(digest)
-
-    print("[摘要] 生成详细内容...")
-    body = _build_body(digest)
-
-    full = f"{overview}\n\n---\n{body}"
-    SUMMARY_FILE.write_text(full, encoding="utf-8")
-    print(f"[摘要] 完成，{len(full)} 字符")
-
-
-def _call_claude_for_overview(digest: dict) -> str:
-    # 给 Claude 的精简输入：每个KOL最高赞推文 + 前10条新闻
-    kol_lines = []
-    for kol in digest.get("kols", [])[:25]:
-        top = kol.get("tweets", [{}])[0].get("text", "")[:100]
-        kol_lines.append(f"@{kol['username']}({kol['note']}): {top}")
-
-    news_lines = []
-    for n in digest.get("news", [])[:10]:
-        news_lines.append(f"♥{n.get('likes',0)} @{n.get('author_handle','')}: {n.get('text','')[:100]}")
-
-    prompt = f"""今日({digest.get('date','')}) AI领域动态，请写中英双语整体摘要（各约100字），提炼3-5个最重要话题趋势，要有观点不要流水账。
-
-KOL动态（按热度）：
-{chr(10).join(kol_lines)}
-
-行业新闻：
-{chr(10).join(news_lines)}
-
-输出格式（严格遵守）：
-【整体摘要 / Daily Overview】
-
-（中文摘要100字）
-
-(English summary ~100 words)"""
-
-    try:
-        import anthropic
-        client = anthropic.Anthropic()
-        msg = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=600,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        print("  [Claude API] 摘要生成成功 ✓")
-        return msg.content[0].text
-    except Exception as e:
-        print(f"  [警告] Claude API 失败: {e}，使用备用摘要")
-        return _fallback_overview(digest)
-
-
-def _fallback_overview(digest: dict) -> str:
-    stats = digest.get("stats", {})
-    return f"""【整体摘要 / Daily Overview】
-
-今日共 {stats.get('total_kols', 0)} 位 KOL 活跃，发布 {stats.get('total_tweets_raw', 0)} 条推文，精选行业新闻 {stats.get('news_after_filter', 0)} 条。
-
-Today {stats.get('total_kols', 0)} KOLs were active with {stats.get('total_tweets_raw', 0)} tweets and {stats.get('news_after_filter', 0)} curated industry news items."""
-
-
-def _build_body(digest: dict) -> str:
-    lines = []
+    overview_html = ""
+    if overview_zh:
+        overview_html += f'<div class="overview"><div class="overview-label">整体摘要</div><div class="overview-text">{overview_zh}</div></div>'
+    if overview_en:
+        overview_html += f'<div class="overview" style="margin-top:8px"><div class="overview-label">Daily Overview</div><div class="overview-text">{overview_en}</div></div>'
 
     # 行业新闻
-    lines.append("【行业新闻 / Industry News】")
-    lines.append("")
-    news = digest.get("news", [])
-    if news:
-        for n in news:
-            handle = n.get("author_handle", "")
-            text = n.get("text", "")
-            likes = n.get("likes", 0)
-            links = n.get("links", [])
-            link_str = f"  \n  → {links[0]}" if links else ""
-            lines.append(f"- **@{handle}** ♥{likes:,}  \n  {text}{link_str}")
-            lines.append("")
+    news_html = '<div class="section-title">行业新闻 / Industry News</div>'
+    news_items = digest_data.get("news", [])
+    if news_items:
+        news_html += '<div class="card">'
+        for n in news_items:
+            handle = n.get("author_handle","")
+            text = n.get("text","")
+            likes = n.get("likes",0)
+            links = n.get("links",[])
+            link_html = f'<a class="news-link" href="{links[0]}" target="_blank">→ {links[0][:60]}{"..." if len(links[0])>60 else ""}</a>' if links else ""
+            news_html += f"""<div class="news-item">
+              <div class="news-handle">@{handle}</div>
+              <div class="news-text">{text}</div>
+              {link_html}
+              <div class="news-likes">♥ {likes:,}</div>
+            </div>"""
+        news_html += "</div>"
     else:
-        lines.append("（今日无符合条件的行业新闻）")
-        lines.append("")
-
-    lines.append("---")
-    lines.append("")
+        news_html += '<div class="empty" style="padding:1rem">今日无符合条件的行业新闻</div>'
 
     # KOL 详情
-    lines.append("【各KOL详情 / KOL Details】")
-    lines.append("")
-    for kol in digest.get("kols", []):
-        username = kol.get("username", "")
-        note = kol.get("note", "")
-        lines.append(f"**@{username}（{note}）**")
-        lines.append("")
-        for t in kol.get("tweets", []):
-            text = t.get("text", "")
-            likes = t.get("likes", 0)
-            retweets = t.get("retweets", 0)
-            links = t.get("links", [])
-            lines.append(f"> {text}")
-            if links:
-                lines.append(f"> → {links[0]}")
-            lines.append(f"> ♥{likes:,} &nbsp; ↺{retweets:,}")
-            lines.append("")
-        lines.append("---")
-        lines.append("")
+    kol_html = '<div class="section-title">各KOL详情 / KOL Details</div>'
+    for kol in digest_data.get("kols", []):
+        username = kol.get("username","")
+        note = kol.get("note","")
+        av = username[0].upper() if username else "?"
+        tweets_html = ""
+        for t in kol.get("tweets",[]):
+            text = t.get("text","")
+            likes = t.get("likes",0)
+            retweets = t.get("retweets",0)
+            links = t.get("links",[])
+            link_html = f'<a class="tweet-link" href="{links[0]}" target="_blank">→ {links[0][:60]}{"..." if len(links[0])>60 else ""}</a>' if links else ""
+            tweets_html += f"""<div class="tweet-item">
+              <div class="tweet-text">{text}</div>
+              {link_html}
+              <div class="tweet-stats">♥ {likes:,} &nbsp; ↺ {retweets:,}</div>
+            </div>"""
+        kol_html += f"""<div class="kol-card">
+          <div class="kol-header">
+            <div class="avatar">{av}</div>
+            <div>
+              <div class="kol-name">@{username}</div>
+              <div class="kol-note">{note}</div>
+            </div>
+          </div>
+          {tweets_html}
+        </div>"""
 
-    return "\n".join(lines)
+    body = f"""{_nav("date")}
+    <a class="back" href="index.html">← 返回列表</a>
+    <div class="page-title">{date_str}</div>
+    <div class="page-sub">AI KOL 日报</div>
+    {overview_html}
+    {news_html}
+    {kol_html}"""
 
-
-# ── publish_web ────────────────────────────────────────────────────────
-
-def publish_web():
-    if not SUMMARY_FILE.exists():
-        print("[错误] today_summary.md 不存在")
-        sys.exit(1)
-
-    summary = SUMMARY_FILE.read_text(encoding="utf-8")
-    tweets_data = json.loads(TWEETS_FILE.read_text(encoding="utf-8")) if TWEETS_FILE.exists() else {}
-    digest_data = json.loads(DIGEST_FILE.read_text(encoding="utf-8")) if DIGEST_FILE.exists() else {}
-    accounts = load_accounts()
-    today = tweets_data.get("date", datetime.date.today().strftime("%Y-%m-%d"))
-
-    _save_archive(today, summary, tweets_data)
-
-    sys.path.insert(0, str(Path(__file__).parent))
-    from web_generator import build_daily_page, build_index_page, build_kol_page, build_topic_page
-
-    build_daily_page(today, digest_data, DOCS_DIR)
-    build_index_page(ARCHIVE_DIR, DOCS_DIR)
-    build_kol_page(ARCHIVE_DIR, DOCS_DIR, accounts)
-    build_topic_page(ARCHIVE_DIR, DOCS_DIR)
-    print("[网页] 生成完成 ✓")
+    (web_dir / f"{date_str}.html").write_text(_page(f"AI KOL 日报 {date_str}", body), encoding="utf-8")
 
 
-def _save_archive(date_str, summary, tweets_data):
-    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
-    path = ARCHIVE_DIR / f"{date_str}.json"
-    path.write_text(json.dumps({
-        "date": date_str,
-        "summary": summary,
-        "tweet_count": tweets_data.get("total_tweets", 0),
-        "kol_count": tweets_data.get("active_kols", 0),
-        "news_count": tweets_data.get("total_news", 0),
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[存档] {path}")
+# ── 按KOL页面 ──────────────────────────────────────────────────────────
+
+def build_kol_page(archive_dir, web_dir, accounts):
+    web_dir.mkdir(parents=True, exist_ok=True)
+    entries = _all_archives(archive_dir)
+
+    # 统计每个KOL出现的天数
+    kol_days = defaultdict(list)
+    for e in entries:
+        date = e.get("date","")
+        summary = e.get("summary","")
+        # 从summary里找出现了哪些KOL
+        for acc in accounts:
+            username = acc.get("username","")
+            if f"@{username}" in summary:
+                kol_days[username].append(date)
+
+    cards = ""
+    for acc in accounts:
+        username = acc.get("username","")
+        note = acc.get("note","")
+        days = kol_days.get(username, [])
+        av = username[0].upper() if username else "?"
+        day_count = len(days)
+        latest = days[0] if days else "暂无记录"
+
+        # 点击跳转到最新出现的日报，而不是 Twitter
+        link = f"{latest}.html" if days else "index.html"
+        cards += f"""<a href="{link}"><div class="kol-index-card">
+          <div class="kol-index-header">
+            <div class="avatar">{av}</div>
+            <div class="kol-index-info">
+              <div class="kol-name">@{username}</div>
+              <div class="kol-note">{note}</div>
+            </div>
+            <div style="margin-left:auto;text-align:right">
+              <div class="badge badge-kol" style="display:inline-block">{day_count} 天活跃</div>
+              <div style="font-size:11px;color:var(--hint);margin-top:4px">最近：{latest}</div>
+            </div>
+          </div>
+        </div></a>"""
+
+    if not cards:
+        cards = '<div class="empty">暂无数据</div>'
+
+    body = f"""{_nav("kol")}
+    <div class="page-title">KOL 列表</div>
+    <div class="page-sub">{len(accounts)} 位追踪中的 AI 领域 KOL</div>
+    {cards}"""
+
+    (web_dir / "kol.html").write_text(_page("KOL 列表 - AI KOL 日报", body), encoding="utf-8")
 
 
-def publish():
-    publish_web()
-    if not GMAIL_USER:
-        return
-    summary = SUMMARY_FILE.read_text(encoding="utf-8")
-    tweets_data = json.loads(TWEETS_FILE.read_text(encoding="utf-8")) if TWEETS_FILE.exists() else {}
-    today = tweets_data.get("date", datetime.date.today().strftime("%Y-%m-%d"))
-    _send_email(summary, today)
+# ── 按话题页面 ──────────────────────────────────────────────────────────
 
+def build_topic_page(archive_dir, web_dir):
+    web_dir.mkdir(parents=True, exist_ok=True)
+    entries = _all_archives(archive_dir)
 
-def _send_email(summary, date_str):
-    print("[Gmail] 发送...")
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"🤖 AI KOL 日报 {date_str}"
-    msg["From"] = GMAIL_USER
-    msg["To"] = GMAIL_TO
-    msg.attach(MIMEText(summary, "plain", "utf-8"))
-    try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-            s.login(GMAIL_USER, GMAIL_PASSWORD)
-            s.sendmail(GMAIL_USER, GMAIL_TO, msg.as_string())
-        print(f"[Gmail] 发送成功 ✓")
-    except Exception as e:
-        print(f"[Gmail] 失败: {e}")
+    # 统计每个话题出现的日期 + 相关KOL
+    topic_data = defaultdict(lambda: {"dates": [], "kols": set()})
+    for e in entries:
+        date = e.get("date","")
+        summary = e.get("summary","")
+        topics = _extract_topics(summary)
+        for t in topics:
+            topic_data[t]["dates"].append(date)
+            # 找出当天提到这个话题的KOL
+            for line in summary.split("\n"):
+                if line.strip().startswith("**@") and any(kw in summary[summary.find(line):summary.find(line)+500].lower() for kw in TOPIC_KEYWORDS.get(t,[])):
+                    m = re.match(r'\*\*@(\w+)', line.strip())
+                    if m:
+                        topic_data[t]["kols"].add(m.group(1))
 
+    cards = ""
+    for topic, data in sorted(topic_data.items(), key=lambda x: -len(x[1]["dates"])):
+        dates = data["dates"]
+        kols = list(data["kols"])[:5]
+        dates_str = "、".join(dates[:5]) + ("等" if len(dates)>5 else "")
+        kol_str = " ".join(f"@{k}" for k in kols) if kols else ""
+        # 点击跳转到最新出现的日报
+        link = f"{dates[0]}.html" if dates else "index.html"
+        cards += f"""<a href="{link}"><div class="topic-card">
+          <div class="topic-header">
+            <span class="topic-name">{topic}</span>
+            <span class="badge badge-topic">{len(dates)} 天</span>
+          </div>
+          <div class="topic-dates">出现于：{dates_str}</div>
+          {"<div class='topic-kols'>相关KOL：" + kol_str + "</div>" if kol_str else ""}
+        </div></a>"""
 
-if __name__ == "__main__":
-    cmd = sys.argv[1] if len(sys.argv) > 1 else "help"
-    if cmd == "fetch":
-        fetch_tweets()
-    elif cmd == "summarize":
-        summarize()
-    elif cmd == "publish_web":
-        publish_web()
-    elif cmd == "publish":
-        publish()
-    else:
-        print("用法: python src/main.py fetch | summarize | publish_web | publish")
+    if not cards:
+        cards = '<div class="empty">话题数据积累中，每日运行后自动更新</div>'
+
+    body = f"""{_nav("topic")}
+    <div class="page-title">话题汇总</div>
+    <div class="page-sub">基于历史日报自动提取的话题趋势</div>
+    {cards}"""
+
+    (web_dir / "topic.html").write_text(_page("话题汇总 - AI KOL 日报", body), encoding="utf-8")
