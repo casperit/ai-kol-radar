@@ -9,7 +9,7 @@
 
 ### Step 1：安装依赖
 ```bash
-pip install requests --break-system-packages -q
+pip install requests anthropic --break-system-packages -q
 ```
 
 ### Step 2：抓取数据
